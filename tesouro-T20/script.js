@@ -61,7 +61,7 @@ function gmoney(min, max) {
       gitemg = "Equipamento"
       itemr = equipamento()
     }
-    res.innerHTML = `Você rolou ${moneyg} para Dinheiro e ${itemg} para Item, resultando em ${gmoneyg} e ${gitemg} como loot. Seu dinheiro gerou ${moneyr} e seu diverso gerou ${itemr}`
+    res.innerHTML = `Você rolou ${moneyg} para Dinheiro e ${itemg} para Item, resultando em ${gmoneyg} e ${gitemg} como loot. Seu dinheiro gerou ${moneyr} e seu item gerou ${itemr}`
   }
 }
 
@@ -76,10 +76,13 @@ function equipamento() {
 
   if(d6 >= 1 && d6 <= 3) {
     itemroll = arma()
+    return itemroll
   } else if (d6 == 4 || d6 == 5) {
     itemroll = armadura()
+    return itemroll
   } else {
     itemroll = esoterico()
+    return itemroll
   }
 }
 
@@ -92,7 +95,95 @@ function arma() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-
+  if(d1100 >= 1 && d1100 <= 3) {
+    return "Adaga"
+  } else if (d1100 == 4 || d1100 == 5) {
+    return "Alabarda"
+  } else if (d1100 == 6 || d1100 == 7) {
+    return "Alfange"
+  } else if (d1100 >= 8 && d1100 <= 10) {
+    return "Arco curto"
+  } else if (d1100 >= 11 && d1100 <= 13) {
+    return "Arco longo"
+  } else if (d1100 == 14 || d1100 == 15) {
+    return "Azagaia"
+  } else if (d1100 == 16) {
+    return "Balas (20)"
+  } else if (d1100 == 17 || d1100 == 18) {
+    return "Besta leve"
+  } else if (d1100 == 19 || d1100 == 20) {
+    return "Besta pesada"
+  } else if (d1100 >= 21 && d1100 <= 23) {
+    return "Bordão"
+  } else if (d1100 == 24) {
+    return "Chicote"
+  } else if (d1100 >= 25 && d1100 <= 27) {
+    return "Cimitarra"
+  } else if (d1100 >= 28 && d1100 <= 30) {
+    return "Clava"
+  } else if (d1100 == 31) {
+    return "Corrente de espinhos"
+  } else if (d1100 == 32 || d1100 == 33) {
+    return "Espada bastarda"
+  } else if (d1100 >= 34 && d1100 <= 38) {
+    return "Espada curta"
+  } else if (d1100 >= 39 && d1100 <= 43) {
+    return "Espada longa"
+  } else if (d1100 >= 44 && d1100 <= 46) {
+    return "Flechas (20)"
+  } else if (d1100 >= 47 && d1100 <= 49) {
+    return "Florete"
+  } else if (d1100 == 50 || d1100 == 51) {
+    return "Foice"
+  } else if (d1100 == 52 || d1100 == 53) {
+    return "Funda"
+  } else if (d1100 == 54 || d1100 == 55) {
+    return "Gadanho"
+  } else if (d1100 == 56) {
+    return "Katana"
+  } else if (d1100 >= 57 && d1100 <= 59) {
+    return "Lança"
+  } else if (d1100 == 60) {
+    return "Lança montada"
+  } else if (d1100 >= 61 && d1100 <= 63) {
+    return "Maça"
+  } else if (d1100 >= 64 && d1100 <= 66) {
+    return "Machadinha"
+  } else if (d1100 == 67) {
+    return "Machado anão"
+  } else if (d1100 >= 68 && d1100 <= 70) {
+    return "Machado de batalha"
+  } else if (d1100 >= 71 && d1100 <= 73) {
+    return "Machado de guerra"
+  } else if (d1100 == 74) {
+    return "Machado táurico"
+  } else if (d1100 == 75 || d1100 <= 76) {
+    return "Mangual"
+  } else if (d1100 == 77) {
+    return "Marreta"
+  } else if (d1100 >= 78 && d1100 <= 80) {
+    return "Martelo de guerra"
+  } else if (d1100 >= 81 && d1100 <= 83) {
+    return "Montante"
+  } else if (d1100 == 84) {
+    return "Mosquete"
+  } else if (d1100 == 85) {
+    return "Pedras (20)"
+  } else if (d1100 >= 86 && d1100 <= 88) {
+    return "Picareta"
+  } else if (d1100 == 89 || d1100 == 90) {
+    return "Pique"
+  } else if (d1100 == 91 || d1100 == 92) {
+    return "Pistola"
+  } else if (d1100 == 93) {
+    return "Rede"
+  } else if (d1100 >= 94 && d1100 <= 96) {
+    return "Tacape"
+  } else if (d1100 == 97 || d1100 == 98) {
+    return "Tridente"
+  } else {
+    return "Virotes (20)"
+  } 
 }
 
 function armadura() {
@@ -104,23 +195,23 @@ function armadura() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  if(d2100 >= 1 && d3100 <= 5) {
+  if(d2100 >= 1 && d2100 <= 5) {
     return "Couro"
-  } else if (d2100 >= 6 && d3100 <= 10) {
+  } else if (d2100 >= 6 && d2100 <= 10) {
     return "Brunea"
-  } else if (d2100 >= 11 && d3100 <= 25) {
+  } else if (d2100 >= 11 && d2100 <= 25) {
     return "Completa"
-  } else if (d2100 >= 26 && d3100 <= 30) {
+  } else if (d2100 >= 26 && d2100 <= 30) {
     return "Cota de malha"
-  } else if (d2100 >= 31 && d3100 <= 45) {
+  } else if (d2100 >= 31 && d2100 <= 45) {
     return "Couraça"
-  } else if (d2100 >= 46 && d3100 <= 55) {
+  } else if (d2100 >= 46 && d2100 <= 55) {
     return "Couro batido"
-  } else if (d2100 >= 56 && d3100 <= 65) {
+  } else if (d2100 >= 56 && d2100 <= 65) {
     return "Escudo leve"
-  } else if (d2100 >= 66 && d3100 <= 80) {
+  } else if (d2100 >= 66 && d2100 <= 80) {
     return "Escudo pesado"
-  } else if (d2100 >= 81 && d3100 <= 85) {
+  } else if (d2100 >= 81 && d2100 <= 85) {
     return "Gibão de epels"
   } else if (d2100 >= 86 && d2100 <= 90) {
     return "Loriga segmentada"
