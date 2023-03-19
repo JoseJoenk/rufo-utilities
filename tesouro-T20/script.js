@@ -43,12 +43,31 @@ function gmoney(min, max) {
   if(nd.value == "ND 1/2") {
     if(moneyg <= 25) {
       gmoneyg = "Nada"
+      moneyr = "Nada"
     } else if (moneyg >= 26 && moneyg <= 70) {
       gmoneyg = "2d6x10 TC"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let d3 = 10
+      let ts = " TC"
+      let tsres = (d1 + d2) * d3
+      moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 71 && moneyg <= 95) {
       gmoneyg = "2d8x10 T$"
+      let d1 = rolldice(1, 8)
+      let d2 = rolldice(1, 8)
+      let d3 = 10
+      let ts = " T$"
+      let tsres = (d1 + d2) * d3
+      moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4x100 T$"
+      let d1 = rolldice(1, 4)
+      let d2 = 0
+      let d3 = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * d3
+      moneyr = `${tsres} ${ts}`
     }
 
     if(itemg <= 45) {
@@ -63,6 +82,12 @@ function gmoney(min, max) {
     }
     res.innerHTML = `Você rolou ${moneyg} para Dinheiro e ${itemg} para Item, resultando em ${gmoneyg} e ${gitemg} como loot. Seu dinheiro gerou ${moneyr} e seu item gerou ${itemr}`
   }
+}
+
+function rolldice(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function equipamento() {
