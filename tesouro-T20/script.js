@@ -80,7 +80,7 @@ function gmoney(min, max) {
       gitemg = "Equipamento"
       itemr = equipamento()
     }
-    res.innerHTML = `Você rolou ${moneyg} para Dinheiro e ${itemg} para Item, resultando em ${gmoneyg} e ${gitemg} como loot. Seu dinheiro gerou ${moneyr} e seu item gerou ${itemr}`
+    res.innerHTML = `Você rolou <strong>${moneyg}</strong> para Dinheiro e <strong>${itemg}</strong> para Item, resultando em <strong>${gmoneyg}</strong> e <strong>${gitemg}</strong> como loot. Seu dinheiro gerou <strong>${moneyr}</strong> e seu item gerou <strong>${itemr}</strong>`
   }
 }
 
