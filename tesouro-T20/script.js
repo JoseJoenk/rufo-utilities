@@ -1,23 +1,5 @@
-/*function gerar() {
-  var res = document.getElementById('res')
-  var gitem = gitem(1, 100)
-  var gmoney = gmoney(1, 100)
 
-  function gitem(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-function gmoney(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  res.innerHTML += `<p>Os valores rolados foram ${gitem} e ${gmoney}</p>`
-}*/
-
+/*Declaração de variaveis e onde os primeiros d100 são rolados*/
 function gerar() {
   var res = document.getElementById('res')
   var itemg = gitem(1, 100)
@@ -26,6 +8,7 @@ function gerar() {
   var gmoneyg = ''
   var itemr = ''
   var moneyr = ''
+  var finalmsg = ''
   var nd = document.getElementById('nd')
 
   function gitem(min, max) {
@@ -40,7 +23,14 @@ function gmoney(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  if(nd.value == "ND 1/2") {
+/*Função que dispara a mensagem final*/
+function fimmsg() {
+  finalmsg = `Você rolou <strong>${moneyg}</strong> para Dinheiro e <strong>${itemg}</strong> para Item, resultando em <strong>${gmoneyg}</strong> e <strong>${gitemg}</strong> como loot. Seu dinheiro gerou <strong>${moneyr}</strong> e seu item gerou <strong>${itemr}</strong>`
+  return finalmsg
+}
+
+/*Seleção de ND e começo do procedimento pra cada ND*/
+  if(nd.value == "ND 1/2") { /*Dinheiro ND 1/2*/
     if(moneyg <= 25) {
       gmoneyg = "Nada"
       moneyr = "Nada"
@@ -70,7 +60,7 @@ function gmoney(min, max) {
       moneyr = `${tsres} ${ts}`
     }
 
-    if(itemg <= 45) {
+    if(itemg <= 45) { /*Item ND 1/2*/
       gitemg = "Nada"
       itemr = "Nada"
     } else if(itemg >= 46 && itemg <= 70) {
@@ -80,16 +70,18 @@ function gmoney(min, max) {
       gitemg = "Equipamento"
       itemr = equipamento()
     }
-    res.innerHTML = `Você rolou <strong>${moneyg}</strong> para Dinheiro e <strong>${itemg}</strong> para Item, resultando em <strong>${gmoneyg}</strong> e <strong>${gitemg}</strong> como loot. Seu dinheiro gerou <strong>${moneyr}</strong> e seu item gerou <strong>${itemr}</strong>`
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
   }
 }
 
+/*Função pra rolar dados aleatórios*/
 function rolldice(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+/*Função pra definir a categoria quando cair Equipamento*/
 function equipamento() {
   let d6 = equip6(1, 6)
 
@@ -110,7 +102,7 @@ function equipamento() {
     return itemroll
   }
 }
-
+/*Função pra rolagem de armas*/
 function arma() {
   let d1100 = armas(1, 100)
 
@@ -210,7 +202,7 @@ function arma() {
     return "Virotes (20)"
   } 
 }
-
+/*Função pra rolagem de armaduras ou escudos*/
 function armadura() {
   let d2100 = armaduras(1, 100)
 
@@ -237,14 +229,14 @@ function armadura() {
   } else if (d2100 >= 66 && d2100 <= 80) {
     return "Escudo pesado"
   } else if (d2100 >= 81 && d2100 <= 85) {
-    return "Gibão de epels"
+    return "Gibão de peles"
   } else if (d2100 >= 86 && d2100 <= 90) {
     return "Loriga segmentada"
   } else {
     return "Meia armadura"
   }
 }
-
+/*Função pra rolagem de esotéricos*/
 function esoterico() {
   let d3100 = esotericos(1, 100)
 
@@ -259,7 +251,7 @@ function esoterico() {
   } else if (d3100 >= 11 && d3100 <= 25) {
     return "Cajado arcano"
   } else if (d3100 >= 26 && d3100 <= 35) {
-    return "Cetro elemental*"
+    return cetro(1, 4)
   } else if (d3100 >= 36 && d3100 <= 42) {
     return "Costela de lich"
   } else if (d3100 >= 43 && d3100 <= 50) {
@@ -271,12 +263,52 @@ function esoterico() {
   } else if (d3100 >= 66 && d3100 <= 75) {
     return "Orbe cristalina"
   } else if (d3100 >= 76 && d3100 <= 85) {
-    return "Tomo hermético*"
+    return tomo(1, 8)
   } else {
     return "Varinha arcana"
   }
 }
+/*Função pra descobrir o elemento do cetro*/
+function cetro(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  elemento = Math.floor(Math.random() * (max - min + 1)) + min;
+  if(elemento = 1) {
+    return "Cetro elemental de ácido"
+  } else if (elemento = 2) {
+    return "Cetro elemental de eletricidade"
+  } else if (elemento = 3) {
+    return "Cetro elemental de fogo"
+  } else {
+    return "Cetro elemental de frio"
+  }
+}
 
+/*Função para descobrir a escola do tomo*/
+function tomo(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  escola = Math.floor(Math.random() * (max - min + 1)) + min;
+  if(escola = 1) {
+    return "Tomo hermético de abjuração"
+  } else if (escola = 2) {
+    return "Tomo hermético de adivinhação"
+  } else if (escola = 3) {
+    return "Tomo hermético de convocação"
+  } else if (escola = 4) {
+    return "Tomo hermético de encantamento"
+  } else if (escola = 5) {
+    return "Tomo hermético de evocação"
+  } else if (escola = 6) {
+    return "Tomo hermético de ilusão"
+  } else if (escola = 7) {
+    return "Tomo hermético de necromancia"
+  } else {
+    return "Tomo hermético de transmutação"
+  }
+}
+
+/*Função pra rolagem de itens diversos*/
 function diverso() {
   let d100 = res100(1, 100)
 
