@@ -30,7 +30,49 @@ function fimmsg() {
 }
 
 /*Seleção de ND e começo do procedimento pra cada ND*/
-  if(nd.value == "ND 1/2") { /*Dinheiro ND 1/2*/
+  if(nd.value == "ND 1/4") { /*Dinheiro pra ND 1/4*/
+    if(moneyg <= 30) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 31 && moneyg <= 70) {
+      gmoneyg = "1d6x10 TC"
+      let d1 = rolldice(1, 6)
+      let d2 = 0
+      let dr = 10
+      let ts = " TC"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 71 && moneyg <= 95) {
+      gmoneyg = "1d4x100 T$"
+      let d1 = rolldice(1, 4)
+      let d2 = 0
+      let dr = 100
+      let ts = " TC"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d6x10 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = 0
+      let dr = 10
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    }
+
+    if(itemg <= 50) { /*Item ND 1/4*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 51 && itemg <= 75) {
+      gitemg = "Diverso"
+      itemr = diverso()
+    } else {
+      gitemg = "Equipamento"
+      itemr = equipamento()
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if(nd.value == "ND 1/2") { /*Dinheiro ND 1/2*/
     if(moneyg <= 25) {
       gmoneyg = "Nada"
       moneyr = "Nada"
@@ -38,25 +80,25 @@ function fimmsg() {
       gmoneyg = "2d6x10 TC"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
-      let d3 = 10
+      let dr = 10
       let ts = " TC"
-      let tsres = (d1 + d2) * d3
+      let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 71 && moneyg <= 95) {
       gmoneyg = "2d8x10 T$"
       let d1 = rolldice(1, 8)
       let d2 = rolldice(1, 8)
-      let d3 = 10
+      let dr = 10
       let ts = " T$"
-      let tsres = (d1 + d2) * d3
+      let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4x100 T$"
       let d1 = rolldice(1, 4)
       let d2 = 0
-      let d3 = 100
+      let dr = 100
       let ts = " T$"
-      let tsres = (d1 + d2) * d3
+      let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     }
 
@@ -69,6 +111,54 @@ function fimmsg() {
     } else {
       gitemg = "Equipamento"
       itemr = equipamento()
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 1") {
+    if(moneyg <= 20) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 21 && moneyg <= 70) {
+      gmoneyg = "3d8x10 T$"
+      let d1 = rolldice(1, 8)
+      let d2 = rolldice(1, 8)
+      let d3 = rolldice(1, 8)
+      let dr = 10
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 71 && moneyg <= 95) {
+      gmoneyg = "4d12x10 T$"
+      let d1 = rolldice(1, 12)
+      let d2 = rolldice(1, 12)
+      let d3 = rolldice(1, 12)
+      let d4 = rolldice(1, 12)
+      let dr = 10
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1 riqueza menor"
+      let d1 = rolldice(1, 4)
+      let d2 = 0
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    }
+
+    if(itemg <= 40) { /*Item ND 1*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 41 && itemg <= 65) {
+      gitemg = "Diverso"
+      itemr = diverso()
+    } else if (itemg >= 66 && itemg <= 90){
+      gitemg = "Equipamento"
+      itemr = equipamento()
+    } else {
+      gitemg = "1 poção"
+      itemr = potion()
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -217,7 +307,7 @@ function armadura() {
   } else if (d2100 >= 6 && d2100 <= 10) {
     return "Brunea"
   } else if (d2100 >= 11 && d2100 <= 25) {
-    return "Completa"
+    return "Armadura completa"
   } else if (d2100 >= 26 && d2100 <= 30) {
     return "Cota de malha"
   } else if (d2100 >= 31 && d2100 <= 45) {
@@ -251,7 +341,7 @@ function esoterico() {
   } else if (d3100 >= 11 && d3100 <= 25) {
     return "Cajado arcano"
   } else if (d3100 >= 26 && d3100 <= 35) {
-    return cetro(1, 4)
+    return cetro()
   } else if (d3100 >= 36 && d3100 <= 42) {
     return "Costela de lich"
   } else if (d3100 >= 43 && d3100 <= 50) {
@@ -263,21 +353,25 @@ function esoterico() {
   } else if (d3100 >= 66 && d3100 <= 75) {
     return "Orbe cristalina"
   } else if (d3100 >= 76 && d3100 <= 85) {
-    return tomo(1, 8)
+    return tomo()
   } else {
     return "Varinha arcana"
   }
 }
 /*Função pra descobrir o elemento do cetro*/
-function cetro(min, max) {
+function cetro() {
+  elemento = cetro4(1,4)
+
+  function cetro4(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
-  elemento = Math.floor(Math.random() * (max - min + 1)) + min;
-  if(elemento = 1) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  if(elemento == 1) {
     return "Cetro elemental de ácido"
-  } else if (elemento = 2) {
+  } else if (elemento == 2) {
     return "Cetro elemental de eletricidade"
-  } else if (elemento = 3) {
+  } else if (elemento == 3) {
     return "Cetro elemental de fogo"
   } else {
     return "Cetro elemental de frio"
@@ -285,23 +379,27 @@ function cetro(min, max) {
 }
 
 /*Função para descobrir a escola do tomo*/
-function tomo(min, max) {
+function tomo() {
+  escola = escola8(1, 8)
+
+  function escola8(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
-  escola = Math.floor(Math.random() * (max - min + 1)) + min;
-  if(escola = 1) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  if(escola == 1) {
     return "Tomo hermético de abjuração"
-  } else if (escola = 2) {
+  } else if (escola == 2) {
     return "Tomo hermético de adivinhação"
-  } else if (escola = 3) {
+  } else if (escola == 3) {
     return "Tomo hermético de convocação"
-  } else if (escola = 4) {
+  } else if (escola == 4) {
     return "Tomo hermético de encantamento"
-  } else if (escola = 5) {
+  } else if (escola == 5) {
     return "Tomo hermético de evocação"
-  } else if (escola = 6) {
+  } else if (escola == 6) {
     return "Tomo hermético de ilusão"
-  } else if (escola = 7) {
+  } else if (escola == 7) {
     return "Tomo hermético de necromancia"
   } else {
     return "Tomo hermético de transmutação"
