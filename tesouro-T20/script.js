@@ -139,11 +139,10 @@ function fimmsg() {
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1 riqueza menor"
-      let d1 = rolldice(1, 4)
+      let d1 = riquezamenor()
       let d2 = 0
-      let dr = 100
       let ts = " T$"
-      let tsres = (d1 + d2) * dr
+      let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
     }
 
@@ -162,6 +161,61 @@ function fimmsg() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
+  } else if (nd.value = "ND 2") {
+    if(moneyg <= 15) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 16 && moneyg <= 55) {
+      gmoneyg = "3d10x10 T$"
+      let d1 = rolldice(1, 10)
+      let d2 = rolldice(1, 10)
+      let d3 = rolldice(1, 10)
+      let dr = 10
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 56 && moneyg <= 85) {
+      gmoneyg = "2d4x100 T$"
+      let d1 = rolldice(1, 4)
+      let d2 = rolldice(1, 4)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 86 && moneyg <= 95) {
+      gmoneyg = "2d6+1x100 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2 + 1) * dr
+     }else {
+      gmoneyg = "1 riqueza menor"
+      let d1 = riquezamenor()
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+    }
+
+    if(itemg <= 30) { /*Item ND 1*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 31 && itemg <= 40) {
+      gitemg = "Diverso"
+      itemr = diverso()
+    } else if (itemg >= 41 && itemg <= 70){
+      gitemg = "Equipamento"
+      itemr = equipamento()
+    } else if (itemg >= 71 && itemg <= 90) {
+      gitemg = "1 poção"
+      itemr = potion()
+    } else {
+      gitemg = "Item superior (1 Melhoria)"
+      itemr = superior(1)
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
   }
 }
 
@@ -173,7 +227,7 @@ function rolldice(min, max) {
 }
 /*Função pra definir a categoria quando cair Equipamento*/
 function equipamento() {
-  let d6 = equip6(1, 6)
+  var d6 = equip6(1, 6)
 
   function equip6(min, max) {
     min = Math.ceil(min);
@@ -517,5 +571,252 @@ function diverso() {
   }
 }
 
+/*Função para definir poções*/
+function potion() {
+  pot = potr(1, 100)
 
+  function potr(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
+  if (pot == 1) {
+    return "Óleo de Abençoar Alimentos"
+  } else if (pot == 2 || pot == 3) {
+    return "Granada de Área Escorregadia"
+  } else if (pot >= 4 && pot <= 6) {
+    return "Óleo de Arma Mágica"
+  } else if (pot == 7) {
+    return "Poção de Compreensão"
+  } else if (pot >= 8 && pot <= 15) {
+    return "Poção de Curar Ferimentos (2d8+2)"
+  } else if (pot >= 16 && pot <= 18) {
+    return "Poção de Disfarce Ilusório"
+  } else if (pot == 19 || pot == 20) {
+    return "Óleo de Escuridão"
+  } else if (pot == 21 || pot == 22) {
+    return "Óleo de Luz"
+  } else if (pot == 23 || pot == 24) {
+    return "Granada de Névoa"
+  } else if (pot == 25 || pot == 26) {
+    return "Poção de Primor Atlético"
+  } else if (pot == 27 || pot == 28) {
+    return "Poção de Proteção Divina"
+  } else if (pot == 29 || pot == 30) {
+    return "Poção de Resistência a Energia"
+  } else if (pot == 31 || pot == 32) {
+    return "Poção de Sono"
+  } else if (pot == 33) {
+    return "Poção de Suporte Ambiental"
+  } else if (pot == 34) {
+    return "Óleo de Tranca Arcana"
+  } else if (pot == 35) {
+    return "Poção de Visão Mística"
+  } else if (pot == 36) {
+    return "Poção de Vitalidade Fantasma"
+  } else if (pot == 37 || pot == 38) {
+    return "Poção de Escudo da Fé (Cena)"
+  } else if (pot == 39 || pot == 40) {
+    return "Poção de Alterar Tamanho"
+  } else if (pot == 41 || pot == 42) {
+    return "Poção de Aparência Perfeita"
+  } else if (pot == 43) {
+    return "Óleo de Armamento da Natureza"
+  } else if (pot >= 44 && pot <= 49) {
+    return "Granada de Bola de Fogo"
+  } else if (pot == 50 || pot == 51) {
+    return "Poção de Camuflagem Ilusória"
+  } else if (pot == 52 || pot == 53) {
+    return "Poção de Concentração de Combate (Cena)"
+  } else if (pot >= 54 && pot <= 62) {
+    return "Poção de Curar Ferimentos (4d8+4)"
+  } else if (pot >= 63 && pot <= 66) {
+    return "Poção de Físico Divino"
+  } else if (pot == 67 || pot == 68) {
+    return "Poção de Mente Divina"
+  } else if (pot == 69 || pot == 70) {
+    return "Poção de Metamorfose"
+  } else if (pot >= 71 && pot <= 75) {
+    return "Poção de Purificação"
+  } else if (pot == 76 || pot == 77) {
+    return "Poção de Velocidade"
+  } else if (pot == 78 || pot == 79) {
+    return "Óleo de Vestimenta da Fé"
+  } else if (pot == 80) {
+    return "Poção de Voz Divina"
+  } else if (pot == 81 || pot == 82) {
+    return "Óleo de Arma Mágica (bônus +3("
+  } else if (pot >= 83 && pot <= 88) {
+    return "Poção de Curar Ferimentos (7d8+7)"
+  } else if (pot == 89) {
+    return "Poção de Físico Divino (três atributos)"
+  } else if (pot >= 90 && pot <= 92) {
+    return "Poção de Invisibilidade (Cena)"
+  } else if (pot >= 93 && pot <= 96) {
+    return "Granada de Bola de Fogo (10d6)"
+  } else {
+    return "Poção de Curar Ferimentos (11d8+11)"
+  }
+}
+
+function riquezamenor() {
+  let riqmen = rolldice(1, 100)
+
+  if (riqmen >= 1 && riqmen <= 25) {
+    return riqueza1()
+  } else if (riqmen >= 26 && riqmen <= 40) {
+    return riqueza2()
+  } else if (riqmen >= 41 && riqmen <= 55) {
+    return riqueza3()
+  } else if (riqmen >= 56 && riqmen <= 70) {
+    return riqueza4()
+  } else if (riqmen >= 71 && riqmen <= 85) {
+    return riqueza5()
+  } else if (riqmen >= 86 && riqmen <= 95) {
+    return riqueza6()
+  } else if (riqmen >= 96 && riqmen <= 99) {
+    return riqueza7()
+  } else {
+    return riqueza8()
+  }
+}
+
+function riquezamedia() {
+  let riqmed = rolldice(1, 100)
+
+  if (riqmed >= 1 && riqmed <= 10) {
+    return riqueza3()
+  } else if (riqmed >= 11 && riqmed <= 30) {
+    return riqueza4()
+  } else if (riqmed >= 31 && riqmed <= 50) {
+    return riqueza5()
+  } else if (riqmed >= 51 && riqmed <= 65) {
+    return riqueza6()
+  } else if (riqmed >= 66 && riqmed <= 80) {
+    return riqueza7()
+  } else if (riqmed >= 81 && riqmed <= 90) {
+    return riqueza8()
+  } else if (riqmed >= 91 && riqmed <= 95) {
+    return riqueza9()
+  } else if (riqmed >= 96 && riqmed <= 99) {
+    return riqueza10()
+  } else {
+    return riqueza11()
+  }
+}
+
+function riquezamaior() {
+  let riqmar = rolldice(1, 100)
+
+  if (riqmar >= 1 && riqmar <= 5) {
+    return riqueza5()
+  } else if (riqmar >= 6 && riqmar <= 15) {
+    return riqueza6()
+  } else if (riqmar >= 16 && riqmar <= 25) {
+    return riqueza7()
+  } else if (riqmar >= 26 && riqmar <= 40) {
+    return riqueza8()
+  } else if (riqmar >= 41 && riqmar <= 60) {
+    return riqueza9()
+  } else if (riqmar >= 61 && riqmar <= 75) {
+    return riqueza10()
+  } else if (riqmar >= 76 && riqmar <= 85) {
+    return riqueza11()
+  } else if (riqmar >= 86 && riqmar <= 95) {
+    return riqueza12()
+  } else {
+    return riqueza13()
+  }
+}
+
+function riqueza1() {
+  let r1 = rolldice(1, 4)
+  let r2 = rolldice(1, 4)
+  let r3 = rolldice(1, 4)
+  let r4 = rolldice(1, 4)
+  return (r1 + r2 + r3 + r4)
+}
+
+function riqueza2() {
+  let r1 = rolldice(1, 4)
+  return r1 * 10
+}
+
+function riqueza3() {
+  let r1 = rolldice(1, 4)
+  let r2 = rolldice(1, 4)
+  return (r1 + r2) * 10
+}
+
+function riqueza4() {
+  let r1 = rolldice(1, 6)
+  let r2 = rolldice(1, 6)
+  let r3 = rolldice(1, 6)
+  let r4 = rolldice(1, 6)
+  return (r1 + r2 + r3 + r4) * 10
+}
+
+function riqueza5() {
+  let r1 = rolldice(1, 6)
+  return r1 * 100
+}
+
+function riqueza6() {
+  let r1 = rolldice(1, 6)
+  let r2 = rolldice(1, 6)
+  return (r1 + r2) * 100
+}
+
+function riqueza7() {
+  let r1 = rolldice(1, 8)
+  let r2 = rolldice(1, 8)
+  return (r1 + r2) * 100
+}
+
+function riqueza8() {
+  let r1 = rolldice(1, 10)
+  let r2 = rolldice(1, 10)
+  let r3 = rolldice(1, 10)
+  let r4 = rolldice(1, 10)
+  return (r1 + r2 + r3 + r4) * 100
+}
+
+function riqueza9() {
+  let r1 = rolldice(1, 12)
+  let r2 = rolldice(1, 12)
+  let r3 = rolldice(1, 12)
+  let r4 = rolldice(1, 12)
+  let r5 = rolldice(1, 12)
+  let r6 = rolldice(1, 12)
+  return (r1 + r2 + r3 + r4 + r5 + r6) * 100
+}
+
+function riqueza10() {
+  let r1 = rolldice(1, 10)
+  let r2 = rolldice(1, 10)
+  return (r1 + r2) * 1000
+}
+
+function riqueza11() {
+  let r1 = rolldice(1, 8)
+  let r2 = rolldice(1, 8)
+  let r3 = rolldice(1, 8)
+  let r4 = rolldice(1, 8)
+  let r5 = rolldice(1, 8)
+  let r6 = rolldice(1, 8)
+  return (r1 + r2 + r3 + r4 + r5 + r6) * 1000
+}
+
+function riqueza12() {
+  let r1 = rolldice(1, 10)
+  return r1 * 10000
+}
+
+function riqueza13() {
+  let r1 = rolldice(1, 12)
+  let r2 = rolldice(1, 12)
+  let r3 = rolldice(1, 12)
+  let r4 = rolldice(1, 12)
+  return (r1 + r2 + r3 + r4) * 10000
+}
