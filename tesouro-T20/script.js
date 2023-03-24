@@ -190,6 +190,7 @@ function fimmsg() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2 + 1) * dr
+      moneyr = `${tsres} ${ts}`
      }else {
       gmoneyg = "1 riqueza menor"
       let d1 = riquezamenor()
