@@ -158,7 +158,7 @@ function fimmsg() {
       itemr = equipamento()
     } else {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = potion(0)
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -211,7 +211,7 @@ function fimmsg() {
       itemr = equipamento()
     } else if (itemg >= 71 && itemg <= 90) {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = potion(0)
     } else {
       gitemg = "Item superior (1 Melhoria)"
       itemr = superior1()
@@ -284,7 +284,7 @@ function fimmsg() {
       itemr = equipamento()
     } else if (itemg >= 61 && itemg <= 85) {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = potion(0)
     } else {
       gitemg = "Item superior (1 Melhoria)"
       itemr = superior1()
@@ -354,7 +354,7 @@ function fimmsg() {
       itemr = equipamento()
     } else if (itemg >= 56 && itemg <= 80) {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = potion(20)
     } else {
       gitemg = "Item superior (1 Melhoria)"
       itemr = superior1()
@@ -396,8 +396,70 @@ function fimmsg() {
       itemr = "Nada"
     } else if(itemg >= 21 && itemg <= 70) {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = potion(0)
     } else if (itemg >= 71 && itemg <= 90){
+      gitemg = "Item superior (1 Melhoria)"
+      itemr = superior1()
+    } else {
+      gitemg = "Item superior (2 Melhorias)"
+      itemr = superior2()
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 6") {
+    if(moneyg <= 15) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 15 && moneyg <= 60) {
+      gmoneyg = "2d6x100 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 61 && moneyg <= 90) {
+      gmoneyg = "2d10x100 T$"
+      let d1 = rolldice(1, 10)
+      let d2 = rolldice(1, 10)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d3+1 riquezas menores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let d4 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      }
+     }
+
+    if(itemg <= 20) { /*Item ND 6*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 21 && itemg <= 65) {
+      gitemg = "1 poção"
+      itemr = potion(20)
+    } else if (itemg >= 66 && itemg <= 95){
       gitemg = "Item superior (1 Melhoria)"
       itemr = superior1()
     } else {
@@ -756,14 +818,9 @@ function diverso() {
 }
 
 /*Função para definir poções*/
-function potion() {
-  pot = potr(1, 100)
-
-  function potr(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+function potion(num) {
+  n = num
+  pot = rolldice(1+n, 100+n)
 
   if (pot == 1) {
     return "Óleo de Abençoar Alimentos"
