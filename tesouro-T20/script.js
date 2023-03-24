@@ -204,13 +204,13 @@ function fimmsg() {
       itemr = "Nada"
     } else if(itemg >= 31 && itemg <= 40) {
       gitemg = "Diverso"
-      itemr = /*diverso()*/superior1()
+      itemr = diverso()
     } else if (itemg >= 41 && itemg <= 70){
       gitemg = "Equipamento"
-      itemr = /*equipamento()*/superior1()
+      itemr = equipamento()
     } else if (itemg >= 71 && itemg <= 90) {
       gitemg = "1 poção"
-      itemr = /*potion()*/superior1()
+      itemr = potion()
     } else {
       gitemg = "Item superior (1 Melhoria)"
       itemr = superior1()
