@@ -162,7 +162,7 @@ function fimmsg() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
-  } else if (nd.value = "ND 2") {
+  } else if (nd.value == "ND 2") {
     if(moneyg <= 15) {
       gmoneyg = "Nada"
       moneyr = "Nada"
@@ -193,12 +193,12 @@ function fimmsg() {
       moneyr = `${tsres} ${ts}`
      }else {
       gmoneyg = "1 riqueza menor"
-      let d1 = riquezamenor()
+      let d1 = riquezamenor(0)
       let d2 = 0
       let ts = " T$"
       let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
-    }
+    } 
 
     if(itemg <= 30) { /*Item ND 2*/
       gitemg = "Nada"
@@ -210,6 +210,149 @@ function fimmsg() {
       gitemg = "Equipamento"
       itemr = equipamento()
     } else if (itemg >= 71 && itemg <= 90) {
+      gitemg = "1 poção"
+      itemr = potion()
+    } else {
+      gitemg = "Item superior (1 Melhoria)"
+      itemr = superior1()
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 3") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 20) {
+      gmoneyg = "4d12x10 T$"
+      let d1 = rolldice(1, 12)
+      let d2 = rolldice(1, 12)
+      let d3 = rolldice(1, 12)
+      let d4 = rolldice(1, 12)
+      let dr = 10
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 21 && moneyg <= 60) {
+      gmoneyg = "1d4x100 T$"
+      let d1 = rolldice(1, 4)
+      let d2 = 0
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 61 && moneyg <= 90) {
+      gmoneyg = "1d8x10 TO"
+      let d1 = rolldice(1, 8)
+      let d2 = 0
+      let dr = 10
+      let ts = " TO"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+     }else {
+      gmoneyg = "1d3 riquezas menores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamenor(0)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    } 
+
+    if(itemg <= 25) { /*Item ND 3*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 26 && itemg <= 35) {
+      gitemg = "Diverso"
+      itemr = diverso()
+    } else if (itemg >= 36 && itemg <= 60){
+      gitemg = "Equipamento"
+      itemr = equipamento()
+    } else if (itemg >= 61 && itemg <= 85) {
+      gitemg = "1 poção"
+      itemr = potion()
+    } else {
+      gitemg = "Item superior (1 Melhoria)"
+      itemr = superior1()
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 4") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 50) {
+      gmoneyg = "4d12x10 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = 0
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 51 && moneyg <= 80) {
+      gmoneyg = "1d12x100 T$"
+      let d1 = rolldice(1, 12)
+      let d2 = 0
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 81 && moneyg <= 90) {
+      gmoneyg = "1 riqueza menor"
+      let d1 = riquezamenor(20)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+     }else {
+      gmoneyg = "1d3 riquezas menores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamenor(20)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamenor(20)
+        let d2 = riquezamenor(20)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamenor(20)
+        let d2 = riquezamenor(20)
+        let d3 = riquezamenor(20)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    } 
+
+    if(itemg <= 20) { /*Item ND 4*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 21 && itemg <= 30) {
+      gitemg = "Diverso"
+      itemr = diverso()
+    } else if (itemg >= 31 && itemg <= 55){
+      gitemg = "Equipamento"
+      itemr = equipamento()
+    } else if (itemg >= 56 && itemg <= 80) {
       gitemg = "1 poção"
       itemr = potion()
     } else {
@@ -656,8 +799,9 @@ function potion() {
   }
 }
 
-function riquezamenor() {
-  let riqmen = rolldice(1, 100)
+function riquezamenor(num) {
+  let n = num
+  let riqmen = rolldice(1+n, 100+n)
 
   if (riqmen >= 1 && riqmen <= 25) {
     return riqueza1()
@@ -678,8 +822,9 @@ function riquezamenor() {
   }
 }
 
-function riquezamedia() {
-  let riqmed = rolldice(1, 100)
+function riquezamedia(num) {
+  let n = num
+  let riqmed = rolldice(1+n, 100+n)
 
   if (riqmed >= 1 && riqmed <= 10) {
     return riqueza3()
@@ -702,8 +847,9 @@ function riquezamedia() {
   }
 }
 
-function riquezamaior() {
-  let riqmar = rolldice(1, 100)
+function riquezamaior(num) {
+  let n = num
+  let riqmar = rolldice(1+n, 100+n)
 
   if (riqmar >= 1 && riqmar <= 5) {
     return riqueza5()
