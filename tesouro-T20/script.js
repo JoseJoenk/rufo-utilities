@@ -641,7 +641,7 @@ function potion() {
   } else if (pot == 80) {
     return "Poção de Voz Divina"
   } else if (pot == 81 || pot == 82) {
-    return "Óleo de Arma Mágica (bônus +3("
+    return "Óleo de Arma Mágica (bônus +3)"
   } else if (pot >= 83 && pot <= 88) {
     return "Poção de Curar Ferimentos (7d8+7)"
   } else if (pot == 89) {
