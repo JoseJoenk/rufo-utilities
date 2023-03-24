@@ -9,6 +9,7 @@ function gerar() {
   var itemr = ''
   var moneyr = ''
   var finalmsg = ''
+
   var nd = document.getElementById('nd')
 
   function gitem(min, max) {
@@ -198,21 +199,21 @@ function fimmsg() {
       moneyr = `${tsres} ${ts}`
     }
 
-    if(itemg <= 30) { /*Item ND 1*/
+    if(itemg <= 30) { /*Item ND 2*/
       gitemg = "Nada"
       itemr = "Nada"
     } else if(itemg >= 31 && itemg <= 40) {
       gitemg = "Diverso"
-      itemr = diverso()
+      itemr = /*diverso()*/superior1()
     } else if (itemg >= 41 && itemg <= 70){
       gitemg = "Equipamento"
-      itemr = equipamento()
+      itemr = /*equipamento()*/superior1()
     } else if (itemg >= 71 && itemg <= 90) {
       gitemg = "1 poção"
-      itemr = potion()
+      itemr = /*potion()*/superior1()
     } else {
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior(1)
+      itemr = superior1()
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -227,13 +228,7 @@ function rolldice(min, max) {
 }
 /*Função pra definir a categoria quando cair Equipamento*/
 function equipamento() {
-  var d6 = equip6(1, 6)
-
-  function equip6(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  var d6 = rolldice(1, 6)
 
   if(d6 >= 1 && d6 <= 3) {
     itemroll = arma()
@@ -820,3 +815,153 @@ function riqueza13() {
   let r4 = rolldice(1, 12)
   return (r1 + r2 + r3 + r4) * 10000
 }
+
+function superior1() {
+  var rollequip = equipamento()
+  var aprimoramento1 = ''
+
+  if(rollequip == "Couro" || rollequip == "Brunea" || rollequip == "Armadura completa" || rollequip == "Cota de malha" || rollequip == "Couraça" || rollequip == "Couro batido" || rollequip == "Escudo leve" || rollequip == "Escudo pesado" || rollequip == "Gibão de peles" || rollequip == "Loriga segmentada"  || rollequip == "Meia armadura") {
+    aprimoramento1 = aprdura()
+  } else if (rollequip == "Bolsa de pó" || rollequip == "Cajado arcano" || rollequip == "Costela de lich" || rollequip == "Dedo de ente" || rollequip == "Luva de ferro" || rollequip == "Medalhão de prata" || rollequip == "Orbe cristalina" || rollequip == "Varinha arcana" || rollequip == "Cetro elemental de ácido" || rollequip == "Cetro elemental de eletricidade" || rollequip == "Cetro elemental de fogo" || rollequip == "Cetro elemental de frio" || rollequip == "Tomo hermético de abjuração" || rollequip == "Tomo hermético de adivinhação" || rollequip == "Tomo hermético de convocação" || rollequip == "Tomo hermético de encantamento" || rollequip == "Tomo hermético de evocação" || rollequip == "Tomo hermético de ilusão" || rollequip == "Tomo hermético de necromancia" || rollequip == "Tomo hermético de transmutação") {
+    aprimoramento1 = apreso()
+  }else {
+    aprimoramento1 = aprarma()
+  }
+  var supfinal = `${rollequip} ${aprimoramento1}`
+  if (aprimoramento1 == "Sob medida") {
+    return superior1()
+  }
+  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Escudo leve") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Pungente" || aprimoramento1 == "Atroz" || aprimoramento1 == "Harmonizada") {
+    return superior1()
+  }
+  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco curto") {
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco longo"){
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Bordão"){
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Clava"){
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Lança"){
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Pique"){
+    return superior1()
+  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Tacape"){
+    return superior1()
+  }
+  return supfinal
+}
+
+function aprarma() {
+  var armaapr = rolldice(1, 100)
+
+  if(armaapr >= 1 && armaapr <= 10) {
+    return "Atroz"
+  } else if (armaapr >= 11 && armaapr <= 13) {
+    return "Banhada a ouro"
+  } else if (armaapr >= 14 && armaapr <= 23) {
+    return "Certeira"
+  } else if (armaapr >= 24 && armaapr <= 26) {
+    return "Cravejada de gemas"
+  } else if (armaapr >= 27 && armaapr <= 36) {
+    return "Cruel"
+  } else if (armaapr >= 37 && armaapr <= 39) {
+    return "Discreta"
+  } else if (armaapr >= 40 && armaapr <= 44) {
+    return "Equilibrada"
+  } else if (armaapr >= 45 && armaapr <= 48) {
+    return "Harmonizada"
+  } else if (armaapr >= 49 && armaapr <= 53) {
+    return "Injeção Alquímica"
+  } else if (armaapr == 54 || armaapr == 55) {
+    return "Macabra"
+  } else if (armaapr >= 56 && armaapr <= 65) {
+    return "Maciça"
+  } else if (armaapr >= 66 && armaapr <= 75) {
+    return materialespecial()
+  } else if (armaapr >= 76 && armaapr <= 80) {
+    return "Mira telescópica"
+  } else if (armaapr >= 81 && armaapr <= 90) {
+    return "Precisa"
+  } else {
+    return "Pungente"
+  }
+}
+
+function aprdura() {
+  var duraapr = rolldice(1, 100)
+
+  if(duraapr >= 1 && duraapr <= 15) {
+    return "Ajustada"
+  } else if (duraapr >= 16 && duraapr <= 19) {
+    return "Banhada a ouro"
+  } else if (duraapr >= 20 && duraapr <= 23) {
+    return "Cravejada de gemas"
+  } else if (duraapr >= 24 && duraapr <= 28) {
+    return "Delicada"
+  } else if (duraapr >= 29 && duraapr <= 32) {
+    return "Discreta"
+  } else if (duraapr >= 33 && duraapr <= 37) {
+    return "Espinhos"
+  } else if (duraapr >= 38 && duraapr <= 40) {
+    return "Macabra"
+  } else if (duraapr >= 41 && duraapr <= 50) {
+    return materialespecial()
+  } else if (duraapr >= 51 && duraapr <= 55) {
+    return "Polida"
+  } else if (duraapr >= 56 && duraapr <= 80) {
+    return "Reforçada"
+  } else if (duraapr >= 81 && duraapr <= 90) {
+    return "Selada"
+  } else {
+    return "Sob medida"
+  }
+}
+
+function apreso() {
+  var esoapr = rolldice(1, 100)
+
+  if(esoapr >= 1 && esoapr <= 4) {
+    return "Banhada a ouro"
+  } else if (esoapr >= 5 && esoapr <= 8) {
+    return "Cravejado de gemas"
+  } else if (esoapr >= 9 && esoapr <= 12) {
+    return "Discreto"
+  } else if (esoapr >= 13 && esoapr <= 27) {
+    return "Energético"
+  } else if (esoapr >= 28 && esoapr <= 42) {
+    return "Harmonizado"
+  } else if (esoapr >= 43 && esoapr <= 45) {
+    return "Macabra"
+  } else if (esoapr >= 46 && esoapr <= 54) {
+    return materialespecial()
+  } else if (esoapr >= 55 && esoapr <= 70) {
+    return "Poderoso"
+  } else if (esoapr >= 71 && esoapr <= 85) {
+    return "Canalizador"
+  } else {
+    return "Vigilante"
+  }
+}
+
+function materialespecial(){
+  material = rolldice(1, 6)
+
+  if(material == 1){
+    return "de Aço-rubi"
+  } else if(material == 2) {
+    return "de Adamante"
+  } else if(material == 3) {
+    return "de Gelo Eterno"
+  } else if(material == 4) {
+    return "de Madeira Tollon"
+  } else if(material == 5) {
+    return "de Matéria Vermelha"
+  } else {
+    return "de Mitral"
+  }
+}
+
