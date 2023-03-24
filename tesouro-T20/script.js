@@ -828,8 +828,22 @@ function superior1() {
   }else {
     aprimoramento1 = aprarma()
   }
-  var supfinal = `${rollequip} ${aprimoramento1}`
   if (aprimoramento1 == "Sob medida") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Selada" && rollequip != "Brunea" || aprimoramento1 == "Delicada" && rollequip != "Brunea") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Selada" && rollequip != "Cota de malha" || aprimoramento1 == "Delicada" && rollequip != "Cota de malha") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Selada" && rollequip != "Loriga segmentada" || aprimoramento1 == "Delicada" && rollequip != "Loriga segmentada") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Selada" && rollequip != "Meia armadura" || aprimoramento1 == "Delicada" && rollequip != "Meia armadura") {
+    return superior1()
+  }
+  if (aprimoramento1 == "Selada" && rollequip != "Armadura completa" || aprimoramento1 == "Delicada" && rollequip != "Armadura completa") {
     return superior1()
   }
   if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Escudo leve") {
@@ -853,6 +867,25 @@ function superior1() {
   } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Tacape"){
     return superior1()
   }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco curto"){
+    return superior1()
+  }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco longo"){
+    return superior1()
+  }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta leve"){
+    return superior1()
+  }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta pesada"){
+    return superior1()
+  }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Mosquete"){
+    return superior1()
+  }
+  if (aprimoramento1 == "Mira telescópica" && rollequip != "Pistola"){
+    return superior1()
+  }
+  var supfinal = `${rollequip} ${aprimoramento1}`
   return supfinal
 }
 
