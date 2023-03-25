@@ -1098,7 +1098,7 @@ function superior1() {
     return superior1()
   }
   if (aprimoramento1 == "Pungente" || aprimoramento1 == "Atroz") {
-    return superior2()
+    return superior1()
   }
   if (aprimoramento1 == "Harmonizado" && rollequip != "Bolsa de pó" || aprimoramento1 == "Harmonizado" && rollequip != "Cajado arcano" || aprimoramento1 == "Harmonizado" && rollequip != "Costela de lich" || aprimoramento1 == "Harmonizado" && rollequip != "Dedo de ente" || aprimoramento1 == "Harmonizado" && rollequip != "Luva de ferro" || aprimoramento1 == "Harmonizado" && rollequip != "Medalhão de prata" || aprimoramento1 == "Harmonizado" && rollequip != "Orbe cristalina" || aprimoramento1 == "Harmonizado" && rollequip != "Varinha arcana" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de ácido" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de eletricidade" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de fogo" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de frio" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de abjuração" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de adivinhação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de convocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de encantamento" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de evocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de ilusão" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de necromancia" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de transmutação")
   if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco curto") {
