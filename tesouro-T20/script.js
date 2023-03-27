@@ -69,7 +69,8 @@ function fimmsg() {
       itemr = diverso()
     } else {
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -111,7 +112,8 @@ function fimmsg() {
       itemr = diverso()
     } else {
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -155,7 +157,8 @@ function fimmsg() {
       itemr = diverso()
     } else if (itemg >= 66 && itemg <= 90){
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     } else {
       gitemg = "1 poção"
       itemr = potion(0)
@@ -208,13 +211,17 @@ function fimmsg() {
       itemr = diverso()
     } else if (itemg >= 41 && itemg <= 70){
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     } else if (itemg >= 71 && itemg <= 90) {
       gitemg = "1 poção"
       itemr = potion(0)
     } else {
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior1()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -281,13 +288,17 @@ function fimmsg() {
       itemr = diverso()
     } else if (itemg >= 36 && itemg <= 60){
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     } else if (itemg >= 61 && itemg <= 85) {
       gitemg = "1 poção"
       itemr = potion(0)
     } else {
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior1()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -351,13 +362,17 @@ function fimmsg() {
       itemr = diverso()
     } else if (itemg >= 31 && itemg <= 55){
       gitemg = "Equipamento"
-      itemr = equipamento()
+      roll = rolldice(1, 6)
+      itemr = equipamento(roll)
     } else if (itemg >= 56 && itemg <= 80) {
       gitemg = "1 poção"
       itemr = potion(20)
     } else {
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior1()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -399,10 +414,17 @@ function fimmsg() {
       itemr = potion(0)
     } else if (itemg >= 71 && itemg <= 90){
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior1()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}`
     } else {
       gitemg = "Item superior (2 Melhorias)"
-      itemr = superior2()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      aprimoramento2 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -461,10 +483,17 @@ function fimmsg() {
       itemr = potion(20)
     } else if (itemg >= 66 && itemg <= 95){
       gitemg = "Item superior (1 Melhoria)"
-      itemr = superior1()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}`
     } else {
       gitemg = "Item superior (2 Melhorias)"
-      itemr = superior2()
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll)
+      aprimoramento2 = superior(roll)
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -478,8 +507,8 @@ function rolldice(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 /*Função pra definir a categoria quando cair Equipamento*/
-function equipamento() {
-  var d6 = rolldice(1, 6)
+function equipamento(roll) {
+  var d6 = roll
 
   if(d6 >= 1 && d6 <= 3) {
     itemroll = arma()
@@ -494,13 +523,7 @@ function equipamento() {
 }
 /*Função pra rolagem de armas*/
 function arma() {
-  let d1100 = armas(1, 100)
-
-  function armas(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  let d1100 = rolldice(1, 100)
 
   if(d1100 >= 1 && d1100 <= 3) {
     return "Adaga"
@@ -594,13 +617,7 @@ function arma() {
 }
 /*Função pra rolagem de armaduras ou escudos*/
 function armadura() {
-  let d2100 = armaduras(1, 100)
-
-  function armaduras(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  let d2100 = rolldice(1, 100)
 
   if(d2100 >= 1 && d2100 <= 5) {
     return "Couro"
@@ -628,13 +645,7 @@ function armadura() {
 }
 /*Função pra rolagem de esotéricos*/
 function esoterico() {
-  let d3100 = esotericos(1, 100)
-
-  function esotericos(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  let d3100 = rolldice(1, 100)
 
   if(d3100 >= 1 && d3100 <= 10) {
     return "Bolsa de pó"
@@ -660,13 +671,8 @@ function esoterico() {
 }
 /*Função pra descobrir o elemento do cetro*/
 function cetro() {
-  elemento = cetro4(1,4)
+  elemento = rolldice(1, 4)
 
-  function cetro4(min, max){
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
   if(elemento == 1) {
     return "Cetro elemental de ácido"
   } else if (elemento == 2) {
@@ -680,13 +686,8 @@ function cetro() {
 
 /*Função para descobrir a escola do tomo*/
 function tomo() {
-  escola = escola8(1, 8)
+  escola = rolldice(1, 8)
 
-  function escola8(min, max){
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
   if(escola == 1) {
     return "Tomo hermético de abjuração"
   } else if (escola == 2) {
@@ -708,13 +709,7 @@ function tomo() {
 
 /*Função pra rolagem de itens diversos*/
 function diverso() {
-  let d100 = res100(1, 100)
-
-  function res100(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  let d100 = rolldice(1, 100)
 
   if(d100 == 1 || d100 == 2) {
     return "Ácido"
@@ -1065,190 +1060,21 @@ function riqueza13() {
   return (r1 + r2 + r3 + r4) * 10000
 }
 
-function superior1() {
-  var rollequip = equipamento()
-  var aprimoramento1 = ''
+function superior(roll) {
+  var d6 = roll
 
-  if(rollequip == "Couro" || rollequip == "Brunea" || rollequip == "Armadura completa" || rollequip == "Cota de malha" || rollequip == "Couraça" || rollequip == "Couro batido" || rollequip == "Escudo leve" || rollequip == "Escudo pesado" || rollequip == "Gibão de peles" || rollequip == "Loriga segmentada"  || rollequip == "Meia armadura") {
-    aprimoramento1 = aprdura()
-  } else if (rollequip == "Bolsa de pó" || rollequip == "Cajado arcano" || rollequip == "Costela de lich" || rollequip == "Dedo de ente" || rollequip == "Luva de ferro" || rollequip == "Medalhão de prata" || rollequip == "Orbe cristalina" || rollequip == "Varinha arcana" || rollequip == "Cetro elemental de ácido" || rollequip == "Cetro elemental de eletricidade" || rollequip == "Cetro elemental de fogo" || rollequip == "Cetro elemental de frio" || rollequip == "Tomo hermético de abjuração" || rollequip == "Tomo hermético de adivinhação" || rollequip == "Tomo hermético de convocação" || rollequip == "Tomo hermético de encantamento" || rollequip == "Tomo hermético de evocação" || rollequip == "Tomo hermético de ilusão" || rollequip == "Tomo hermético de necromancia" || rollequip == "Tomo hermético de transmutação") {
-    aprimoramento1 = apreso()
-  }else {
-    aprimoramento1 = aprarma()
+  if(d6 >= 1 && d6 <= 3) {
+    suproll = aprarma()
+    return suproll
+  } else if (d6 == 4 || d6 == 5) {
+    suproll = aprdura()
+    return suproll
+  } else {
+    suproll = apreso()
+    return suproll
   }
-  if (aprimoramento1 == "Sob medida") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Brunea" || aprimoramento1 == "Delicada" && rollequip != "Brunea") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Cota de malha" || aprimoramento1 == "Delicada" && rollequip != "Cota de malha") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Loriga segmentada" || aprimoramento1 == "Delicada" && rollequip != "Loriga segmentada") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Meia armadura" || aprimoramento1 == "Delicada" && rollequip != "Meia armadura") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Armadura completa" || aprimoramento1 == "Delicada" && rollequip != "Armadura completa") {
-    return superior1()
-  }
-  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Escudo leve") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Pungente" || aprimoramento1 == "Atroz") {
-    return superior1()
-  }
-  if (aprimoramento1 == "Harmonizado" && rollequip != "Bolsa de pó" || aprimoramento1 == "Harmonizado" && rollequip != "Cajado arcano" || aprimoramento1 == "Harmonizado" && rollequip != "Costela de lich" || aprimoramento1 == "Harmonizado" && rollequip != "Dedo de ente" || aprimoramento1 == "Harmonizado" && rollequip != "Luva de ferro" || aprimoramento1 == "Harmonizado" && rollequip != "Medalhão de prata" || aprimoramento1 == "Harmonizado" && rollequip != "Orbe cristalina" || aprimoramento1 == "Harmonizado" && rollequip != "Varinha arcana" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de ácido" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de eletricidade" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de fogo" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de frio" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de abjuração" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de adivinhação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de convocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de encantamento" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de evocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de ilusão" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de necromancia" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de transmutação")
-  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco curto") {
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco longo"){
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Bordão"){
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Clava"){
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Lança"){
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Pique"){
-    return superior1()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Tacape"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco curto"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco longo"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta leve"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta pesada"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Mosquete"){
-    return superior1()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Pistola"){
-    return superior1()
-  }
-  var supfinal = `${rollequip} ${aprimoramento1}`
-  return supfinal
 }
 
-function superior2() {
-  var rollequip = equipamento()
-  var aprimoramento1 = aprimoramento()
-  var aprimoramento2 = aprimoramento()
-
-  function aprimoramento(){
-    if(rollequip == "Couro" || rollequip == "Brunea" || rollequip == "Armadura completa" || rollequip == "Cota de malha" || rollequip == "Couraça" || rollequip == "Couro batido" || rollequip == "Escudo leve" || rollequip == "Escudo pesado" || rollequip == "Gibão de peles" || rollequip == "Loriga segmentada"  || rollequip == "Meia armadura") {
-      return aprdura()
-    } else if (rollequip == "Bolsa de pó" || rollequip == "Cajado arcano" || rollequip == "Costela de lich" || rollequip == "Dedo de ente" || rollequip == "Luva de ferro" || rollequip == "Medalhão de prata" || rollequip == "Orbe cristalina" || rollequip == "Varinha arcana" || rollequip == "Cetro elemental de ácido" || rollequip == "Cetro elemental de eletricidade" || rollequip == "Cetro elemental de fogo" || rollequip == "Cetro elemental de frio" || rollequip == "Tomo hermético de abjuração" || rollequip == "Tomo hermético de adivinhação" || rollequip == "Tomo hermético de convocação" || rollequip == "Tomo hermético de encantamento" || rollequip == "Tomo hermético de evocação" || rollequip == "Tomo hermético de ilusão" || rollequip == "Tomo hermético de necromancia" || rollequip == "Tomo hermético de transmutação") {
-      return apreso()
-    }else {
-      return aprarma()
-    }
-  }
-  if (aprimoramento1 == "Sob medida") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Pungente" || aprimoramento1 == "Atroz") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Harmonizado" && rollequip != "Bolsa de pó" || aprimoramento1 == "Harmonizado" && rollequip != "Cajado arcano" || aprimoramento1 == "Harmonizado" && rollequip != "Costela de lich" || aprimoramento1 == "Harmonizado" && rollequip != "Dedo de ente" || aprimoramento1 == "Harmonizado" && rollequip != "Luva de ferro" || aprimoramento1 == "Harmonizado" && rollequip != "Medalhão de prata" || aprimoramento1 == "Harmonizado" && rollequip != "Orbe cristalina" || aprimoramento1 == "Harmonizado" && rollequip != "Varinha arcana" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de ácido" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de eletricidade" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de fogo" || aprimoramento1 == "Harmonizado" && rollequip != "Cetro elemental de frio" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de abjuração" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de adivinhação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de convocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de encantamento" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de evocação" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de ilusão" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de necromancia" || aprimoramento1 == "Harmonizado" && rollequip != "Tomo hermético de transmutação")
-  if (aprimoramento2 == "Pungente" && aprimoramento1 != "Certeiro"){
-    return superior2()
-  }
-  if(aprimoramento2 == "Atroz" && aprimoramento1 != "Cruel"){
-    return superior2()
-  }
-  if(aprimoramento2 == "Sob medida" && aprimoramento1 != "Ajustada"){
-    return superior2()
-  }
-  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco curto" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Arco curto") {
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Arco longo" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Arco longo"){
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Bordão" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Bordão"){
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Clava" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Clava"){
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Lança" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Lança"){
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Pique" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Pique"){
-    return superior2()
-  } else if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Tacape" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Tacape"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco curto" || aprimoramento2 == "Mira telescópica" && rollequip != "Arco curto"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Arco longo"  || aprimoramento2 == "Mira telescópica" && rollequip != "Arco longo"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta leve" || aprimoramento2 == "Mira telescópica" && rollequip != "Besta leve"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Besta pesada" || aprimoramento2 == "Mira telescópica" && rollequip != "Besta pesada"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Mosquete" || aprimoramento2 == "Mira telescópica" && rollequip != "Mosquete"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Mira telescópica" && rollequip != "Pistola" || aprimoramento2 == "Mira telescópica" && rollequip != "Pistola"){
-    return superior2()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Brunea" || aprimoramento1 == "Delicada" && rollequip != "Brunea" || aprimoramento2 == "Selada" && rollequip != "Brunea" || aprimoramento2 == "Delicada" && rollequip != "Brunea") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Cota de malha" || aprimoramento1 == "Delicada" && rollequip != "Cota de malha" || aprimoramento2 == "Selada" && rollequip != "Cota de malha" || aprimoramento2 == "Delicada" && rollequip != "Cota de malha") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Loriga segmentada" || aprimoramento1 == "Delicada" && rollequip != "Loriga segmentada" || aprimoramento2 == "Selada" && rollequip != "Loriga segmentada" || aprimoramento2 == "Delicada" && rollequip != "Loriga segmentada") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Meia armadura" || aprimoramento1 == "Delicada" && rollequip != "Meia armadura" || aprimoramento2 == "Selada" && rollequip != "Meia armadura" || aprimoramento2 == "Delicada" && rollequip != "Meia armadura") {
-    return superior2()
-  }
-  if (aprimoramento1 == "Selada" && rollequip != "Armadura completa" || aprimoramento1 == "Delicada" && rollequip != "Armadura completa" || aprimoramento2 == "Selada" && rollequip != "Armadura completa" || aprimoramento2 == "Delicada" && rollequip != "Armadura completa") {
-    return superior2()
-  }
-  if (aprimoramento1 == "de Madeira Tollon" && rollequip != "Escudo leve" || aprimoramento2 == "de Madeira Tollon" && rollequip != "Escudo leve") {
-    return superior2()
-  }
-  if (aprimoramento2 == "de Aço-rubi" && aprimoramento1 == "de Adamante" || aprimoramento2 == "de Aço-rubi" && aprimoramento1 == "de Gelo Eterno" || aprimoramento2 == "de Aço-rubi" && aprimoramento1 == "de Madeira Tollon" || aprimoramento2 == "de Aço-rubi" && aprimoramento1 == "de Matéria Vermelha" || aprimoramento2 == "de Aço-rubi" && aprimoramento1 == "de Mitral"){
-    return superior2()
-  }
-  if (aprimoramento2 == "de Adamante" && aprimoramento1 == "de Aço-rubi" || aprimoramento2 == "de Adamante" && aprimoramento1 == "de Gelo Eterno" || aprimoramento2 == "de Adamante" && aprimoramento1 == "de Madeira Tollon" || aprimoramento2 == "de Adamante" && aprimoramento1 == "de Matéria Vermelha" || aprimoramento2 == "de Adamante" && aprimoramento1 == "de Mitral"){
-    return superior2()
-  }
-  if (aprimoramento2 == "Gelo Eterno" && aprimoramento1 == "de Adamante" || aprimoramento2 == "de Gelo Eterno" && aprimoramento1 == "de Aço-rubi" || aprimoramento2 == "de Gelo Eterno" && aprimoramento1 == "de Madeira Tollon" || aprimoramento2 == "de Gelo Eterno" && aprimoramento1 == "de Matéria Vermelha" || aprimoramento2 == "de Gelo Eterno" && aprimoramento1 == "de Mitral"){
-    return superior2()
-  }
-  if (aprimoramento2 == "de Madeira Tollon" && aprimoramento1 == "de Adamante" || aprimoramento2 == "de Madeira Tollon" && aprimoramento1 == "de Gelo Eterno" || aprimoramento2 == "de Madeira Tollon" && aprimoramento1 == "de Aço-rubi" || aprimoramento2 == "de Madeira Tollon" && aprimoramento1 == "de Matéria Vermelha" || aprimoramento2 == "de Madeira Tollon" && aprimoramento1 == "de Mitral"){
-    return superior2()
-  }
-  if (aprimoramento2 == "de Matéria Vermelha" && aprimoramento1 == "de Adamante" || aprimoramento2 == "de Matéria Vermelha" && aprimoramento1 == "de Gelo Eterno" || aprimoramento2 == "de Matéria Vermelha" && aprimoramento1 == "de Madeira Tollon" || aprimoramento2 == "de Matéria Vermelha" && aprimoramento1 == "de Aço-rubi" || aprimoramento2 == "de Matéria Vermelha" && aprimoramento1 == "de Mitral"){
-    return superior2()
-  }
-  if (aprimoramento2 == "de Mitral" && aprimoramento1 == "de Adamante" || aprimoramento2 == "de Mitral" && aprimoramento1 == "de Gelo Eterno" || aprimoramento2 == "de Mitral" && aprimoramento1 == "de Madeira Tollon" || aprimoramento2 == "de Mitral" && aprimoramento1 == "de Matéria Vermelha" || aprimoramento2 == "de Mitral" && aprimoramento1 == "de Aço-rubi"){
-    return superior2()
-  }
-  if (aprimoramento2 == "Maciça" && aprimoramento1 == "Precisa"){
-    return superior2()
-  }
-  if (aprimoramento2 == "Precisa" && aprimoramento1 == "Maciça"){
-    return superior2()
-  }
-  if (aprimoramento2 == aprimoramento1){
-    return superior2()
-  }
-  var supfinal = `${rollequip} ${aprimoramento1}, ${aprimoramento2}`
-  return supfinal
-}
 function aprarma() {
   var armaapr = rolldice(1, 100)
 
