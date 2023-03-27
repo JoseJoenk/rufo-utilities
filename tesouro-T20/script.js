@@ -491,8 +491,8 @@ function fimmsg() {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll)
-      aprimoramento2 = superior(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll)
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
     /*Mensagem final depois que tudo é rolado*/
@@ -1060,11 +1060,40 @@ function riqueza13() {
   return (r1 + r2 + r3 + r4) * 10000
 }
 
-function superior(roll) {
+function superior(roll, e) {
   var d6 = roll
-
+  var equiroll = e
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
+    if (suproll == "Atroz" || suproll == "Pungente" || suproll == "Harmonizada"){
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Arco curto") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Arco longo") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Bordão") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Clava") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Lança") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Pique") {
+      superior(1, equiroll)
+    } else if (suproll == "de Madeira Tollon" && equiroll != "Tacape") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Arco curto") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Arco longo") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Besta leve") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Besta pesada") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Mosquete") {
+      superior(1, equiroll)
+    } else if (suproll == "Mira telescópica" && equiroll != "Pistola") {
+      superior(1, equiroll)
+    }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
@@ -1072,6 +1101,21 @@ function superior(roll) {
   } else {
     suproll = apreso()
     return suproll
+  }
+}
+
+function superior2(roll) {
+  var droll = roll
+
+  if(droll >= 1 && droll <= 3) {
+    superoll = aprarma()
+    return superoll
+  } else if (droll == 4 || droll == 5) {
+    superoll = aprdura()
+    return superoll
+  } else {
+    superoll = apreso()
+    return superoll
   }
 }
 
