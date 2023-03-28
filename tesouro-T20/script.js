@@ -8,7 +8,15 @@ function gerar() {
   var gmoneyg = ''
   var itemr = ''
   var moneyr = ''
+  var equip = ''
+  var aprimoramento1 = ''
+  var aprimoramento2 = ''
+  var aprimoramento3 = ''
+  var aprimoramento4 = ''
+  var aprimoramento5 = ''
+  var aprimoramento6 = ''
   var finalmsg = ''
+
 
   var nd = document.getElementById('nd')
 
@@ -475,23 +483,23 @@ function fimmsg() {
       }
      }
 
-    if(itemg <= 20) { /*Item ND 6*/
+    if(itemg <= -20) { /*Item ND 6*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 65) {
+    } else if(itemg >= /*21*/-20 && itemg <= /*65*/ -10) {
       gitemg = "1 poção"
       itemr = potion(20)
-    } else if (itemg >= 66 && itemg <= 95){
+    } else if (itemg >= /*66*/1 && itemg <= /*95*/100){
       gitemg = "Item superior (1 Melhoria)"
-      roll = rolldice(1, 6)
+      roll = rolldice(1, 3)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll)
+      aprimoramento1 = superior(roll, equip)
       itemr = `${equip} ${aprimoramento1}`
     } else {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll, equip)
+      aprimoramento1 = superior(roll)
       aprimoramento2 = superior2(roll)
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
@@ -1063,36 +1071,16 @@ function riqueza13() {
 function superior(roll, e) {
   var d6 = roll
   var equiroll = e
+  const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
+  const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
-    if (suproll == "Atroz" || suproll == "Pungente" || suproll == "Harmonizada"){
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Arco curto") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Arco longo") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Bordão") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Clava") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Lança") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Pique") {
-      superior(1, equiroll)
-    } else if (suproll == "de Madeira Tollon" && equiroll != "Tacape") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Arco curto") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Arco longo") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Besta leve") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Besta pesada") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Mosquete") {
-      superior(1, equiroll)
-    } else if (suproll == "Mira telescópica" && equiroll != "Pistola") {
-      superior(1, equiroll)
+    if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      superior(d6, equiroll)
+    } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      superior(d6, equiroll)
+    } else if (suproll == "Atroz" || suproll == "Pungente" || suproll == "Harmonizada") {
+      superior(d6, equiroll)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
