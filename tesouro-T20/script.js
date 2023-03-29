@@ -424,14 +424,19 @@ function fimmsg() {
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll)
+      aprimoramento1 = superior(roll, equip)
       itemr = `${equip} ${aprimoramento1}`
     } else {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll)
-      aprimoramento2 = superior(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
     /*Mensagem final depois que tudo é rolado*/
@@ -483,15 +488,15 @@ function fimmsg() {
       }
      }
 
-    if(itemg <= -20) { /*Item ND 6*/
+    if(itemg <= 20) { /*Item ND 6*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= /*21*/-20 && itemg <= /*65*/ -10) {
+    } else if(itemg >= 21 && itemg <= 65) {
       gitemg = "1 poção"
       itemr = potion(20)
-    } else if (itemg >= /*66*/1 && itemg <= /*95*/100){
+    } else if (itemg >= 66 && itemg <= 95){
       gitemg = "Item superior (1 Melhoria)"
-      roll = rolldice(1, 3)
+      roll = rolldice(1, 6)
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
       itemr = `${equip} ${aprimoramento1}`
@@ -499,13 +504,123 @@ function fimmsg() {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
-      aprimoramento1 = superior(roll)
-      aprimoramento2 = superior2(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
-  } 
+  } else if (nd.value == "ND 7") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 60) {
+      gmoneyg = "2d8x100 T$"
+      let d1 = rolldice(1, 8)
+      let d2 = rolldice(1, 8)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 61 && moneyg <= 90) {
+      gmoneyg = "2d12x10 TO"
+      let d1 = rolldice(1, 12)
+      let d2 = rolldice(1, 12)
+      let dr = 10
+      let ts = " TO"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d4+1 riquezas menores"
+      let riq3 = rolldice(1, 4)
+      if(riq3 == 1) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 3) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let d4 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let d4 = riquezamenor(0)
+        let d5 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4 + d5)
+        moneyr = `${tsres} ${ts}`
+      }
+     }
+
+    if(itemg <= /*2*/0) { /*Item ND 6*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= /*21*/0 && itemg <= /*60*/0) {
+      gitemg = "1d3 poções"
+      let potr = rolldice(1, 3)
+      if (potr == 1) {
+        itemr = potion(0)
+      } else if (potr == 2) {
+        pot1 = potion(0)
+        pot2 = potion(0)
+        itemr = `${pot1} e ${pot2}`
+      } else {
+        pot1 = potion(0)
+        pot2 = potion(0)
+        pot3 = potion(0)
+        itemr = `${pot1}, ${pot2} e ${pot3}`
+      }
+    } else if (itemg >= /*61*/0 && itemg <= /*90*/0){
+      gitemg = "Item superior (2 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+    } else {
+      gitemg = "Item superior (3 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+      while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
+        aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  }
 }
 
 /*Função pra rolar dados aleatórios*/
@@ -1073,6 +1188,7 @@ function superior(roll, e) {
   var equiroll = e
   const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
   const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
+  const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
@@ -1085,6 +1201,13 @@ function superior(roll, e) {
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
+    if (suproll == "Sob medida") {
+      superior(d6, equiroll)
+    } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      superior(d6, equiroll)
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+      superior(d6, equiroll)
+    }
     return suproll
   } else {
     suproll = apreso()
@@ -1092,18 +1215,116 @@ function superior(roll, e) {
   }
 }
 
-function superior2(roll) {
-  var droll = roll
-
-  if(droll >= 1 && droll <= 3) {
-    superoll = aprarma()
-    return superoll
-  } else if (droll == 4 || droll == 5) {
-    superoll = aprdura()
-    return superoll
+function superior2(roll, e, sup) {
+  var d6 = roll
+  var equiroll = e
+  var melhor = sup
+  const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
+  const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
+  const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
+  const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
+  const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
+  if(d6 >= 1 && d6 <= 3) {
+    suproll = aprarma()
+    if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      superior2(d6, equiroll, melhor)
+    } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      superior2(d6, equiroll, melhor)
+    } else if (suproll == "Atroz" && melhor != "Cruel") {
+      superior2(d6, equiroll, melhor)
+    } else if (suproll == "Pungente" && melhor != "Certeira") {
+      superior2(d6, equiroll, melhor)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior2(d6, equiroll, melhor)
+    } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      superior2(d6, equiroll, melhor)
+    } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      superior2(d6, equiroll, melhor)
+    }
+    return suproll
+  } else if (d6 == 4 || d6 == 5) {
+    suproll = aprdura()
+    if (suproll == "Sob medida" && melhor != "Ajustada") {
+      superior2(d6, equiroll, melhor)
+    } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      superior2(d6, equiroll, melhor)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior2(d6, equiroll, melhor)
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+      superior2(d6, equiroll, melhor)
+    } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      superior2(d6, equiroll, melhor)
+    } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      superior2(d6, equiroll, melhor)
+    }
+    return suproll
   } else {
-    superoll = apreso()
-    return superoll
+    suproll = apreso()
+    if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior2(d6, equiroll, melhor)
+    }
+    return suproll
+  }
+}
+
+function superior3(roll, e, sup, sup2) {
+  var d6 = roll
+  var equiroll = e
+  var melhor = sup
+  var melhor2 = sup2
+  const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
+  const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
+  const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
+  const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
+  const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
+  if(d6 >= 1 && d6 <= 3) {
+    suproll = aprarma()
+    if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Atroz" && melhor != "Cruel") {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Pungente" && melhor != "Certeira") {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor2 == "Precisa" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor2 == "Maciça" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    }
+    return suproll
+  } else if (d6 == 4 || d6 == 5) {
+    suproll = aprdura()
+    if (suproll == "Sob medida" && melhor != "Ajustada") {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor2 == "Delicada" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (melhor2 == "Reforçada" && incompativel.includes(suproll)){
+      superior3(d6, equiroll, melhor, melhor2)
+    }
+    return suproll
+  } else {
+    suproll = apreso()
+    if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    }
+    return suproll
   }
 }
 
@@ -1157,7 +1378,7 @@ function aprdura() {
   } else if (duraapr >= 29 && duraapr <= 32) {
     return "Discreta"
   } else if (duraapr >= 33 && duraapr <= 37) {
-    return "Espinhos"
+    return "com Espinhos"
   } else if (duraapr >= 38 && duraapr <= 40) {
     return "Macabra"
   } else if (duraapr >= 41 && duraapr <= 50) {
