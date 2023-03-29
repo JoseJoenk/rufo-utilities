@@ -620,7 +620,7 @@ function fimmsg() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
-  }  else if (nd.value == "ND 8") {
+  } else if (nd.value == "ND 8") {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
@@ -674,7 +674,7 @@ function fimmsg() {
       let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
       }
-    }
+
     if(itemg <= 20) { /*Item ND 8*/
       gitemg = "Nada"
       itemr = "Nada"
@@ -721,6 +721,91 @@ function fimmsg() {
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 9") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 35) {
+      gmoneyg = "1 riqueza média"
+      let d1 = riquezamedia(0)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 36 && moneyg <= 85) {
+      gmoneyg = "4d6x100 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let d3 = rolldice(1, 6)
+      let d4 = rolldice(1, 6)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d3 riquezas médias"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamedia(0)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let d3 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    }
+    if(itemg <= 20) { /*Item ND 9*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 21 && itemg <= 70) {
+      gitemg = "1 poção"
+      itemr = potion(20)
+    } else if (itemg >= 71 && itemg <= 95){
+      gitemg = "Item superior (3 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+      while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
+        aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+    } else {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        item = arma()
+        encanto = encantoArma()
+        itemf = `${item} ${encanto}`
+      } else if (roll == 3) {
+        item = armadura()
+        encanto = encantoArmadura()
+        itemf = `${item} ${encanto}`
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -1546,4 +1631,4 @@ function materialespecial(){
     return "de Mitral"
   }
 }
-
+}
