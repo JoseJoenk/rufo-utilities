@@ -1250,7 +1250,7 @@ function superior2(roll, e, sup) {
       superior2(d6, equiroll, melhor)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
       superior2(d6, equiroll, melhor)
-    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       superior2(d6, equiroll, melhor)
     } else if (melhor == "Delicada" && incompativel.includes(suproll)){
       superior2(d6, equiroll, melhor)
@@ -1307,7 +1307,7 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
       superior3(d6, equiroll, melhor, melhor2)
-    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Delicada" && incompativel.includes(suproll)){
       superior3(d6, equiroll, melhor, melhor2)
