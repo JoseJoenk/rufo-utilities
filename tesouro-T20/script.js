@@ -1308,7 +1308,7 @@ function superior(roll, e) {
       superior(d6, equiroll)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
       superior(d6, equiroll)
-    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equip)) {
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       superior(d6, equiroll)
     }
     return suproll
