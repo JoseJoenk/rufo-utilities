@@ -620,8 +620,111 @@ function fimmsg() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
+  }  else if (nd.value == "ND 8") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 55) {
+      gmoneyg = "2d10x100 T$"
+      let d1 = rolldice(1, 10)
+      let d2 = rolldice(1, 10)
+      let dr = 100
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 56 && moneyg <= 95) {
+      gmoneyg = "1d4+1 riquezas menores"
+      let riq3 = rolldice(1, 4)
+      if(riq3 == 1) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 3) {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let d4 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamenor(0)
+        let d2 = riquezamenor(0)
+        let d3 = riquezamenor(0)
+        let d4 = riquezamenor(0)
+        let d5 = riquezamenor(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4 + d5)
+        moneyr = `${tsres} ${ts}`
+      }
+    } else {
+      gmoneyg = "1 riqueza média"
+      let d1 = riquezamedia(20)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      }
+    }
+    if(itemg <= 20) { /*Item ND 8*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 21 && itemg <= 75) {
+      gitemg = "1d3 poções"
+      let potr = rolldice(1, 3)
+      if (potr == 1) {
+        itemr = potion(0)
+      } else if (potr == 2) {
+        pot1 = potion(0)
+        pot2 = potion(0)
+        itemr = `${pot1} e ${pot2}`
+      } else {
+        pot1 = potion(0)
+        pot2 = potion(0)
+        pot3 = potion(0)
+        itemr = `${pot1}, ${pot2} e ${pot3}`
+      }
+    } else if (itemg >= 76 && itemg <= 95){
+      gitemg = "Item superior (2 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+    } else {
+      gitemg = "Item superior (3 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+      while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
+        aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
   }
-}
 
 /*Função pra rolar dados aleatórios*/
 function rolldice(min, max) {
