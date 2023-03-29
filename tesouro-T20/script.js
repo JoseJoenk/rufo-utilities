@@ -571,10 +571,10 @@ function fimmsg() {
       }
      }
 
-    if(itemg <= /*2*/0) { /*Item ND 6*/
+    if(itemg <= 20) { /*Item ND 7*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= /*21*/0 && itemg <= /*60*/0) {
+    } else if(itemg >= 21 && itemg <= 60) {
       gitemg = "1d3 poções"
       let potr = rolldice(1, 3)
       if (potr == 1) {
@@ -589,7 +589,7 @@ function fimmsg() {
         pot3 = potion(0)
         itemr = `${pot1}, ${pot2} e ${pot3}`
       }
-    } else if (itemg >= /*61*/0 && itemg <= /*90*/0){
+    } else if (itemg >= 61 && itemg <= 90){
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
@@ -1297,6 +1297,8 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Maciça" && incompativel.includes(suproll)){
       superior3(d6, equiroll, melhor, melhor2)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
@@ -1317,11 +1319,15 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Reforçada" && incompativel.includes(suproll)){
       superior3(d6, equiroll, melhor, melhor2)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
   } else {
     suproll = apreso()
     if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
       superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
