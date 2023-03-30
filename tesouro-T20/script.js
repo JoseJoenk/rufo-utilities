@@ -1051,6 +1051,131 @@ function gerar() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 12") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 45) {
+      gmoneyg = "1 riqueza média"
+      let d1 = riquezamedia(20)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 46 && moneyg <= 80) {
+      gmoneyg = "2d6x1000 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let dr = 1000
+      let ts = " T$"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d4+1 riquezas médias"
+      let riq3 = rolldice(1, 4)
+      if(riq3 == 1) {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let d3 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 3) {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let d3 = riquezamedia(0)
+        let d4 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamedia(0)
+        let d2 = riquezamedia(0)
+        let d3 = riquezamedia(0)
+        let d4 = riquezamedia(0)
+        let d5 = riquezamedia(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4 + d5)
+        moneyr = `${tsres} ${ts}`
+      }
+    }
+
+    if(itemg <= 45) { /*Item ND 11*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 46 && itemg <= 70) {
+      gitemg = "1d3+1 poções"
+      let potr = rolldice(1, 3)
+      if (potr == 1) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        itemr = `${pot1} e ${pot2}`
+      } else if (potr == 2) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        itemr = `${pot1}, ${pot2} e ${pot3}`
+      } else {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        pot4 = potion(20)
+        itemr = `${pot1}, ${pot2}, ${pot3} e ${pot4}`
+      }
+    } else if (itemg >= 71 && itemg <= 85){
+      gitemg = "Item superior (4 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+      while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
+        aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      }
+      while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
+        aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+    } else {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
   }
 } 
 
@@ -1718,6 +1843,10 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Pungente" && melhor != "Certeira") {
       superior3(d6, equiroll, melhor, melhor2)
+    }else if (suproll == "Atroz" && melhor2 != "Cruel") {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Pungente" && melhor2 != "Certeira") {
+      superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Precisa" && incompativel.includes(suproll)){
@@ -1735,6 +1864,8 @@ function superior3(roll, e, sup, sup2) {
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
+      superior3(d6, equiroll, melhor, melhor2)
+    } else if (suproll == "Sob medida" && melhor2 != "Ajustada") {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
       superior3(d6, equiroll, melhor, melhor2)
@@ -1760,6 +1891,100 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
       superior3(d6, equiroll, melhor, melhor2)
+    }
+    return suproll
+  }
+}
+
+function superior4(roll, e, sup, sup2, sup3) {
+  var d6 = roll
+  var equiroll = e
+  var melhor = sup
+  var melhor2 = sup2
+  var melhor3 = sup3
+  const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
+  const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
+  const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
+  const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
+  const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
+  if(d6 >= 1 && d6 <= 3) {
+    suproll = aprarma()
+    if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Atroz" && melhor != "Cruel") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Pungente" && melhor != "Certeira") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Atroz" && melhor2 != "Cruel") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Pungente" && melhor2 != "Certeira") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Atroz" && melhor3 != "Cruel") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Pungente" && melhor3 != "Certeira") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor2 == "Precisa" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor2 == "Maciça" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor3 == "Precisa" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor3 == "Maciça" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    }
+    return suproll
+  } else if (d6 == 4 || d6 == 5) {
+    suproll = aprdura()
+    if (suproll == "Sob medida" && melhor != "Ajustada") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Sob medida" && melhor2 != "Ajustada") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Sob medida" && melhor3 != "Ajustada") {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor2 == "Delicada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor2 == "Reforçada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor3 == "Delicada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (melhor3 == "Reforçada" && incompativel.includes(suproll)){
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    }
+    return suproll
+  } else {
+    suproll = apreso()
+    if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
+    } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      superior4(d6, equiroll, melhor, melhor2, melhor3)
     }
     return suproll
   }
