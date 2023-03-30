@@ -1697,6 +1697,24 @@ function encantoArma() {
   }
 }
 
+function anticriatura(){
+  criatura = rolldice(1, 6)
+
+  if (criatura == 1) {
+    return "Anticriatura (Animal)"
+  } else if (criatura == 2) {
+    return "Anticriatura (Construto)"
+  } else if (criatura == 3) {
+    return "Anticriatura (Espírito)"
+  } else if (criatura == 4) {
+    return "Anticriatura (Monstro)"
+  } else if (criatura == 5) {
+    return "Anticriatura (Morto-vivo)"
+  } else {
+    return "Anticriatura (Uma raça humanoide)"
+  }
+}
+
 function encantoArmadura() {
   var encantoroll = rolldice(1, 100)
 
@@ -1881,98 +1899,98 @@ function acessorioMedio() {
   acess = rolldice(1, 100)
 
   if (acess >= 1 && acess <= 4) {
-    return 
+    return "Anel de telecinesia"
   } else if (acess >= 5 && acess <= 8) {
-    return 
+    return "Bola de cristal"
   } else if (acess == 9 || acess == 10) {
-    return
+    return "Caveira maldita"
   } else if (acess >= 11 && acess <= 14) {
-    return
+    return "Botas aladas"
   } else if (acess >= 15 && acess <= 18) {
-    return
+    return "Braceletes de bronze"
   } else if (acess >= 19 && acess <= 24) {
-    return
+    return "Anel da energia"
   } else if (acess >= 25 && acess <= 30) {
-    return
+    return "Anel da vitalidade"
   } else if (acess >= 31 && acess <= 34) {
-    return
+    return "Anel da invisibilidade"
   } else if (acess >= 35 && acess <= 38) {
-    return
+    return "Braçadeiras do arqueiro"
   } else if (acess >= 39 && acess <= 42) {
-    return
+    return "Brincos de Marah"
   } else if (acess >= 43 && acess <= 46) {
-    return
+    return "Faixas do pugilista"
   } else if (acess >= 47 && acess <= 50) {
-    return
+    return "Manto da aranha"
   } else if (acess >= 51 && acess <= 54) {
-    return
+    return "Vassoura voadora"
   } else if (acess >= 55 && acess <= 58) {
-    return
+    return "Símbolo abençoado"
   } else if (acess >= 59 && acess <= 64) {
-    return
+    return "Amuleto da robustez"
   } else if (acess >= 65 && acess <= 68) {
-    return
+    return "Botas velozes"
   } else if (acess >= 69 && acess <= 74) {
-    return
+    return "Cinto da força do gigante"
   } else if (acess >= 75 && acess <= 80) {
-    return
+    return "Coroa majestosa"
   } else if (acess >= 81 && acess <= 86) {
-    return
+    return "Estola da serenidade"
   } else if (acess == 87 || acess == 88) {
-    return
+    return "Manto do morcego"
   } else if (acess >= 89 && acess <= 94) {
-    return
+    return "Pulseiras da celeridade"
   } else {
-    return
-  }
+    return "Tiara da sapiência"
+  } 
 }
 
 function acessorioMaior() {
   acess = rolldice(1, 100)
 
   if (acess == 1 || acess == 2) {
-    return 
+    return "Elmo do teletransporte"
   } else if (acess == 3 || acess == 4) {
-    return
+    return "Gema da telepatia"
   } else if (acess >= 5 && acess <= 9) {
-    return
+    return "Gema elemental"
   } else if (acess >= 10 && acess <= 15) {
-    return
+    return "Manual da saúde corporal"
   } else if (acess >= 16 && acess <= 21) {
-    return
+    return "Manual do bom exercício"
   } else if (acess >= 22 && acess <= 27) {
-    return
+    return "Manual dos movimentos precisos"
   } else if (acess >= 28 && acess <= 34) {
-    return
+    return "Medalhão de Lena"
   } else if (acess >= 35 && acess <= 40) {
-    return
+    return "Tomo da compreensão"
   } else if (acess >= 41 && acess <= 46) {
-    return
+    return "Tomo da liderança e influência"
   } else if (acess >= 47 && acess <= 52) {
-    return
+    return "Tomo dos grandes pensamentos"
   } else if (acess >= 53 && acess <= 57) {
-    return
+    return "Anel refletor"
   } else if (acess >= 58 && acess <= 60) {
-    return
+    return "Cinto do campeão"
   } else if (acess >= 61 && acess <= 67) {
-    return
+    return "Colar guardião"
   } else if (acess >= 68 && acess <= 72) {
-    return
+    return "Estatueta animista"
   } else if (acess >= 73 && acess <= 77) {
-    return
+    return "Anel da liberdade"
   } else if (acess >= 78 && acess <= 82) {
-    return
+    return "Tapete voador"
   } else if (acess >= 83 && acess <= 87) {
-    return
+    return "Braceletes de ouro"
   } else if (acess == 88 || acess == 89) {
-    return
+    return "Espelho da oposição"
   } else if (acess >= 90 && acess <= 94) {
-    return
+    return "Robe do arquimago"
   } else if (acess == 95 || acess == 96) {
-    return
+    return "Orbe das tempestades"
   } else if (acess == 97 && acess == 98) {
-    return
+    return "Anel da regeneração"
   } else {
-    return
+    return "Espelho do aprisionamento"
   }
 }
