@@ -13,8 +13,6 @@ function gerar() {
   var aprimoramento2 = ''
   var aprimoramento3 = ''
   var aprimoramento4 = ''
-  var aprimoramento5 = ''
-  var aprimoramento6 = ''
   var finalmsg = ''
 
 
@@ -26,19 +24,19 @@ function gerar() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-function gmoney(min, max) {
+  function gmoney(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-/*Função que dispara a mensagem final*/
-function fimmsg() {
+  /*Função que dispara a mensagem final*/
+  function fimmsg() {
   finalmsg = `Você rolou <strong>${moneyg}</strong> para Dinheiro e <strong>${itemg}</strong> para Item, resultando em <strong>${gmoneyg}</strong> e <strong>${gitemg}</strong> como loot. Seu dinheiro gerou <strong>${moneyr}</strong> e seu item gerou <strong>${itemr}</strong>`
   return finalmsg
-}
+  }
 
-/*Seleção de ND e começo do procedimento pra cada ND*/
+  /*Seleção de ND e começo do procedimento pra cada ND*/
   if(nd.value == "ND 1/4") { /*Dinheiro pra ND 1/4*/
     if(moneyg <= 30) {
       gmoneyg = "Nada"
@@ -769,13 +767,13 @@ function fimmsg() {
         moneyr = `${tsres} ${ts}`
       }
     }
-    if(itemg <= 20) { /*Item ND 9*/
+    if(itemg <= -20) { /*Item ND 9*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 70) {
+    } else if(itemg >= -21 && itemg <= -70) {
       gitemg = "1 poção"
       itemr = potion(20)
-    } else if (itemg >= 71 && itemg <= 95){
+    } else if (itemg >= -71 && itemg <= -95){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
       equip = equipamento(roll)
@@ -795,13 +793,23 @@ function fimmsg() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
-        encanto = encantoArma()
-        itemf = `${item} ${encanto}`
+        encantamento = encanto(1)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
       } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificação", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
-        encanto = encantoArmadura()
-        itemf = `${item} ${encanto}`
+        encantamento = encanto(2)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
       } else {
         itemf = acessorioMenor()
       }
@@ -810,6 +818,7 @@ function fimmsg() {
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
   }
+}
 
 /*Função pra rolar dados aleatórios*/
 function rolldice(min, max) {
@@ -1631,6 +1640,94 @@ function materialespecial(){
     return "de Mitral"
   }
 }
+
+function encanto(n, equi) {
+  typo = n
+  rEqui = equi
+  const naoPode = ["Energética", "Lancinante", "Magnífica", "Guardião"]
+  const escudos = ["Escudo leve", "Escudo pesado"]
+  if (typo == 1) {
+    enc = encantoArma()
+    if (naoPode.includes(enc)) {
+      encanto(typo, rEqui)
+    }
+    return enc
+  } else {
+      enc = encantoArmadura()
+      if (naoPode.includes(enc)) {
+        encanto(typo, rEqui)
+      } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+        encanto (typo, rEqui)
+      } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+        encanto (typo, rEqui)
+      }
+      return enc
+  }
+}
+
+function encanto2(n, equi, e1) {
+  typo = n
+  rEqui = equi
+  enc1 = e1
+  const escudos = ["Escudo leve", "Escudo pesado"]
+  if (typo == 1) {
+    enc = encantoArma()
+    if (enc == "Energética" && enc1 != "Formidável") {
+      encanto2(typo, rEqui, enc1)
+    } else if (enc == "Magnífica" && enc1 != "Formidável") {
+      encanto2(typo, rEqui, enc1)
+    } else if (enc == "Lancinante" && enc1 != "Dilacerante") {
+      encanto2(typo, rEqui, enc1)
+    }
+    return enc
+  } else {
+    enc = encantoArmadura()
+    if (enc == "Guardião" && enc1 != "Defensor") {
+      encanto2(typo, rEqui, enc1)
+    } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+      encanto2(typo, rEqui, enc1)
+    } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+      encanto2(typo, rEqui, enc1)
+    }
+    return enc
+  }
+}
+
+function encanto3(n, equi, e1, e2) {
+  typo = n
+  rEqui = equi
+  enc1 = e1
+  enc2 = e2
+  const escudos = ["Escudo leve", "Escudo pesado"]
+  if (typo == 1) {
+    enc = encantoArma()
+    if (enc == "Magnífica" && enc2 != "Formidável") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Magnífica" && enc1 != "Formidável") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Energética" && enc2 != "Formidável") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Energética" && enc1 != "Formidável") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Lancinante" && enc2 != "Dilacerante") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Lancinante" && enc1 != "Dilacerante") {
+      encanto3(typo, rEqui, enc1, enc2)
+    }
+    return enc
+  } else {
+    enc = encantoArmadura()
+    if (enc == "Guardião" && enc2 != "Defensor") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Guardião" && enc1 != "Defensor") {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+      encanto3(typo, rEqui, enc1, enc2)
+    } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+      encanto3(typo, rEqui, enc1, enc2)
+    }
+    return enc
+  }
 }
 
 function encantoArma() {
