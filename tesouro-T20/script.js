@@ -793,7 +793,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -909,7 +909,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -1027,7 +1027,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -1152,7 +1152,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -1280,7 +1280,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1422,7 +1422,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1563,7 +1563,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1722,7 +1722,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1818,7 +1818,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -1843,7 +1843,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1886,7 +1886,7 @@ function gerar() {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -1997,7 +1997,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -2022,7 +2022,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -2065,7 +2065,7 @@ function gerar() {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -2159,7 +2159,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -2184,7 +2184,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -2227,7 +2227,7 @@ function gerar() {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -2352,7 +2352,7 @@ function gerar() {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
@@ -2377,7 +2377,7 @@ function gerar() {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
@@ -2420,7 +2420,7 @@ function gerar() {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
       if (roll == 1 || roll == 2) {
-        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         encantamento2 = encanto2(1, item, encantamento)
