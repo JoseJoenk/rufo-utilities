@@ -1605,6 +1605,877 @@ function gerar() {
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 16") {
+    if(moneyg <= 10) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 11 && moneyg <= 40) {
+      gmoneyg = "3d6x1000 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let d3 = rolldice(1, 6)
+      let dr = 1000
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 41 && moneyg <= 75) {
+      gmoneyg = "3d10x100 TO"
+      let d1 = rolldice(1, 10)
+      let d2 = rolldice(1, 10)
+      let d3 = rolldice(1, 10)
+      let dr = 100
+      let ts = " TO"
+      let tsres = (d1 + d2 + d3) * dr
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d3 riquezas maiores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamaior(0)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let d3 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    }
+
+    if(itemg <= 35) { /*Item ND 16*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 36 && itemg <= 45) {
+      gitemg = "1d6+1 poções"
+      let potr = rolldice(1, 6)
+      if (potr == 1) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        itemr = `${pot1} e ${pot2}`
+      } else if (potr == 2) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        itemr = `${pot1}, ${pot2} e ${pot3}`
+      } else if (potr == 3) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        pot4 = potion(20)
+        itemr = `${pot1}, ${pot2}, ${pot3} e ${pot4}`
+      } else if (potr == 4) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        pot4 = potion(20)
+        pot5 = potion(20)
+        itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4} e ${pot5}`
+      } else if (potr == 5) {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        pot4 = potion(20)
+        pot5 = potion(20)
+        pot6 = potion(20)
+        itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4}, ${pot5} e ${pot6}`
+      } else {
+        pot1 = potion(20)
+        pot2 = potion(20)
+        pot3 = potion(20)
+        pot4 = potion(20)
+        pot5 = potion(20)
+        pot6 = potion(20)
+        pot7 = potion(20)
+        itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4}, ${pot5}, ${pot6} e ${pot7}`
+      }
+    } else if (itemg >= 46 && itemg <= 80){
+      gitemg = "Item superior (4 Melhorias)"
+      roll = rolldice(1, 6)
+      equip = equipamento(roll)
+      aprimoramento1 = superior(roll, equip)
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
+      while (aprimoramento2 === aprimoramento1) {
+      aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      }
+      while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
+        aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
+      }
+      while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
+        aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+      }
+
+      itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+    } else {
+      gitemg = "Item Mágico (Médio)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else {
+        itemf = acessorioMedio()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 17") {
+    if(moneyg <= 5) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 6 && moneyg <= 40) {
+      gmoneyg = "4d6x1000 T$"
+      let d1 = rolldice(1, 6)
+      let d2 = rolldice(1, 6)
+      let d3 = rolldice(1, 6)
+      let d4 = rolldice(1, 6)
+      let dr = 1000
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 41 && moneyg <= 75) {
+      gmoneyg = "1d3 riquezas médias"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamedia(20)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamedia(20)
+        let d2 = riquezamedia(20)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamedia(20)
+        let d2 = riquezamedia(20)
+        let d3 = riquezamedia(20)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    } else {
+      gmoneyg = "2d4x1000 TO"
+      let d1 = rolldice(1, 4)
+      let d2 = rolldice(1, 4)
+      let dr = 1000
+      let ts = " TO"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    }
+
+    if(itemg <= 20) { /*Item ND 17*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 21 && itemg <= 40) {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
+    } else if (itemg >= 41 && itemg <= 80){
+      gitemg = "Item Mágico (Médio)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else {
+        itemf = acessorioMedio()
+      }
+      itemr = itemf
+    } else {
+      gitemg = "Item Mágico (Maior)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else {
+        itemf = acessorioMaior()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 18") {
+    if(moneyg <= 5) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 6 && moneyg <= 40) {
+      gmoneyg = "4d10x1000 T$"
+      let d1 = rolldice(1, 10)
+      let d2 = rolldice(1, 10)
+      let d3 = rolldice(1, 10)
+      let d4 = rolldice(1, 10)
+      let dr = 1000
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 41 && moneyg <= 75) {
+      gmoneyg = "1 riqueza maior"
+      let d1 = riquezamaior(0)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d3+1 riquezas maiores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let d3 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let d3 = riquezamaior(0)
+        let d4 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      }
+    }
+
+    if(itemg <= 15) { /*Item ND 18*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 16 && itemg <= 40) {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
+    } else if (itemg >= 41 && itemg <= 70){
+      gitemg = "Item Mágico (Médio)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else {
+        itemf = acessorioMedio()
+      }
+      itemr = itemf
+    } else {
+      gitemg = "Item Mágico (Maior)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else {
+        itemf = acessorioMaior()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 19") {
+    if(moneyg <= 5) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 6 && moneyg <= 40) {
+      gmoneyg = "4d12x1000 T$"
+      let d1 = rolldice(1, 12)
+      let d2 = rolldice(1, 12)
+      let d3 = rolldice(1, 12)
+      let d4 = rolldice(1, 12)
+      let dr = 1000
+      let ts = " T$"
+      let tsres = (d1 + d2 + d3 + d4) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 41 && moneyg <= 75) {
+      gmoneyg = "1 riqueza maior"
+      let d1 = riquezamaior(20)
+      let d2 = 0
+      let ts = " T$"
+      let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+    } else {
+      gmoneyg = "1d12x1000 TO"
+      let d1 = rolldice(1, 12)
+      let d2 = 0
+      let dr = 1000
+      let ts = " TO"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    }
+
+    if(itemg <= 10) { /*Item ND 19*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 11 && itemg <= 40) {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
+    } else if (itemg >= 41 && itemg <= 60){
+      gitemg = "Item Mágico (Médio)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else {
+        itemf = acessorioMedio()
+      }
+      itemr = itemf
+    } else {
+      gitemg = "Item Mágico (Maior)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else {
+        itemf = acessorioMaior()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
+  } else if (nd.value == "ND 20") {
+    if(moneyg <= 5) {
+      gmoneyg = "Nada"
+      moneyr = "Nada"
+    } else if (moneyg >= 6 && moneyg <= 40) {
+      gmoneyg = "2d4x1000 TO"
+      let d1 = rolldice(1, 4)
+      let d2 = rolldice(1, 4)
+      let dr = 1000
+      let ts = " TO"
+      let tsres = (d1 + d2) * dr
+      moneyr = `${tsres} ${ts}`
+    } else if (moneyg >= 41 && moneyg <= 75) {
+      gmoneyg = "1d3 riquezas maiores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamaior(0)
+        let d2 = 0
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamaior(0)
+        let d2 = riquezamaior(0)
+        let d3 = riquezamaior(0)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+        moneyr = `${tsres} ${ts}`
+      }
+    } else {
+      gmoneyg = "1d3+1 riquezas maiores"
+      let riq3 = rolldice(1, 3)
+      if(riq3 == 1) {
+        let d1 = riquezamaior(20)
+        let d2 = riquezamaior(20)
+        let ts = " T$"
+        let tsres = (d1 + d2)
+        moneyr = `${tsres} ${ts}`
+      } else if (riq3 == 2) {
+        let d1 = riquezamaior(20)
+        let d2 = riquezamaior(20)
+        let d3 = riquezamaior(20)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3)
+      moneyr = `${tsres} ${ts}`
+      } else {
+        let d1 = riquezamaior(20)
+        let d2 = riquezamaior(20)
+        let d3 = riquezamaior(20)
+        let d4 = riquezamaior(20)
+        let ts = " T$"
+        let tsres = (d1 + d2 + d3 + d4)
+        moneyr = `${tsres} ${ts}`
+      }
+    }
+
+    if(itemg <= 5) { /*Item ND 20*/
+      gitemg = "Nada"
+      itemr = "Nada"
+    } else if(itemg >= 6 && itemg <= 40) {
+      gitemg = "Item Mágico (Menor)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}`
+        }
+      } else {
+        itemf = acessorioMenor()
+      }
+      itemr = itemf
+    } else if (itemg >= 41 && itemg <= 50){
+      gitemg = "Item Mágico (Médio)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento} e ${encantamento2}`
+        }
+      } else {
+        itemf = acessorioMedio()
+      }
+      itemr = itemf
+    } else {
+      gitemg = "Item Mágico (Maior)"
+      roll = rolldice(1, 6)
+      if (roll == 1 || roll == 2) {
+        const encantosA = ["Ameaçadora", "Antiicriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
+        item = arma()
+        encantamento = encanto(1, item)
+        encantamento2 = encanto2(1, item, encantamento)
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        if (!encantosA.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else if (roll == 3) {
+        const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
+        item = armadura()
+        encantamento = encanto(2, item)
+        encantamento2 = encanto2(2, item, encantamento)
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        while (encantamento2 == encantamento) {
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+        
+        if (!encantosE.includes(encantamento)) {
+          itemf = encantamento
+        } else {
+          itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+        }
+      } else {
+        itemf = acessorioMaior()
+      }
+      itemr = itemf
+    }
+    /*Mensagem final depois que tudo é rolado*/
+    res.innerHTML = fimmsg()
   }
 } 
 
@@ -2784,7 +3655,7 @@ function armaEsmecifica() {
   } else if (armaroll >= 61 && armaroll <= 67) {
     return "Arco do poder"
   } else if (armaroll >= 68 && armaroll <= 72) {
-    return "Língua de prata"
+    return "Língua do deserto"
   } else if (armaroll >= 73 && armaroll <= 77) {
     return "Besta explosiva"
   } else if (armaroll >= 78 && armaroll <= 82) {
