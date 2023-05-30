@@ -1892,16 +1892,17 @@ function gerar() {
         encantamento2 = encanto2(1, item, encantamento)
         encantamento3 = encanto3(1, item, encantamento, encantamento2)
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
-        while (!encantosA.includes(encantamento3)){
-          encantamento3 = encanto3(1, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -1917,16 +1918,17 @@ function gerar() {
         encantamento2 = encanto2(2, item, encantamento)
         encantamento3 = encanto3(2, item, encantamento, encantamento2)
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
-        while (!encantosE.includes(encantamento3)){
-          encantamento3 = encanto3(2, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
         
@@ -2071,16 +2073,17 @@ function gerar() {
         encantamento2 = encanto2(1, item, encantamento)
         encantamento3 = encanto3(1, item, encantamento, encantamento2)
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
-        while (!encantosA.includes(encantamento3)){
-          encantamento3 = encanto3(1, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2096,16 +2099,17 @@ function gerar() {
         encantamento2 = encanto2(2, item, encantamento)
         encantamento3 = encanto3(2, item, encantamento, encantamento2)
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
-        while (!encantosE.includes(encantamento3)){
-          encantamento3 = encanto3(2, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
         
@@ -2233,16 +2237,17 @@ function gerar() {
         encantamento2 = encanto2(1, item, encantamento)
         encantamento3 = encanto3(1, item, encantamento, encantamento2)
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
-        while (!encantosA.includes(encantamento3)){
-          encantamento3 = encanto3(1, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2258,16 +2263,17 @@ function gerar() {
         encantamento2 = encanto2(2, item, encantamento)
         encantamento3 = encanto3(2, item, encantamento, encantamento2)
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
-        while (!encantosE.includes(encantamento3)){
-          encantamento3 = encanto3(2, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
         
@@ -2426,16 +2432,18 @@ function gerar() {
         encantamento2 = encanto2(1, item, encantamento)
         encantamento3 = encanto3(1, item, encantamento, encantamento2)
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
-        while (!encantosA.includes(encantamento3)){
-          encantamento3 = encanto3(1, item, encantamento, encantamento2)
-        }
+        
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          encantamento3 = encanto3(1, item, encantamento, encantamento2)
+        }
+
+        while (!encantosA.includes(encantamento2)){
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        while (!encantosA.includes(encantamento3)){
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2451,16 +2459,17 @@ function gerar() {
         encantamento2 = encanto2(2, item, encantamento)
         encantamento3 = encanto3(2, item, encantamento, encantamento2)
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
-        while (!encantosE.includes(encantamento3)){
-          encantamento3 = encanto3(2, item, encantamento, encantamento2)
-        }
         while (encantamento2 == encantamento) {
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
+          encantamento3 = encanto3(2, item, encantamento, encantamento2)
+        }
+
+        while (!encantosE.includes(encantamento2)){
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
         
