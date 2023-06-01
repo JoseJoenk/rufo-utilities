@@ -5,7 +5,7 @@ function rolldice(min, max) {
   }
 
 /*Função pra definir a categoria quando cair Equipamento*/
-export function equipamento(roll) {
+export default function equipamento(roll) {
     var d6 = roll
   
     if(d6 >= 1 && d6 <= 3) {

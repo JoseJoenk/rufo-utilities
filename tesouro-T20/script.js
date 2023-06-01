@@ -4,6 +4,10 @@ function gerar() {
   var itemg = rolldice(1, 100)
   var moneyg = rolldice(1, 100)
   var nd = document.getElementById('nd')
+  var secreto = document.getElementById('secreto')
+  var hidden = document.getElementById('hidden')
+  hidden.innerHTML = ''
+  secreto.innerHTML = `Sua rolagem de Dinheiro foi ${moneyg} <br>Sua rolagem de Item foi ${itemg} <br>`
 
   /*Função que dispara a mensagem final*/
   function fimmsg() {
@@ -23,6 +27,7 @@ function gerar() {
       let dr = 10
       let ts = " TC"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 10 TC <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 71 && moneyg <= 95) {
       gmoneyg = "1d4x100 TC"
@@ -31,6 +36,7 @@ function gerar() {
       let dr = 100
       let ts = " TC"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 TC <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d6x10 T$"
@@ -39,6 +45,7 @@ function gerar() {
       let dr = 10
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 10 T$ <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -51,6 +58,7 @@ function gerar() {
     } else {
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     }
     /*Mensagem final depois que tudo é rolado*/
@@ -66,6 +74,7 @@ function gerar() {
       let dr = 10
       let ts = " TC"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 10 TC <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 71 && moneyg <= 95) {
       gmoneyg = "2d8x10 T$"
@@ -74,6 +83,7 @@ function gerar() {
       let dr = 10
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 10 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4x100 T$"
@@ -82,6 +92,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -94,6 +105,7 @@ function gerar() {
     } else {
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     }
     /*Mensagem final depois que tudo é rolado*/
@@ -110,6 +122,7 @@ function gerar() {
       let dr = 10
       let ts = " T$"
       let tsres = (d1 + d2 + d3) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 10 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 71 && moneyg <= 95) {
       gmoneyg = "4d12x10 T$"
@@ -119,6 +132,7 @@ function gerar() {
       let d4 = rolldice(1, 12)
       let dr = 10
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 10 T$ <br>`
       let tsres = (d1 + d2 + d3 + d4) * dr
       moneyr = `${tsres} ${ts}`
     } else {
@@ -139,6 +153,7 @@ function gerar() {
     } else if (itemg >= 66 && itemg <= 90){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     } else {
       gitemg = "1 poção"
@@ -157,6 +172,7 @@ function gerar() {
       let d3 = rolldice(1, 10)
       let dr = 10
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 10 T$ <br>`
       let tsres = (d1 + d2 + d3) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 56 && moneyg <= 85) {
@@ -165,6 +181,7 @@ function gerar() {
       let d2 = rolldice(1, 4)
       let dr = 100
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 86 && moneyg <= 95) {
@@ -173,6 +190,7 @@ function gerar() {
       let d2 = rolldice(1, 6)
       let dr = 100
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + 1 x 10 T$ <br>`
       let tsres = (d1 + d2 + 1) * dr
       moneyr = `${tsres} ${ts}`
      }else {
@@ -193,6 +211,7 @@ function gerar() {
     } else if (itemg >= 41 && itemg <= 70){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     } else if (itemg >= 71 && itemg <= 90) {
       gitemg = "1 poção"
@@ -200,9 +219,11 @@ function gerar() {
     } else {
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll)
       itemr = `${equip} ${aprimoramento1}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -218,6 +239,7 @@ function gerar() {
       let d4 = rolldice(1, 12)
       let dr = 10
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 10 T$ <br>`
       let tsres = (d1 + d2 + d3 + d4) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 21 && moneyg <= 60) {
@@ -226,6 +248,7 @@ function gerar() {
       let d2 = 0
       let dr = 100
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 61 && moneyg <= 90) {
@@ -234,11 +257,13 @@ function gerar() {
       let d2 = 0
       let dr = 10
       let ts = " TO"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 10 TO <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
      }else {
       gmoneyg = "1d3 riquezas menores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas menores <br>`
       if(riq3 == 1) {
         let d1 = riquezamenor(0)
         let d2 = 0
@@ -270,6 +295,7 @@ function gerar() {
     } else if (itemg >= 36 && itemg <= 60){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     } else if (itemg >= 61 && itemg <= 85) {
       gitemg = "1 poção"
@@ -277,9 +303,11 @@ function gerar() {
     } else {
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll)
       itemr = `${equip} ${aprimoramento1}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -293,6 +321,7 @@ function gerar() {
       let d2 = 0
       let dr = 100
       let ts = " T$"
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 51 && moneyg <= 80) {
@@ -302,6 +331,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 81 && moneyg <= 90) {
       gmoneyg = "1 riqueza menor"
@@ -313,6 +343,7 @@ function gerar() {
      }else {
       gmoneyg = "1d3 riquezas menores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas menores <br>`
       if(riq3 == 1) {
         let d1 = riquezamenor(20)
         let d2 = 0
@@ -344,6 +375,7 @@ function gerar() {
     } else if (itemg >= 31 && itemg <= 55){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
     } else if (itemg >= 56 && itemg <= 80) {
       gitemg = "1 poção"
@@ -351,9 +383,11 @@ function gerar() {
     } else {
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll)
       itemr = `${equip} ${aprimoramento1}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -368,6 +402,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 66 && moneyg <= 95) {
       gmoneyg = "3d4x10 TO"
@@ -377,6 +412,7 @@ function gerar() {
       let dr = 10
       let ts = " TO"
       let tsres = (d1 + d2 + d3) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 10 TO <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1 riqueza média"
@@ -396,14 +432,18 @@ function gerar() {
     } else if (itemg >= 71 && itemg <= 90){
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
       itemr = `${equip} ${aprimoramento1}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
 
       while (aprimoramento2 === aprimoramento1) {
@@ -411,6 +451,7 @@ function gerar() {
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -425,6 +466,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 61 && moneyg <= 90) {
       gmoneyg = "2d10x100 T$"
@@ -433,10 +475,12 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d3+1 riquezas menores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas menores <br>`
       if(riq3 == 1) {
         let d1 = riquezamenor(0)
         let d2 = riquezamenor(0)
@@ -470,14 +514,18 @@ function gerar() {
     } else if (itemg >= 66 && itemg <= 95){
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
       itemr = `${equip} ${aprimoramento1}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
 
       while (aprimoramento2 === aprimoramento1) {
@@ -485,6 +533,7 @@ function gerar() {
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -499,6 +548,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 61 && moneyg <= 90) {
       gmoneyg = "2d12x10 TO"
@@ -507,10 +557,12 @@ function gerar() {
       let dr = 10
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 10 TO <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4+1 riquezas menores"
       let riq3 = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas menores <br>`
       if(riq3 == 1) {
         let d1 = riquezamenor(0)
         let d2 = riquezamenor(0)
@@ -550,6 +602,7 @@ function gerar() {
     } else if(itemg >= 21 && itemg <= 60) {
       gitemg = "1d3 poções"
       let potr = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} poções <br>`
       if (potr == 1) {
         itemr = potion(0)
       } else if (potr == 2) {
@@ -565,8 +618,10 @@ function gerar() {
     } else if (itemg >= 61 && itemg <= 90){
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
 
       while (aprimoramento2 === aprimoramento1) {
@@ -574,22 +629,27 @@ function gerar() {
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      while (aprimoramento2 === aprimoramento1) {
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
 
-      while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -604,10 +664,12 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 56 && moneyg <= 95) {
       gmoneyg = "1d4+1 riquezas menores"
       let riq3 = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas menores <br>`
       if(riq3 == 1) {
         let d1 = riquezamenor(0)
         let d2 = riquezamenor(0)
@@ -654,6 +716,7 @@ function gerar() {
     } else if(itemg >= 21 && itemg <= 75) {
       gitemg = "1d3 poções"
       let potr = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} poções <br>`
       if (potr == 1) {
         itemr = potion(0)
       } else if (potr == 2) {
@@ -669,8 +732,10 @@ function gerar() {
     } else if (itemg >= 76 && itemg <= 95){
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
 
       while (aprimoramento2 === aprimoramento1) {
@@ -678,22 +743,27 @@ function gerar() {
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      while (aprimoramento2 === aprimoramento1) {
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
 
-      while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     }
     /*Mensagem final depois que tudo é rolado*/
     res.innerHTML = fimmsg()
@@ -717,10 +787,12 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d3 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = 0
@@ -751,29 +823,36 @@ function gerar() {
     } else if (itemg >= 71 && itemg <= 95){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      while (aprimoramento2 === aprimoramento1) {
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
 
-      while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else if (roll == 3) {
@@ -781,8 +860,10 @@ function gerar() {
         item = armadura()
         encantamento = encanto(2, item)
         if (!encantosE.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else {
@@ -805,6 +886,7 @@ function gerar() {
       let dr = 100
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 31 && moneyg <= 85) {
       gmoneyg = "4d10x10 TO"
@@ -815,10 +897,12 @@ function gerar() {
       let dr = 10
       let ts = " TO"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 10 TO <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d3+1 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = riquezamedia(0)
@@ -848,6 +932,7 @@ function gerar() {
     } else if(itemg >= 51 && itemg <= 75) {
       gitemg = "1d3+1 poções"
       let potr = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(0)
         pot2 = potion(0)
@@ -867,29 +952,36 @@ function gerar() {
     } else if (itemg >= 76 && itemg <= 90){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      while (aprimoramento2 === aprimoramento1) {
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
 
-      while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else if (roll == 3) {
@@ -897,8 +989,10 @@ function gerar() {
         item = armadura()
         encantamento = encanto(2, item)
         if (!encantosE.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else {
@@ -919,10 +1013,12 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 46 && moneyg <= 85) {
       gmoneyg = "1d3 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = 0
@@ -950,6 +1046,7 @@ function gerar() {
       let dr = 100
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 TO <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -959,6 +1056,7 @@ function gerar() {
     } else if(itemg >= 46 && itemg <= 70) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(0)
         pot2 = potion(0)
@@ -985,29 +1083,36 @@ function gerar() {
     } else if (itemg >= 71 && itemg <= 90){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
+      while (aprimoramento2 === aprimoramento1) {
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
 
-      while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2} e ${aprimoramento3}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else if (roll == 3) {
@@ -1015,8 +1120,10 @@ function gerar() {
         item = armadura()
         encantamento = encanto(2, item)
         if (!encantosE.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else {
@@ -1044,10 +1151,12 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4+1 riquezas médias"
       let riq3 = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = riquezamedia(0)
@@ -1087,6 +1196,7 @@ function gerar() {
     } else if(itemg >= 46 && itemg <= 70) {
       gitemg = "1d3+1 poções"
       let potr = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(20)
         pot2 = potion(20)
@@ -1106,33 +1216,41 @@ function gerar() {
     } else if (itemg >= 71 && itemg <= 85){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
-      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
-
       while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
       while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
         aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
         if (!encantosA.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else if (roll == 3) {
@@ -1140,8 +1258,10 @@ function gerar() {
         item = armadura()
         encantamento = encanto(2, item)
         if (!encantosE.includes(encantamento)) {
+          hidden.innerHTML = ''
           itemf = encantamento
         } else {
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
           itemf = `${item} ${encantamento}`
         }
       } else {
@@ -1164,10 +1284,12 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 46 && moneyg <= 80) {
       gmoneyg = "1d3+1 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = riquezamedia(0)
@@ -1199,6 +1321,7 @@ function gerar() {
       let dr = 100
       let ts = " TO"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 100 TO <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -1208,6 +1331,7 @@ function gerar() {
     } else if(itemg >= 41 && itemg <= 65) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(20)
         pot2 = potion(20)
@@ -1234,36 +1358,44 @@ function gerar() {
     } else if (itemg >= 66 && itemg <= 95){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
-      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
-
       while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
       while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
         aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
-
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -1271,17 +1403,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -1289,6 +1425,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -1304,6 +1441,7 @@ function gerar() {
     } else if (moneyg >= 11 && moneyg <= 45) {
       gmoneyg = "1d3+1 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(0)
         let d2 = riquezamedia(0)
@@ -1334,6 +1472,7 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1 riqueza maior"
@@ -1350,6 +1489,7 @@ function gerar() {
     } else if(itemg >= 41 && itemg <= 65) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(20)
         pot2 = potion(20)
@@ -1376,36 +1516,45 @@ function gerar() {
     } else if (itemg >= 66 && itemg <= 90){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
-      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
-
       while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
       while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
         aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -1413,17 +1562,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -1431,6 +1584,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -1457,6 +1611,7 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d4x1000 TO"
@@ -1465,6 +1620,7 @@ function gerar() {
       let dr = 1000
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 1000 TO <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -1474,6 +1630,7 @@ function gerar() {
     } else if(itemg >= 36 && itemg <= 45) {
       gitemg = "1d6+1 poções"
       let potr = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(0)
         pot2 = potion(0)
@@ -1517,36 +1674,45 @@ function gerar() {
     } else if (itemg >= 46 && itemg <= 85){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
-      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
-
       while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
       while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
         aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -1554,17 +1720,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -1572,6 +1742,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -1592,6 +1763,7 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 41 && moneyg <= 75) {
       gmoneyg = "3d10x100 TO"
@@ -1601,10 +1773,12 @@ function gerar() {
       let dr = 100
       let ts = " TO"
       let tsres = (d1 + d2 + d3) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 100 TO <br>`
       moneyr = `${tsres} ${ts}`
     } else {
       gmoneyg = "1d3 riquezas maiores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas maiores <br>`
       if(riq3 == 1) {
         let d1 = riquezamaior(0)
         let d2 = 0
@@ -1633,6 +1807,7 @@ function gerar() {
     } else if(itemg >= 36 && itemg <= 45) {
       gitemg = "1d6+1 poções"
       let potr = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${roll} + 1 poções <br>`
       if (potr == 1) {
         pot1 = potion(20)
         pot2 = potion(20)
@@ -1676,36 +1851,45 @@ function gerar() {
     } else if (itemg >= 46 && itemg <= 80){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       equip = equipamento(roll)
       aprimoramento1 = superior(roll, equip)
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
       aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
-      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
-
       while (aprimoramento2 === aprimoramento1) {
-      aprimoramento2 = superior2(roll, equip, aprimoramento1)
-      }
+        aprimoramento2 = superior2(roll, equip, aprimoramento1)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       while (aprimoramento3 === aprimoramento1 || aprimoramento3 === aprimoramento2) {
         aprimoramento3 = superior3(roll, equip, aprimoramento2, aprimoramento1)
       }
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+      aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
+
       while (aprimoramento4 === aprimoramento1 || aprimoramento4 === aprimoramento2 || aprimoramento4 === aprimoramento3) {
         aprimoramento4 = superior4(roll, equip, aprimoramento3, aprimoramento2, aprimoramento1)
       }
 
       itemr = `${equip} ${aprimoramento1}, ${aprimoramento2}, ${aprimoramento3} e ${aprimoramento4}`
+      secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
     } else {
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -1713,17 +1897,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -1731,6 +1919,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -1752,10 +1941,12 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 41 && moneyg <= 75) {
       gmoneyg = "1d3 riquezas médias"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas médias <br>`
       if(riq3 == 1) {
         let d1 = riquezamedia(20)
         let d2 = 0
@@ -1783,6 +1974,7 @@ function gerar() {
       let dr = 1000
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 TO <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -1792,6 +1984,7 @@ function gerar() {
     } else if(itemg >= 21 && itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
@@ -1800,6 +1993,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
@@ -1809,6 +2003,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMenor()
@@ -1817,16 +2012,20 @@ function gerar() {
     } else if (itemg >= 41 && itemg <= 80){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -1834,17 +2033,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -1852,6 +2055,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -1860,24 +2064,31 @@ function gerar() {
     } else {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Maior rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
-        encantamento3 = encanto3(1, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
+        while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
         while (!encantosA.includes(encantamento3)){
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -1885,24 +2096,29 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
-        encantamento3 = encanto3(2, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
+        while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
         while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
@@ -1911,6 +2127,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMaior()
@@ -1932,6 +2149,7 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 41 && moneyg <= 75) {
       gmoneyg = "1 riqueza maior"
@@ -1943,6 +2161,7 @@ function gerar() {
     } else {
       gmoneyg = "1d3+1 riquezas maiores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas maiores <br>`
       if(riq3 == 1) {
         let d1 = riquezamaior(0)
         let d2 = riquezamaior(0)
@@ -1973,6 +2192,7 @@ function gerar() {
     } else if(itemg >= 16 && itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
@@ -1981,6 +2201,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
@@ -1990,6 +2211,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMenor()
@@ -1998,16 +2220,20 @@ function gerar() {
     } else if (itemg >= 41 && itemg <= 70){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -2015,17 +2241,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -2033,6 +2263,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -2041,24 +2272,31 @@ function gerar() {
     } else {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Maior rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
-        encantamento3 = encanto3(1, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
+        while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
         while (!encantosA.includes(encantamento3)){
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2066,24 +2304,29 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
-        encantamento3 = encanto3(2, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
+        while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
         while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
@@ -2092,6 +2335,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMaior()
@@ -2113,6 +2357,7 @@ function gerar() {
       let dr = 1000
       let ts = " T$"
       let tsres = (d1 + d2 + d3 + d4) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 41 && moneyg <= 75) {
       gmoneyg = "1 riqueza maior"
@@ -2128,6 +2373,7 @@ function gerar() {
       let dr = 1000
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 1000 TO <br>`
       moneyr = `${tsres} ${ts}`
     }
 
@@ -2137,6 +2383,7 @@ function gerar() {
     } else if(itemg >= 11 && itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
@@ -2145,6 +2392,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
@@ -2154,6 +2402,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMenor()
@@ -2162,16 +2411,20 @@ function gerar() {
     } else if (itemg >= 41 && itemg <= 60){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -2179,17 +2432,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -2197,6 +2454,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -2205,24 +2463,31 @@ function gerar() {
     } else {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Maior rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
-        encantamento3 = encanto3(1, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
+        while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
         while (!encantosA.includes(encantamento3)){
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2230,24 +2495,29 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
-        encantamento3 = encanto3(2, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
+        while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
         while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
@@ -2256,6 +2526,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMaior()
@@ -2275,10 +2546,12 @@ function gerar() {
       let dr = 1000
       let ts = " TO"
       let tsres = (d1 + d2) * dr
+      secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 TO <br>`
       moneyr = `${tsres} ${ts}`
     } else if (moneyg >= 41 && moneyg <= 75) {
       gmoneyg = "1d3 riquezas maiores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas maiores <br>`
       if(riq3 == 1) {
         let d1 = riquezamaior(0)
         let d2 = 0
@@ -2302,6 +2575,7 @@ function gerar() {
     } else {
       gmoneyg = "1d3+1 riquezas maiores"
       let riq3 = rolldice(1, 3)
+      secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas maiores <br>`
       if(riq3 == 1) {
         let d1 = riquezamaior(20)
         let d2 = riquezamaior(20)
@@ -2332,6 +2606,7 @@ function gerar() {
     } else if(itemg >= 6 && itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
@@ -2340,6 +2615,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
@@ -2349,6 +2625,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMenor()
@@ -2357,16 +2634,20 @@ function gerar() {
     } else if (itemg >= 41 && itemg <= 50){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
 
         while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
 
@@ -2374,17 +2655,21 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
 
         while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
         
@@ -2392,6 +2677,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento} e ${encantamento2}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMedio()
@@ -2400,25 +2686,31 @@ function gerar() {
     } else {
       gitemg = "Item Mágico (Maior)"
       roll = rolldice(1, 6)
+      secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Maior rolou ${roll} <br>`
       if (roll == 1 || roll == 2) {
         const encantosA = ["Ameaçadora", "Anticriatura (Animal)", "Anticriatura (Construto)", "Anticriatura (Espírito)", "Anticriatura (Monstro)", "Anticriatura (Morto-vivo)", "Anticriatura (Uma raça humanoide)", "Arremesso", "Assassina", "Caçadora", "Congelante", "Conjuradora", "Corrosiva", "Dançarina", "Defensora", "Destruidora", "Dilacerante", "Drenante", "Elétrica", "Energética", "Excruciante", "Flamejante", "Formidável", "Lancinante", "Magnífica", "Piedosa", "Profana", "Sagrada", "Sanguinária", "Trovejante", "Tumular", "Veloz", "Venenosa"]
         item = arma()
         encantamento = encanto(1, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(1, item, encantamento)
-        encantamento3 = encanto3(1, item, encantamento, encantamento2)
-
-        
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(1, item, encantamento)
         }
+        while (!encantosA.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(1, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(1, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2) {
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
-        while (!encantosA.includes(encantamento2)){
-          encantamento2 = encanto2(1, item, encantamento)
-        }
         while (!encantosA.includes(encantamento3)){
+          hidden.innerHTML = ''
           encantamento3 = encanto3(1, item, encantamento, encantamento2)
         }
 
@@ -2426,24 +2718,29 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else if (roll == 3) {
         const encantosE = ["Abascanto", "Abençoado", "Acrobático", "Alado", "Animado", "Assustador", "Cáustica", "Defensor", "Escorregadio", "Esmagador", "Fantasmagórico", "Fortificado", "Gélido", "Guardião", "Hipnótico", "Ilusório", "Incandescente", "Invulnerável", "Opaco", "Protetor", "Refletor", "Relampejante", "Reluzente", "Sombrio", "Zeloso"]
         item = armadura()
         encantamento = encanto(2, item)
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         encantamento2 = encanto2(2, item, encantamento)
-        encantamento3 = encanto3(2, item, encantamento, encantamento2)
-
         while (encantamento2 == encantamento) {
+          hidden.innerHTML = ''
           encantamento2 = encanto2(2, item, encantamento)
         }
+        while (!encantosE.includes(encantamento2)){
+          hidden.innerHTML = ''
+          encantamento2 = encanto2(2, item, encantamento)
+        }
+        secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
+        encantamento3 = encanto3(2, item, encantamento, encantamento2)
+
         while (encantamento3 == encantamento || encantamento3 == encantamento2){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
 
-        while (!encantosE.includes(encantamento2)){
-          encantamento2 = encanto2(2, item, encantamento)
-        }
         while (!encantosE.includes(encantamento3)){
           encantamento3 = encanto3(2, item, encantamento, encantamento2)
         }
@@ -2452,6 +2749,7 @@ function gerar() {
           itemf = encantamento
         } else {
           itemf = `${item} ${encantamento}, ${encantamento2} e ${encantamento3}`
+          secreto.innerHTML = secreto.innerHTML + hidden.innerHTML
         }
       } else {
         itemf = acessorioMaior()
@@ -2487,7 +2785,7 @@ function equipamento(roll) {
 /*Função pra rolagem de armas*/
 function arma() {
   let d1100 = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Sua Arma rolou ${d1100} <br>`
   if(d1100 >= 1 && d1100 <= 3) {
     return "Adaga"
   } else if (d1100 == 4 || d1100 == 5) {
@@ -2581,7 +2879,7 @@ function arma() {
 /*Função pra rolagem de armaduras ou escudos*/
 function armadura() {
   let d2100 = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Sua Armadura rolou ${d2100} <br>`
   if(d2100 >= 1 && d2100 <= 5) {
     return "Couro"
   } else if (d2100 >= 6 && d2100 <= 10) {
@@ -2609,7 +2907,7 @@ function armadura() {
 /*Função pra rolagem de esotéricos*/
 function esoterico() {
   let d3100 = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Esotérico rolou ${d3100} <br>`
   if(d3100 >= 1 && d3100 <= 10) {
     return "Bolsa de pó"
   } else if (d3100 >= 11 && d3100 <= 25) {
@@ -2635,7 +2933,7 @@ function esoterico() {
 /*Função pra descobrir o elemento do cetro*/
 function cetro() {
   elemento = rolldice(1, 4)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Cetro rolou ${elemento} <br>`
   if(elemento == 1) {
     return "Cetro elemental de ácido"
   } else if (elemento == 2) {
@@ -2650,7 +2948,7 @@ function cetro() {
 /*Função para descobrir a escola do tomo*/
 function tomo() {
   escola = rolldice(1, 8)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Tomo rolou ${escola} <br>`
   if(escola == 1) {
     return "Tomo hermético de abjuração"
   } else if (escola == 2) {
@@ -2673,7 +2971,7 @@ function tomo() {
 /*Função pra rolagem de itens diversos*/
 function diverso() {
   let d100 = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Diverso rolou ${d100} <br>`
   if(d100 == 1 || d100 == 2) {
     return "Ácido"
   } else if (d100 == 3 || d100 == 4) {
@@ -2779,7 +3077,11 @@ function diverso() {
 function potion(num) {
   n = num
   pot = rolldice(1+n, 100+n)
-
+  if (n == 0) {
+    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${pot} <br>`
+  } else {
+    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${pot} + 20 <br>`
+  }
   if (pot == 1) {
     return "Óleo de Abençoar Alimentos"
   } else if (pot == 2 || pot == 3) {
@@ -2862,7 +3164,11 @@ function potion(num) {
 function riquezamenor(num) {
   let n = num
   let riqmen = rolldice(1+n, 100+n)
-
+  if (n == 0) {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqmen} <br>`
+  } else {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqmen} + 20 <br>`
+  }
   if (riqmen >= 1 && riqmen <= 25) {
     return riqueza1()
   } else if (riqmen >= 26 && riqmen <= 40) {
@@ -2885,7 +3191,11 @@ function riquezamenor(num) {
 function riquezamedia(num) {
   let n = num
   let riqmed = rolldice(1+n, 100+n)
-
+  if (n == 0) {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqmed} <br>`
+  } else {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqmed} + 20 <br>`
+  }
   if (riqmed >= 1 && riqmed <= 10) {
     return riqueza3()
   } else if (riqmed >= 11 && riqmed <= 30) {
@@ -2910,7 +3220,11 @@ function riquezamedia(num) {
 function riquezamaior(num) {
   let n = num
   let riqmar = rolldice(1+n, 100+n)
-
+  if (n == 0) {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} <br>`
+  } else {
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} + 20 <br>`
+  }
   if (riqmar >= 1 && riqmar <= 5) {
     return riqueza5()
   } else if (riqmar >= 6 && riqmar <= 15) {
@@ -2937,17 +3251,20 @@ function riqueza1() {
   let r2 = rolldice(1, 4)
   let r3 = rolldice(1, 4)
   let r4 = rolldice(1, 4)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} <br>`
   return (r1 + r2 + r3 + r4)
 }
 
 function riqueza2() {
   let r1 = rolldice(1, 4)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} x 10 <br>`
   return r1 * 10
 }
 
 function riqueza3() {
   let r1 = rolldice(1, 4)
   let r2 = rolldice(1, 4)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} x 10 <br>`
   return (r1 + r2) * 10
 }
 
@@ -2956,23 +3273,27 @@ function riqueza4() {
   let r2 = rolldice(1, 6)
   let r3 = rolldice(1, 6)
   let r4 = rolldice(1, 6)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} x 10 <br>`
   return (r1 + r2 + r3 + r4) * 10
 }
 
 function riqueza5() {
   let r1 = rolldice(1, 6)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} x 100 <br>`
   return r1 * 100
 }
 
 function riqueza6() {
   let r1 = rolldice(1, 6)
   let r2 = rolldice(1, 6)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} x 100 <br>`
   return (r1 + r2) * 100
 }
 
 function riqueza7() {
   let r1 = rolldice(1, 8)
   let r2 = rolldice(1, 8)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} x 100 <br>`
   return (r1 + r2) * 100
 }
 
@@ -2981,6 +3302,7 @@ function riqueza8() {
   let r2 = rolldice(1, 10)
   let r3 = rolldice(1, 10)
   let r4 = rolldice(1, 10)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} x 100 <br>`
   return (r1 + r2 + r3 + r4) * 100
 }
 
@@ -2991,12 +3313,14 @@ function riqueza9() {
   let r4 = rolldice(1, 12)
   let r5 = rolldice(1, 12)
   let r6 = rolldice(1, 12)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} + ${r5} + ${r6} x 100 <br>`
   return (r1 + r2 + r3 + r4 + r5 + r6) * 100
 }
 
 function riqueza10() {
   let r1 = rolldice(1, 10)
   let r2 = rolldice(1, 10)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} x 1000 <br>`
   return (r1 + r2) * 1000
 }
 
@@ -3007,11 +3331,13 @@ function riqueza11() {
   let r4 = rolldice(1, 8)
   let r5 = rolldice(1, 8)
   let r6 = rolldice(1, 8)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} + ${r5} + ${r6} x 1000 <br>`
   return (r1 + r2 + r3 + r4 + r5 + r6) * 1000
 }
 
 function riqueza12() {
   let r1 = rolldice(1, 10)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} x 10000 <br>`
   return r1 * 10000
 }
 
@@ -3020,32 +3346,40 @@ function riqueza13() {
   let r2 = rolldice(1, 12)
   let r3 = rolldice(1, 12)
   let r4 = rolldice(1, 12)
+  secreto.innerHTML = secreto.innerHTML + `Uma de suas riquezas rolou ${r1} + ${r2} + ${r3} + ${r4} x 10000 <br>`
   return (r1 + r2 + r3 + r4) * 10000
 }
 
 function superior(roll, e) {
   var d6 = roll
   var equiroll = e
+  hidden.innerHTML = ''
   const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
   const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
   const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     } else if (suproll == "Atroz" || suproll == "Pungente" || suproll == "Harmonizada") {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
     if (suproll == "Sob medida") {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior(d6, equiroll)
     }
     return suproll
@@ -3067,40 +3401,54 @@ function superior2(roll, e, sup) {
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (suproll == "Atroz" && melhor != "Cruel") {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (suproll == "Pungente" && melhor != "Certeira") {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     }
     return suproll
   } else {
     suproll = apreso()
     if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior2(d6, equiroll, melhor)
     }
     return suproll
@@ -3120,60 +3468,84 @@ function superior3(roll, e, sup, sup2) {
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Atroz" && melhor != "Cruel") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Pungente" && melhor != "Certeira") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     }else if (suproll == "Atroz" && melhor2 != "Cruel") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Pungente" && melhor2 != "Certeira") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Sob medida" && melhor2 != "Ajustada") {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (melhor2 == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
   } else {
     suproll = apreso()
     if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
@@ -3194,80 +3566,114 @@ function superior4(roll, e, sup, sup2, sup3) {
   if(d6 >= 1 && d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Mira telescópica" && !armasMira.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Atroz" && melhor != "Cruel") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Pungente" && melhor != "Certeira") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Atroz" && melhor2 != "Cruel") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Pungente" && melhor2 != "Certeira") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Atroz" && melhor3 != "Cruel") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Pungente" && melhor3 != "Certeira") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor2 == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor2 == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor3 == "Precisa" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor3 == "Maciça" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     }
     return suproll
   } else if (d6 == 4 || d6 == 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Sob medida" && melhor2 != "Ajustada") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Sob medida" && melhor3 != "Ajustada") {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "Selada" && !armaduraPesada.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor2 == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor2 == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor3 == "Delicada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (melhor3 == "Reforçada" && incompativel.includes(suproll)){
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     }
     return suproll
   } else {
     suproll = apreso()
     if (materialEspecial.includes(melhor) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor2) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     } else if (materialEspecial.includes(melhor3) && materialEspecial.includes(suproll)) {
+      hidden.innerHTML = ''
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     }
     return suproll
@@ -3275,8 +3681,9 @@ function superior4(roll, e, sup, sup2, sup3) {
 }
 
 function aprarma() {
+  hidden.innerHTML = ''
   var armaapr = rolldice(1, 100)
-
+  hidden.innerHTML = `O aprimoramento de arma rolou ${armaapr} <br>`
   if(armaapr >= 1 && armaapr <= 10) {
     return "Atroz"
   } else if (armaapr >= 11 && armaapr <= 13) {
@@ -3311,8 +3718,9 @@ function aprarma() {
 }
 
 function aprdura() {
+  hidden.innerHTML = ''
   var duraapr = rolldice(1, 100)
-
+  hidden.innerHTML = `O aprimoramento de armadura rolou ${duraapr} <br>`
   if(duraapr >= 1 && duraapr <= 15) {
     return "Ajustada"
   } else if (duraapr >= 16 && duraapr <= 19) {
@@ -3341,8 +3749,9 @@ function aprdura() {
 }
 
 function apreso() {
+  hidden.innerHTML = ''
   var esoapr = rolldice(1, 100)
-
+  hidden.innerHTML = `O aprimoramento de esotérico rolou ${esoapr} <br>`
   if(esoapr >= 1 && esoapr <= 4) {
     return "Banhada a ouro"
   } else if (esoapr >= 5 && esoapr <= 8) {
@@ -3368,7 +3777,7 @@ function apreso() {
 
 function materialespecial(){
   material = rolldice(1, 6)
-
+  hidden.innerHTML = hidden.innerHTML + `O material especial rolou ${material} <br>`
   if(material == 1){
     return "de Aço-rubi"
   } else if(material == 2) {
@@ -3385,6 +3794,7 @@ function materialespecial(){
 }
 
 function encanto(n, equi) {
+  hidden.innerHTML = ''
   typo = n
   rEqui = equi
   const naoPode = ["Energética", "Lancinante", "Magnífica", "Guardião"]
@@ -3392,16 +3802,20 @@ function encanto(n, equi) {
   if (typo == 1) {
     enc = encantoArma()
     if (naoPode.includes(enc)) {
+      hidden.innerHTML = ''
       encanto(typo, rEqui)
     }
     return enc
   } else {
       enc = encantoArmadura()
       if (naoPode.includes(enc)) {
+        hidden.innerHTML = ''
         encanto(typo, rEqui)
       } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+        hidden.innerHTML = ''
         encanto (typo, rEqui)
       } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+        hidden.innerHTML = ''
         encanto (typo, rEqui)
       }
       return enc
@@ -3409,6 +3823,7 @@ function encanto(n, equi) {
 }
 
 function encanto2(n, equi, e1) {
+  hidden.innerHTML = ''
   typo = n
   rEqui = equi
   enc1 = e1
@@ -3416,20 +3831,26 @@ function encanto2(n, equi, e1) {
   if (typo == 1) {
     enc = encantoArma()
     if (enc == "Energética" && enc1 != "Formidável") {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     } else if (enc == "Magnífica" && enc1 != "Formidável") {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     } else if (enc == "Lancinante" && enc1 != "Dilacerante") {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     }
     return enc
   } else {
     enc = encantoArmadura()
     if (enc == "Guardião" && enc1 != "Defensor") {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+      hidden.innerHTML = ''
       encanto2(typo, rEqui, enc1)
     }
     return enc
@@ -3437,6 +3858,7 @@ function encanto2(n, equi, e1) {
 }
 
 function encanto3(n, equi, e1, e2) {
+  hidden.innerHTML = ''
   typo = n
   rEqui = equi
   enc1 = e1
@@ -3445,28 +3867,38 @@ function encanto3(n, equi, e1, e2) {
   if (typo == 1) {
     enc = encantoArma()
     if (enc == "Magnífica" && enc2 != "Formidável") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Magnífica" && enc1 != "Formidável") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Energética" && enc2 != "Formidável") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Energética" && enc1 != "Formidável") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Lancinante" && enc2 != "Dilacerante") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Lancinante" && enc1 != "Dilacerante") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     }
     return enc
   } else {
     enc = encantoArmadura()
     if (enc == "Guardião" && enc2 != "Defensor") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Guardião" && enc1 != "Defensor") {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Esmagador" && !escudos.includes(rEqui)) {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     } else if (enc == "Animado" && !escudos.includes(rEqui)) {
+      hidden.innerHTML = ''
       encanto3(typo, rEqui, enc1, enc2)
     }
     return enc
@@ -3474,8 +3906,9 @@ function encanto3(n, equi, e1, e2) {
 }
 
 function encantoArma() {
-  var encantoroll = rolldice(1, 100)
-
+  hidden.innerHTML = ''
+  var encantoroll = rolldice(91, 100)
+  hidden.innerHTML = `Um encanto de arma rolou ${encantoroll} <br>`
   if (encantoroll >= 1 && encantoroll <= 5) {
     return "Ameaçadora"
   } else if (encantoroll >= 6 && encantoroll <= 10) {
@@ -3539,7 +3972,7 @@ function encantoArma() {
 
 function anticriatura(){
   criatura = rolldice(1, 6)
-
+  hidden.innerHTML = hidden.innerHTML + `Um anticriatura rolou ${criatura} <br>`
   if (criatura == 1) {
     return "Anticriatura (Animal)"
   } else if (criatura == 2) {
@@ -3556,8 +3989,9 @@ function anticriatura(){
 }
 
 function encantoArmadura() {
-  var encantoroll = rolldice(1, 100)
-
+  hidden.innerHTML = ''
+  var encantoroll = rolldice(91, 100)
+  hidden.innerHTML = `Um encanto de armadura rolou ${encantoroll} <br>`
   if (encantoroll >= 1 && encantoroll <= 6) {
     return "Abascanto"
   } else if (encantoroll >= 7 && encantoroll <= 10) {
@@ -3615,7 +4049,7 @@ function encantoArmadura() {
 
 function armaEsmecifica() {
   armaroll = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + hidden.innerHTML + `Sua arma específica rolou ${armaroll} <br>`
   if (armaroll >= 1 && armaroll <= 5) {
     return "Azagaia dos relâmpagos"
   } else if (armaroll >= 6 && armaroll <= 15) {
@@ -3657,7 +4091,7 @@ function armaEsmecifica() {
 
 function armaduraEspecifica() {
   armaduraroll = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + hidden.innerHTML + `Sua armadura específica rolou ${armaduraroll} <br>`
   if (armaduraroll >= 1 && armaduraroll <= 10) {
     return "Cota élfica"
   } else if (armaduraroll >= 11 && armaduraroll <= 20) {
@@ -3689,7 +4123,7 @@ function armaduraEspecifica() {
 
 function acessorioMenor() {
   acess = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Acessório Menor rolou ${acess} <br>`
   if (acess == 1 || acess == 2) {
     return "Anel do sustento"
   } else if (acess >= 3 && acess <= 7) {
@@ -3737,7 +4171,7 @@ function acessorioMenor() {
 
 function acessorioMedio() {
   acess = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Acessório Médio rolou ${acess} <br>`
   if (acess >= 1 && acess <= 4) {
     return "Anel de telecinesia"
   } else if (acess >= 5 && acess <= 8) {
@@ -3787,7 +4221,7 @@ function acessorioMedio() {
 
 function acessorioMaior() {
   acess = rolldice(1, 100)
-
+  secreto.innerHTML = secreto.innerHTML + `Seu Acessório Maior rolou ${acess} <br>`
   if (acess == 1 || acess == 2) {
     return "Elmo do teletransporte"
   } else if (acess == 3 || acess == 4) {

@@ -7,13 +7,13 @@
     <title>Gerador de Tesouro</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <script src="equipamentos.js"></script>
 </head>
 <body>
     <header>
         <h1>Gerador de Tesouro T20</h1>
     </header>
     <main>
+        <section id="principal">
         <div id="com">
             <label for="nd">Escolha um ND:</label>
             <select name="nd" id="nd">
@@ -40,10 +40,20 @@
                 <option value="ND 19">ND 19</option>
                 <option value="ND 20">ND 20</option>
             </select>
-            <input type="button" value="Gerar" onclick="gerar()">
+            <input type="button" value="Gerar" id="Gerar" onclick="gerar()">
         </div>
         <div id="res">
             O que será que vai sair...
+        </div>
+        </section>
+        <br>
+        <section id="escondido">
+            <div id="secreto">
+                <p>Aqui aparecem rolagens detalhadas pra você que desconfia de mim.</p>
+            </div>
+        </section>
+        <div id="hidden">
+            Você não devia estar aqui. Xô!
         </div>
     </main>
     <footer>
