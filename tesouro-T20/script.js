@@ -1,3 +1,11 @@
+function aparece() {
+  if (escondido.style.display == 'block') {
+    escondido.style.display = 'none'
+  } else {
+    escondido.style.display = 'block'
+  }
+}
+
 /*Declaração de variaveis e onde os primeiros d100 são rolados*/
 function gerar() {
   var res = document.getElementById('res')
@@ -3907,7 +3915,7 @@ function encanto3(n, equi, e1, e2) {
 
 function encantoArma() {
   hidden.innerHTML = ''
-  var encantoroll = rolldice(91, 100)
+  var encantoroll = rolldice(1, 100)
   hidden.innerHTML = `Um encanto de arma rolou ${encantoroll} <br>`
   if (encantoroll >= 1 && encantoroll <= 5) {
     return "Ameaçadora"
@@ -3990,7 +3998,7 @@ function anticriatura(){
 
 function encantoArmadura() {
   hidden.innerHTML = ''
-  var encantoroll = rolldice(91, 100)
+  var encantoroll = rolldice(1, 100)
   hidden.innerHTML = `Um encanto de armadura rolou ${encantoroll} <br>`
   if (encantoroll >= 1 && encantoroll <= 6) {
     return "Abascanto"

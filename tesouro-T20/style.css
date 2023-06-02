@@ -36,6 +36,14 @@ div {
     padding: 15px;
 }
 
+div#hidden {
+    display: none;
+}
+
+section#escondido {
+    display: none;
+}
+
 footer {
     background-color: white;
     text-align: center;
