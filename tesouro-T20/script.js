@@ -28,7 +28,7 @@ function gerar() {
     if(moneyg <= 30) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 31 && moneyg <= 70) {
+    } else if (moneyg <= 70) {
       gmoneyg = "1d6x10 TC"
       let d1 = rolldice(1, 6)
       let d2 = 0
@@ -37,7 +37,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 10 TC <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 71 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "1d4x100 TC"
       let d1 = rolldice(1, 4)
       let d2 = 0
@@ -60,7 +60,7 @@ function gerar() {
     if(itemg <= 50) { /*Item ND 1/4*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 51 && itemg <= 75) {
+    } else if(itemg <= 75) {
       gitemg = "Diverso"
       itemr = diverso()
     } else {
@@ -75,7 +75,7 @@ function gerar() {
     if(moneyg <= 25) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 26 && moneyg <= 70) {
+    } else if (moneyg <= 70) {
       gmoneyg = "2d6x10 TC"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -84,7 +84,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 10 TC <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 71 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "2d8x10 T$"
       let d1 = rolldice(1, 8)
       let d2 = rolldice(1, 8)
@@ -107,7 +107,7 @@ function gerar() {
     if(itemg <= 45) { /*Item ND 1/2*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 46 && itemg <= 70) {
+    } else if(itemg <= 70) {
       gitemg = "Diverso"
       itemr = diverso()
     } else {
@@ -122,7 +122,7 @@ function gerar() {
     if(moneyg <= 20) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 21 && moneyg <= 70) {
+    } else if (moneyg <= 70) {
       gmoneyg = "3d8x10 T$"
       let d1 = rolldice(1, 8)
       let d2 = rolldice(1, 8)
@@ -132,7 +132,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 10 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 71 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "4d12x10 T$"
       let d1 = rolldice(1, 12)
       let d2 = rolldice(1, 12)
@@ -155,10 +155,10 @@ function gerar() {
     if(itemg <= 40) { /*Item ND 1*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 41 && itemg <= 65) {
+    } else if(itemg <= 65) {
       gitemg = "Diverso"
       itemr = diverso()
-    } else if (itemg >= 66 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -173,7 +173,7 @@ function gerar() {
     if(moneyg <= 15) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 16 && moneyg <= 55) {
+    } else if (moneyg <= 55) {
       gmoneyg = "3d10x10 T$"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -183,7 +183,7 @@ function gerar() {
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 10 T$ <br>`
       let tsres = (d1 + d2 + d3) * dr
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 56 && moneyg <= 85) {
+    } else if (moneyg <= 85) {
       gmoneyg = "2d4x100 T$"
       let d1 = rolldice(1, 4)
       let d2 = rolldice(1, 4)
@@ -192,7 +192,7 @@ function gerar() {
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 86 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "2d6+1x100 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -213,15 +213,15 @@ function gerar() {
     if(itemg <= 30) { /*Item ND 2*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 31 && itemg <= 40) {
+    } else if(itemg <= 40) {
       gitemg = "Diverso"
       itemr = diverso()
-    } else if (itemg >= 41 && itemg <= 70){
+    } else if (itemg <= 70){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
-    } else if (itemg >= 71 && itemg <= 90) {
+    } else if (itemg <= 90) {
       gitemg = "1 poção"
       itemr = potion(0)
     } else {
@@ -239,7 +239,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 20) {
+    } else if (moneyg <= 20) {
       gmoneyg = "4d12x10 T$"
       let d1 = rolldice(1, 12)
       let d2 = rolldice(1, 12)
@@ -250,7 +250,7 @@ function gerar() {
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 10 T$ <br>`
       let tsres = (d1 + d2 + d3 + d4) * dr
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 21 && moneyg <= 60) {
+    } else if (moneyg <= 60) {
       gmoneyg = "1d4x100 T$"
       let d1 = rolldice(1, 4)
       let d2 = 0
@@ -259,7 +259,7 @@ function gerar() {
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 61 && moneyg <= 90) {
+    } else if (moneyg <= 90) {
       gmoneyg = "1d8x10 TO"
       let d1 = rolldice(1, 8)
       let d2 = 0
@@ -297,15 +297,15 @@ function gerar() {
     if(itemg <= 25) { /*Item ND 3*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 26 && itemg <= 35) {
+    } else if(itemg <= 35) {
       gitemg = "Diverso"
       itemr = diverso()
-    } else if (itemg >= 36 && itemg <= 60){
+    } else if (itemg <= 60){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
-    } else if (itemg >= 61 && itemg <= 85) {
+    } else if (itemg <= 85) {
       gitemg = "1 poção"
       itemr = potion(0)
     } else {
@@ -323,7 +323,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 50) {
+    } else if (moneyg <= 50) {
       gmoneyg = "1d6x100 T$"
       let d1 = rolldice(1, 6)
       let d2 = 0
@@ -332,7 +332,7 @@ function gerar() {
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       let tsres = (d1 + d2) * dr
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 51 && moneyg <= 80) {
+    } else if (moneyg <= 80) {
       gmoneyg = "1d12x100 T$"
       let d1 = rolldice(1, 12)
       let d2 = 0
@@ -341,7 +341,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 81 && moneyg <= 90) {
+    } else if (moneyg <= 90) {
       gmoneyg = "1 riqueza menor"
       let d1 = riquezamenor(20)
       let d2 = 0
@@ -377,15 +377,15 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 4*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 30) {
+    } else if(itemg <= 30) {
       gitemg = "Diverso"
       itemr = diverso()
-    } else if (itemg >= 31 && itemg <= 55){
+    } else if (itemg <= 55){
       gitemg = "Equipamento"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
       itemr = equipamento(roll)
-    } else if (itemg >= 56 && itemg <= 80) {
+    } else if (itemg <= 80) {
       gitemg = "1 poção"
       itemr = potion(20)
     } else {
@@ -403,7 +403,7 @@ function gerar() {
     if(moneyg <= 15) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 15 && moneyg <= 65) {
+    } else if (moneyg <= 65) {
       gmoneyg = "1d8x100 T$"
       let d1 = rolldice(1, 8)
       let d2 = 0
@@ -412,7 +412,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 66 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "3d4x10 TO"
       let d1 = rolldice(1, 4)
       let d2 = rolldice(1, 4)
@@ -434,10 +434,10 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 5*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 70) {
+    } else if(itemg <= 70) {
       gitemg = "1 poção"
       itemr = potion(0)
-    } else if (itemg >= 71 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -467,7 +467,7 @@ function gerar() {
     if(moneyg <= 15) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 15 && moneyg <= 60) {
+    } else if (moneyg <= 60) {
       gmoneyg = "2d6x100 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -476,7 +476,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 61 && moneyg <= 90) {
+    } else if (moneyg <= 90) {
       gmoneyg = "2d10x100 T$"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -516,10 +516,10 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 6*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 65) {
+    } else if(itemg <= 65) {
       gitemg = "1 poção"
       itemr = potion(20)
-    } else if (itemg >= 66 && itemg <= 95){
+    } else if (itemg <= 95){
       gitemg = "Item superior (1 Melhoria)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -549,7 +549,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 60) {
+    } else if (moneyg <= 60) {
       gmoneyg = "2d8x100 T$"
       let d1 = rolldice(1, 8)
       let d2 = rolldice(1, 8)
@@ -558,7 +558,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 61 && moneyg <= 90) {
+    } else if (moneyg <= 90) {
       gmoneyg = "2d12x10 TO"
       let d1 = rolldice(1, 12)
       let d2 = rolldice(1, 12)
@@ -607,7 +607,7 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 7*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 60) {
+    } else if(itemg <= 60) {
       gitemg = "1d3 poções"
       let potr = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} poções <br>`
@@ -623,7 +623,7 @@ function gerar() {
         pot3 = potion(0)
         itemr = `${pot1}, ${pot2} e ${pot3}`
       }
-    } else if (itemg >= 61 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -665,7 +665,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 55) {
+    } else if (moneyg <= 55) {
       gmoneyg = "2d10x100 T$"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -674,7 +674,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 56 && moneyg <= 95) {
+    } else if (moneyg <= 95) {
       gmoneyg = "1d4+1 riquezas menores"
       let riq3 = rolldice(1, 4)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas menores <br>`
@@ -721,7 +721,7 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 8*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 75) {
+    } else if(itemg <= 75) {
       gitemg = "1d3 poções"
       let potr = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} poções <br>`
@@ -737,7 +737,7 @@ function gerar() {
         pot3 = potion(0)
         itemr = `${pot1}, ${pot2} e ${pot3}`
       }
-    } else if (itemg >= 76 && itemg <= 95){
+    } else if (itemg <= 95){
       gitemg = "Item superior (2 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -779,14 +779,14 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 35) {
+    } else if (moneyg <= 35) {
       gmoneyg = "1 riqueza média"
       let d1 = riquezamedia(0)
       let d2 = 0
       let ts = " T$"
       let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 36 && moneyg <= 85) {
+    } else if (moneyg <= 85) {
       gmoneyg = "4d6x100 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -825,10 +825,10 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 9*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 70) {
+    } else if(itemg <= 70) {
       gitemg = "1 poção"
       itemr = potion(20)
-    } else if (itemg >= 71 && itemg <= 95){
+    } else if (itemg <= 95){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -885,7 +885,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 30) {
+    } else if (moneyg <= 30) {
       gmoneyg = "4d6x100 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -896,7 +896,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3 + d4) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 100 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 31 && moneyg <= 85) {
+    } else if (moneyg <= 85) {
       gmoneyg = "4d10x10 TO"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -937,7 +937,7 @@ function gerar() {
     if(itemg <= 50) { /*Item ND 10*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 51 && itemg <= 75) {
+    } else if(itemg <= 75) {
       gitemg = "1d3+1 poções"
       let potr = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -957,7 +957,7 @@ function gerar() {
         pot4 = potion(0)
         itemr = `${pot1}, ${pot2}, ${pot3} e ${pot4}`
       }
-    } else if (itemg >= 76 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1014,7 +1014,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 45) {
+    } else if (moneyg <= 45) {
       gmoneyg = "2d4x1000 T$"
       let d1 = rolldice(1, 4)
       let d2 = rolldice(1, 4)
@@ -1023,7 +1023,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 46 && moneyg <= 85) {
+    } else if (moneyg <= 85) {
       gmoneyg = "1d3 riquezas médias"
       let riq3 = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas médias <br>`
@@ -1061,7 +1061,7 @@ function gerar() {
     if(itemg <= 45) { /*Item ND 11*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 46 && itemg <= 70) {
+    } else if(itemg <= 70) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -1088,7 +1088,7 @@ function gerar() {
         pot5 = potion(0)
         itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4} e ${pot5}`
       }
-    } else if (itemg >= 71 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Item superior (3 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1145,14 +1145,14 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 45) {
+    } else if (moneyg <= 45) {
       gmoneyg = "1 riqueza média"
       let d1 = riquezamedia(20)
       let d2 = 0
       let ts = " T$"
       let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 46 && moneyg <= 80) {
+    } else if (moneyg <= 80) {
       gmoneyg = "2d6x1000 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -1201,7 +1201,7 @@ function gerar() {
     if(itemg <= 45) { /*Item ND 12*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 46 && itemg <= 70) {
+    } else if(itemg <= 70) {
       gitemg = "1d3+1 poções"
       let potr = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -1221,7 +1221,7 @@ function gerar() {
         pot4 = potion(20)
         itemr = `${pot1}, ${pot2}, ${pot3} e ${pot4}`
       }
-    } else if (itemg >= 71 && itemg <= 85){
+    } else if (itemg <= 85){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1283,7 +1283,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 45) {
+    } else if (moneyg <= 45) {
       gmoneyg = "4d4x1000 T$"
       let d1 = rolldice(1, 4)
       let d2 = rolldice(1, 4)
@@ -1294,7 +1294,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3 + d4) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 46 && moneyg <= 80) {
+    } else if (moneyg <= 80) {
       gmoneyg = "1d3+1 riquezas médias"
       let riq3 = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
@@ -1336,7 +1336,7 @@ function gerar() {
     if(itemg <= 40) { /*Item ND 13*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 41 && itemg <= 65) {
+    } else if(itemg <= 65) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -1363,7 +1363,7 @@ function gerar() {
         pot5 = potion(20)
         itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4} e ${pot5}`
       }
-    } else if (itemg >= 66 && itemg <= 95){
+    } else if (itemg <= 95){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1446,7 +1446,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 45) {
+    } else if (moneyg <= 45) {
       gmoneyg = "1d3+1 riquezas médias"
       let riq3 = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} + 1 riquezas médias <br>`
@@ -1472,7 +1472,7 @@ function gerar() {
         let tsres = (d1 + d2 + d3 + d4)
         moneyr = `${tsres} ${ts}`
       }
-    } else if (moneyg >= 46 && moneyg <= 80) {
+    } else if (moneyg <= 80) {
       gmoneyg = "3d6x1000 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -1494,7 +1494,7 @@ function gerar() {
     if(itemg <= 40) { /*Item ND 14*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 41 && itemg <= 65) {
+    } else if(itemg <= 65) {
       gitemg = "1d4+1 poções"
       let potr = rolldice(1, 4)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -1521,7 +1521,7 @@ function gerar() {
         pot5 = potion(20)
         itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4} e ${pot5}`
       }
-    } else if (itemg >= 66 && itemg <= 90){
+    } else if (itemg <= 90){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1605,14 +1605,14 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 45) {
+    } else if (moneyg <= 45) {
       gmoneyg = "1 riqueza média"
       let d1 = riquezamedia(20)
       let d2 = 0
       let ts = " T$"
       let tsres = (d1 + d2)
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 46 && moneyg <= 80) {
+    } else if (moneyg <= 80) {
       gmoneyg = "2d10x1000 T$"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -1635,7 +1635,7 @@ function gerar() {
     if(itemg <= 35) { /*Item ND 15*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 36 && itemg <= 45) {
+    } else if(itemg <= 45) {
       gitemg = "1d6+1 poções"
       let potr = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${potr} + 1 poções <br>`
@@ -1679,7 +1679,7 @@ function gerar() {
         pot7 = potion(0)
         itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4}, ${pot5}, ${pot6} e ${pot7}`
       }
-    } else if (itemg >= 46 && itemg <= 85){
+    } else if (itemg <= 85){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1763,7 +1763,7 @@ function gerar() {
     if(moneyg <= 10) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 11 && moneyg <= 40) {
+    } else if (moneyg <= 40) {
       gmoneyg = "3d6x1000 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -1773,7 +1773,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 41 && moneyg <= 75) {
+    } else if (moneyg <= 75) {
       gmoneyg = "3d10x100 TO"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -1812,7 +1812,7 @@ function gerar() {
     if(itemg <= 35) { /*Item ND 16*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 36 && itemg <= 45) {
+    } else if(itemg <= 45) {
       gitemg = "1d6+1 poções"
       let potr = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${roll} + 1 poções <br>`
@@ -1856,7 +1856,7 @@ function gerar() {
         pot7 = potion(20)
         itemr = `${pot1}, ${pot2}, ${pot3}, ${pot4}, ${pot5}, ${pot6} e ${pot7}`
       }
-    } else if (itemg >= 46 && itemg <= 80){
+    } else if (itemg <= 80){
       gitemg = "Item superior (4 Melhorias)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu equipamento rolou ${roll} <br>`
@@ -1940,7 +1940,7 @@ function gerar() {
     if(moneyg <= 5) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 6 && moneyg <= 40) {
+    } else if (moneyg <= 40) {
       gmoneyg = "4d6x1000 T$"
       let d1 = rolldice(1, 6)
       let d2 = rolldice(1, 6)
@@ -1951,7 +1951,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3 + d4) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 41 && moneyg <= 75) {
+    } else if (moneyg <= 75) {
       gmoneyg = "1d3 riquezas médias"
       let riq3 = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas médias <br>`
@@ -1989,7 +1989,7 @@ function gerar() {
     if(itemg <= 20) { /*Item ND 17*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 21 && itemg <= 40) {
+    } else if (itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
@@ -2017,7 +2017,7 @@ function gerar() {
         itemf = acessorioMenor()
       }
       itemr = itemf
-    } else if (itemg >= 41 && itemg <= 80){
+    } else if (itemg <= 80){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
@@ -2148,7 +2148,7 @@ function gerar() {
     if(moneyg <= 5) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 6 && moneyg <= 40) {
+    } else if (moneyg <= 40) {
       gmoneyg = "4d10x1000 T$"
       let d1 = rolldice(1, 10)
       let d2 = rolldice(1, 10)
@@ -2159,7 +2159,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3 + d4) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 41 && moneyg <= 75) {
+    } else if (moneyg <= 75) {
       gmoneyg = "1 riqueza maior"
       let d1 = riquezamaior(0)
       let d2 = 0
@@ -2197,7 +2197,7 @@ function gerar() {
     if(itemg <= 15) { /*Item ND 18*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 16 && itemg <= 40) {
+    } else if(itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
@@ -2225,7 +2225,7 @@ function gerar() {
         itemf = acessorioMenor()
       }
       itemr = itemf
-    } else if (itemg >= 41 && itemg <= 70){
+    } else if (itemg <= 70){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
@@ -2356,7 +2356,7 @@ function gerar() {
     if(moneyg <= 5) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 6 && moneyg <= 40) {
+    } else if (moneyg <= 40) {
       gmoneyg = "4d12x1000 T$"
       let d1 = rolldice(1, 12)
       let d2 = rolldice(1, 12)
@@ -2367,7 +2367,7 @@ function gerar() {
       let tsres = (d1 + d2 + d3 + d4) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} + ${d3} + ${d4} x 1000 T$ <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 41 && moneyg <= 75) {
+    } else if (moneyg <= 75) {
       gmoneyg = "1 riqueza maior"
       let d1 = riquezamaior(20)
       let d2 = 0
@@ -2388,7 +2388,7 @@ function gerar() {
     if(itemg <= 10) { /*Item ND 19*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 11 && itemg <= 40) {
+    } else if(itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
@@ -2416,7 +2416,7 @@ function gerar() {
         itemf = acessorioMenor()
       }
       itemr = itemf
-    } else if (itemg >= 41 && itemg <= 60){
+    } else if (itemg <= 60){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
@@ -2547,7 +2547,7 @@ function gerar() {
     if(moneyg <= 5) {
       gmoneyg = "Nada"
       moneyr = "Nada"
-    } else if (moneyg >= 6 && moneyg <= 40) {
+    } else if (moneyg <= 40) {
       gmoneyg = "2d4x1000 TO"
       let d1 = rolldice(1, 4)
       let d2 = rolldice(1, 4)
@@ -2556,7 +2556,7 @@ function gerar() {
       let tsres = (d1 + d2) * dr
       secreto.innerHTML = secreto.innerHTML + `O dinheiro rolado foi ${d1} + ${d2} x 1000 TO <br>`
       moneyr = `${tsres} ${ts}`
-    } else if (moneyg >= 41 && moneyg <= 75) {
+    } else if (moneyg <= 75) {
       gmoneyg = "1d3 riquezas maiores"
       let riq3 = rolldice(1, 3)
       secreto.innerHTML = secreto.innerHTML + `Você rolou ${riq3} riquezas maiores <br>`
@@ -2611,7 +2611,7 @@ function gerar() {
     if(itemg <= 5) { /*Item ND 20*/
       gitemg = "Nada"
       itemr = "Nada"
-    } else if(itemg >= 6 && itemg <= 40) {
+    } else if(itemg <= 40) {
       gitemg = "Item Mágico (Menor)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Menor rolou ${roll} <br>`
@@ -2639,7 +2639,7 @@ function gerar() {
         itemf = acessorioMenor()
       }
       itemr = itemf
-    } else if (itemg >= 41 && itemg <= 50){
+    } else if (itemg <= 50){
       gitemg = "Item Mágico (Médio)"
       roll = rolldice(1, 6)
       secreto.innerHTML = secreto.innerHTML + `Seu Item Mágico Médio rolou ${roll} <br>`
@@ -2779,10 +2779,10 @@ function rolldice(min, max) {
 function equipamento(roll) {
   var d6 = roll
 
-  if(d6 >= 1 && d6 <= 3) {
+  if(d6 <= 3) {
     itemroll = arma()
     return itemroll
-  } else if (d6 == 4 || d6 == 5) {
+  } else if (d6 <= 5) {
     itemroll = armadura()
     return itemroll
   } else {
@@ -2794,91 +2794,91 @@ function equipamento(roll) {
 function arma() {
   let d1100 = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Sua Arma rolou ${d1100} <br>`
-  if(d1100 >= 1 && d1100 <= 3) {
+  if(d1100 <= 3) {
     return "Adaga"
-  } else if (d1100 == 4 || d1100 == 5) {
+  } else if (d1100 <= 5) {
     return "Alabarda"
-  } else if (d1100 == 6 || d1100 == 7) {
+  } else if (d1100 <= 7) {
     return "Alfange"
-  } else if (d1100 >= 8 && d1100 <= 10) {
+  } else if (d1100 <= 10) {
     return "Arco curto"
-  } else if (d1100 >= 11 && d1100 <= 13) {
+  } else if (d1100 <= 13) {
     return "Arco longo"
-  } else if (d1100 == 14 || d1100 == 15) {
+  } else if (d1100 <= 15) {
     return "Azagaia"
   } else if (d1100 == 16) {
     return "Balas (20)"
-  } else if (d1100 == 17 || d1100 == 18) {
+  } else if (d1100 <= 18) {
     return "Besta leve"
-  } else if (d1100 == 19 || d1100 == 20) {
+  } else if (d1100 <= 20) {
     return "Besta pesada"
-  } else if (d1100 >= 21 && d1100 <= 23) {
+  } else if (d1100 <= 23) {
     return "Bordão"
   } else if (d1100 == 24) {
     return "Chicote"
-  } else if (d1100 >= 25 && d1100 <= 27) {
+  } else if (d1100 <= 27) {
     return "Cimitarra"
-  } else if (d1100 >= 28 && d1100 <= 30) {
+  } else if (d1100 <= 30) {
     return "Clava"
   } else if (d1100 == 31) {
     return "Corrente de espinhos"
-  } else if (d1100 == 32 || d1100 == 33) {
+  } else if (d1100 <= 33) {
     return "Espada bastarda"
-  } else if (d1100 >= 34 && d1100 <= 38) {
+  } else if (d1100 <= 38) {
     return "Espada curta"
-  } else if (d1100 >= 39 && d1100 <= 43) {
+  } else if (d1100 <= 43) {
     return "Espada longa"
-  } else if (d1100 >= 44 && d1100 <= 46) {
+  } else if (d1100 <= 46) {
     return "Flechas (20)"
-  } else if (d1100 >= 47 && d1100 <= 49) {
+  } else if (d1100 <= 49) {
     return "Florete"
-  } else if (d1100 == 50 || d1100 == 51) {
+  } else if (d1100 <= 51) {
     return "Foice"
-  } else if (d1100 == 52 || d1100 == 53) {
+  } else if (d1100 <= 53) {
     return "Funda"
-  } else if (d1100 == 54 || d1100 == 55) {
+  } else if (d1100 <= 55) {
     return "Gadanho"
   } else if (d1100 == 56) {
     return "Katana"
-  } else if (d1100 >= 57 && d1100 <= 59) {
+  } else if (d1100 <= 59) {
     return "Lança"
   } else if (d1100 == 60) {
     return "Lança montada"
-  } else if (d1100 >= 61 && d1100 <= 63) {
+  } else if (d1100 <= 63) {
     return "Maça"
-  } else if (d1100 >= 64 && d1100 <= 66) {
+  } else if (d1100 <= 66) {
     return "Machadinha"
   } else if (d1100 == 67) {
     return "Machado anão"
-  } else if (d1100 >= 68 && d1100 <= 70) {
+  } else if (d1100 <= 70) {
     return "Machado de batalha"
-  } else if (d1100 >= 71 && d1100 <= 73) {
+  } else if (d1100 <= 73) {
     return "Machado de guerra"
   } else if (d1100 == 74) {
     return "Machado táurico"
-  } else if (d1100 == 75 || d1100 <= 76) {
+  } else if (d1100 <= 76) {
     return "Mangual"
   } else if (d1100 == 77) {
     return "Marreta"
-  } else if (d1100 >= 78 && d1100 <= 80) {
+  } else if (d1100 <= 80) {
     return "Martelo de guerra"
-  } else if (d1100 >= 81 && d1100 <= 83) {
+  } else if (d1100 <= 83) {
     return "Montante"
   } else if (d1100 == 84) {
     return "Mosquete"
   } else if (d1100 == 85) {
     return "Pedras (20)"
-  } else if (d1100 >= 86 && d1100 <= 88) {
+  } else if (d1100 <= 88) {
     return "Picareta"
-  } else if (d1100 == 89 || d1100 == 90) {
+  } else if (d1100 <= 90) {
     return "Pique"
-  } else if (d1100 == 91 || d1100 == 92) {
+  } else if (d1100 <= 92) {
     return "Pistola"
   } else if (d1100 == 93) {
     return "Rede"
-  } else if (d1100 >= 94 && d1100 <= 96) {
+  } else if (d1100 <= 96) {
     return "Tacape"
-  } else if (d1100 == 97 || d1100 == 98) {
+  } else if (d1100 <= 98) {
     return "Tridente"
   } else {
     return "Virotes (20)"
@@ -2888,25 +2888,25 @@ function arma() {
 function armadura() {
   let d2100 = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Sua Armadura rolou ${d2100} <br>`
-  if(d2100 >= 1 && d2100 <= 5) {
+  if(d2100 <= 5) {
     return "Couro"
-  } else if (d2100 >= 6 && d2100 <= 10) {
+  } else if (d2100 <= 10) {
     return "Brunea"
-  } else if (d2100 >= 11 && d2100 <= 25) {
+  } else if (d2100 <= 25) {
     return "Armadura completa"
-  } else if (d2100 >= 26 && d2100 <= 30) {
+  } else if (d2100 <= 30) {
     return "Cota de malha"
-  } else if (d2100 >= 31 && d2100 <= 45) {
+  } else if (d2100 <= 45) {
     return "Couraça"
-  } else if (d2100 >= 46 && d2100 <= 55) {
+  } else if (d2100 <= 55) {
     return "Couro batido"
-  } else if (d2100 >= 56 && d2100 <= 65) {
+  } else if (d2100 <= 65) {
     return "Escudo leve"
-  } else if (d2100 >= 66 && d2100 <= 80) {
+  } else if (d2100 <= 80) {
     return "Escudo pesado"
-  } else if (d2100 >= 81 && d2100 <= 85) {
+  } else if (d2100 <= 85) {
     return "Gibão de peles"
-  } else if (d2100 >= 86 && d2100 <= 90) {
+  } else if (d2100 <= 90) {
     return "Loriga segmentada"
   } else {
     return "Meia armadura"
@@ -2916,23 +2916,23 @@ function armadura() {
 function esoterico() {
   let d3100 = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Seu Esotérico rolou ${d3100} <br>`
-  if(d3100 >= 1 && d3100 <= 10) {
+  if(d3100 <= 10) {
     return "Bolsa de pó"
-  } else if (d3100 >= 11 && d3100 <= 25) {
+  } else if (d3100 <= 25) {
     return "Cajado arcano"
-  } else if (d3100 >= 26 && d3100 <= 35) {
+  } else if (d3100 <= 35) {
     return cetro()
-  } else if (d3100 >= 36 && d3100 <= 42) {
+  } else if (d3100 <= 42) {
     return "Costela de lich"
-  } else if (d3100 >= 43 && d3100 <= 50) {
+  } else if (d3100 <= 50) {
     return "Dedo de ente"
-  } else if (d3100 >= 51 && d3100 <= 55) {
+  } else if (d3100 <= 55) {
     return "Luva de ferro"
-  } else if (d3100 >= 56 && d3100 <= 65) {
+  } else if (d3100 <= 65) {
     return "Medalhão de prata"
-  } else if (d3100 >= 66 && d3100 <= 75) {
+  } else if (d3100 <= 75) {
     return "Orbe cristalina"
-  } else if (d3100 >= 76 && d3100 <= 85) {
+  } else if (d3100 <= 85) {
     return tomo()
   } else {
     return "Varinha arcana"
@@ -2980,23 +2980,23 @@ function tomo() {
 function diverso() {
   let d100 = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Seu Diverso rolou ${d100} <br>`
-  if(d100 == 1 || d100 == 2) {
+  if(d100 <= 2) {
     return "Ácido"
-  } else if (d100 == 3 || d100 == 4) {
+  } else if (d100 <= 4) {
     return "Água Benta"
   } else if  (d100 == 5) {
     return "Alaúde élfico"
   } else if (d100 == 6) {
     return "Algemas"
-  } else if (d100 == 7 || d100 == 8) {
+  } else if (d100 <= 8) {
     return "Baga-de-fogo"
-  } else if (d100 >= 9 && d100 <= 23) {
+  } else if (d100 <= 23) {
     return "Bálsamo restaurador"
   } else if (d100 == 24) {
     return "Bandana"
   } else if (d100 == 25) {
     return "Bandoleira de poções"
-  } else if (d100 >= 26 && d100 <= 30) {
+  } else if (d100 <= 30) {
     return "Bomba"
   } else if (d100 == 31) {
     return "Botas reforçadas"
@@ -3010,19 +3010,19 @@ function diverso() {
     return "Casaco longo"
   } else if (d100 == 36) {
     return "Chapéu arcano"
-  } else if (d100 == 37 || d100 == 38) {
+  } else if (d100 <= 38) {
     return "Coleção de Livros"
-  } else if (d100 == 39 || d100 == 40) {
+  } else if (d100 <= 40) {
     return "Cosmético"
-  } else if (d100 == 41 || d100 == 42) {
+  } else if (d100 <= 42) {
     return "Dente-de-dragão"
   } else if (d100 == 43) {
     return "Enfeite de elmo"
   } else if (d100 == 44) {
     return "Elixir do amor"
-  } else if (d100 == 45 || d100 == 46) {
+  } else if (d100 <= 46) {
     return "Equipamento de viagem"
-  } else if (d100 >= 47 && d100 <= 56) {
+  } else if (d100 <= 56) {
     return "Essência de mana"
   } else if (d100 == 57) {
     return "Estojo de disfarces"
@@ -3030,43 +3030,43 @@ function diverso() {
     return "Farrapos do ermitão"
   } else if (d100 == 59) {
     return "Flauta mística"
-  } else if (d100 >= 60 && d100 <= 66) {
+  } else if (d100 <= 66) {
     return "Fogo alquímico"
   } else if (d100 == 67) {
     return "Gorro de ervas"
-  } else if (d100 == 68 || d100 == 69) {
+  } else if (d100 <= 69) {
     return "Líquen lilás"
   } else if (d100 == 70) {
     return "Luneta"
   } else if (d100 == 71) {
     return "Luva de pelica"
-  } else if (d100 == 72 || d100 == 73) {
+  } else if (d100 <= 73) {
     return "Maleta de medicamentos"
   } else if (d100 == 74) {
     return "Manopla"
   } else if (d100 == 75) {
     return "Manto eclesiástico"
-  } else if (d100 >= 76 && d100 <= 78) {
+  } else if (d100 <= 78) {
     return "Mochila de aventureiro"
-  } else if (d100 == 79 && d100 == 89) {
+  } else if (d100 <= 89) {
     return "Musgo púrpura"
   } else if (d100 == 81) {
     return "Organizador de pergaminhos"
-  } else if (d100 == 82 || d100 == 83) {
+  } else if (d100 <= 83) {
     return "Ossos de monstro"
-  } else if (d100 == 84 || d100 == 85) {
+  } else if (d100 <= 85) {
     return "Pó de cristal"
-  } else if (d100 == 86 || d100 == 87) {
+  } else if (d100 <= 87) {
     return "Pó de giz"
   } else if (d100 == 88) {
     return "Pó do desaparecimento"
   } else if (d100 == 89) {
     return "Robe místico"
-  } else if (d100 == 90 || d100 == 91) {
+  } else if (d100 <= 91) {
     return "Saco de sal"
   } else if (d100 == 92) {
     return "Sapatos de camurça"
-  } else if (d100 == 93 || d100 == 94) {
+  } else if (d100 <= 94) {
     return "Seixo de âmbar"
   } else if (d100 == 95) {
     return "Sela"
@@ -3074,7 +3074,7 @@ function diverso() {
     return "Tabardo"
   } else if (d100 == 97) {
     return "Traje da corte"
-  } else if (d100 == 98 || d100 == 99) {
+  } else if (d100 <= 99) {
     return "Terra de cemitério"
   } else {
     return "Veste de seda"
@@ -3084,37 +3084,38 @@ function diverso() {
 /*Função para definir poções*/
 function potion(num) {
   n = num
-  pot = rolldice(1+n, 100+n)
+  potrol = rolldice(1, 100)
+  pot = n + potrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${pot} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${potrol} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${pot} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma poção rolou ${potrol} + 20 <br>`
   }
   if (pot == 1) {
     return "Óleo de Abençoar Alimentos"
-  } else if (pot == 2 || pot == 3) {
+  } else if (pot <= 3) {
     return "Granada de Área Escorregadia"
-  } else if (pot >= 4 && pot <= 6) {
+  } else if (pot <= 6) {
     return "Óleo de Arma Mágica"
   } else if (pot == 7) {
     return "Poção de Compreensão"
-  } else if (pot >= 8 && pot <= 15) {
+  } else if (pot <= 15) {
     return "Poção de Curar Ferimentos (2d8+2)"
-  } else if (pot >= 16 && pot <= 18) {
+  } else if (pot <= 18) {
     return "Poção de Disfarce Ilusório"
-  } else if (pot == 19 || pot == 20) {
+  } else if (pot <= 20) {
     return "Óleo de Escuridão"
-  } else if (pot == 21 || pot == 22) {
+  } else if (pot <= 22) {
     return "Óleo de Luz"
-  } else if (pot == 23 || pot == 24) {
+  } else if (pot <= 24) {
     return "Granada de Névoa"
-  } else if (pot == 25 || pot == 26) {
+  } else if (pot <= 26) {
     return "Poção de Primor Atlético"
-  } else if (pot == 27 || pot == 28) {
+  } else if (pot <= 28) {
     return "Poção de Proteção Divina"
-  } else if (pot == 29 || pot == 30) {
+  } else if (pot <= 30) {
     return "Poção de Resistência a Energia"
-  } else if (pot == 31 || pot == 32) {
+  } else if (pot <= 32) {
     return "Poção de Sono"
   } else if (pot == 33) {
     return "Poção de Suporte Ambiental"
@@ -3124,45 +3125,45 @@ function potion(num) {
     return "Poção de Visão Mística"
   } else if (pot == 36) {
     return "Poção de Vitalidade Fantasma"
-  } else if (pot == 37 || pot == 38) {
+  } else if (pot <= 38) {
     return "Poção de Escudo da Fé (Cena)"
-  } else if (pot == 39 || pot == 40) {
+  } else if (pot <= 40) {
     return "Poção de Alterar Tamanho"
-  } else if (pot == 41 || pot == 42) {
+  } else if (pot <= 42) {
     return "Poção de Aparência Perfeita"
   } else if (pot == 43) {
     return "Óleo de Armamento da Natureza"
-  } else if (pot >= 44 && pot <= 49) {
+  } else if (pot <= 49) {
     return "Granada de Bola de Fogo"
-  } else if (pot == 50 || pot == 51) {
+  } else if (pot <= 51) {
     return "Poção de Camuflagem Ilusória"
-  } else if (pot == 52 || pot == 53) {
+  } else if (pot <= 53) {
     return "Poção de Concentração de Combate (Cena)"
-  } else if (pot >= 54 && pot <= 62) {
+  } else if (pot <= 62) {
     return "Poção de Curar Ferimentos (4d8+4)"
-  } else if (pot >= 63 && pot <= 66) {
+  } else if (pot <= 66) {
     return "Poção de Físico Divino"
-  } else if (pot == 67 || pot == 68) {
+  } else if (pot <= 68) {
     return "Poção de Mente Divina"
-  } else if (pot == 69 || pot == 70) {
+  } else if (pot <= 70) {
     return "Poção de Metamorfose"
-  } else if (pot >= 71 && pot <= 75) {
+  } else if (pot <= 75) {
     return "Poção de Purificação"
-  } else if (pot == 76 || pot == 77) {
+  } else if (pot <= 77) {
     return "Poção de Velocidade"
-  } else if (pot == 78 || pot == 79) {
+  } else if (pot <= 79) {
     return "Óleo de Vestimenta da Fé"
   } else if (pot == 80) {
     return "Poção de Voz Divina"
-  } else if (pot == 81 || pot == 82) {
+  } else if (pot <= 82) {
     return "Óleo de Arma Mágica (bônus +3)"
-  } else if (pot >= 83 && pot <= 88) {
+  } else if (pot <= 88) {
     return "Poção de Curar Ferimentos (7d8+7)"
   } else if (pot == 89) {
     return "Poção de Físico Divino (três atributos)"
-  } else if (pot >= 90 && pot <= 92) {
+  } else if (pot <= 92) {
     return "Poção de Invisibilidade (Cena)"
-  } else if (pot >= 93 && pot <= 96) {
+  } else if (pot <= 96) {
     return "Granada de Bola de Fogo (10d6)"
   } else {
     return "Poção de Curar Ferimentos (11d8+11)"
@@ -3171,25 +3172,26 @@ function potion(num) {
 
 function riquezamenor(num) {
   let n = num
-  let riqmen = rolldice(1+n, 100+n)
+  let riqrol = rolldice(1+n, 100+n)
+  riqmen = n + riqrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqmen} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqmen} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol} + 20 <br>`
   }
-  if (riqmen >= 1 && riqmen <= 25) {
+  if (riqmen <= 25) {
     return riqueza1()
-  } else if (riqmen >= 26 && riqmen <= 40) {
+  } else if (riqmen <= 40) {
     return riqueza2()
-  } else if (riqmen >= 41 && riqmen <= 55) {
+  } else if (riqmen <= 55) {
     return riqueza3()
-  } else if (riqmen >= 56 && riqmen <= 70) {
+  } else if (riqmen <= 70) {
     return riqueza4()
-  } else if (riqmen >= 71 && riqmen <= 85) {
+  } else if (riqmen <= 85) {
     return riqueza5()
-  } else if (riqmen >= 86 && riqmen <= 95) {
+  } else if (riqmen <= 95) {
     return riqueza6()
-  } else if (riqmen >= 96 && riqmen <= 99) {
+  } else if (riqmen <= 99) {
     return riqueza7()
   } else {
     return riqueza8()
@@ -3198,27 +3200,28 @@ function riquezamenor(num) {
 
 function riquezamedia(num) {
   let n = num
-  let riqmed = rolldice(1+n, 100+n)
+  let riqrol = rolldice(1+n, 100+n)
+  riqmed = n + riqrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqmed} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqmed} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol} + 20 <br>`
   }
-  if (riqmed >= 1 && riqmed <= 10) {
+  if (riqmed <= 10) {
     return riqueza3()
-  } else if (riqmed >= 11 && riqmed <= 30) {
+  } else if (riqmed <= 30) {
     return riqueza4()
-  } else if (riqmed >= 31 && riqmed <= 50) {
+  } else if (riqmed <= 50) {
     return riqueza5()
-  } else if (riqmed >= 51 && riqmed <= 65) {
+  } else if (riqmed <= 65) {
     return riqueza6()
-  } else if (riqmed >= 66 && riqmed <= 80) {
+  } else if (riqmed <= 80) {
     return riqueza7()
-  } else if (riqmed >= 81 && riqmed <= 90) {
+  } else if (riqmed <= 90) {
     return riqueza8()
-  } else if (riqmed >= 91 && riqmed <= 95) {
+  } else if (riqmed <= 95) {
     return riqueza9()
-  } else if (riqmed >= 96 && riqmed <= 99) {
+  } else if (riqmed <= 99) {
     return riqueza10()
   } else {
     return riqueza11()
@@ -3227,27 +3230,28 @@ function riquezamedia(num) {
 
 function riquezamaior(num) {
   let n = num
-  let riqmar = rolldice(1+n, 100+n)
+  let riqrol = rolldice(1+n, 100+n)
+  riqmar = n + riqrol
   if (n == 0) {
     secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} <br>`
   } else {
     secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} + 20 <br>`
   }
-  if (riqmar >= 1 && riqmar <= 5) {
+  if (riqmar <= 5) {
     return riqueza5()
-  } else if (riqmar >= 6 && riqmar <= 15) {
+  } else if (riqmar <= 15) {
     return riqueza6()
-  } else if (riqmar >= 16 && riqmar <= 25) {
+  } else if (riqmar <= 25) {
     return riqueza7()
-  } else if (riqmar >= 26 && riqmar <= 40) {
+  } else if (riqmar <= 40) {
     return riqueza8()
-  } else if (riqmar >= 41 && riqmar <= 60) {
+  } else if (riqmar <= 60) {
     return riqueza9()
-  } else if (riqmar >= 61 && riqmar <= 75) {
+  } else if (riqmar <= 75) {
     return riqueza10()
-  } else if (riqmar >= 76 && riqmar <= 85) {
+  } else if (riqmar <= 85) {
     return riqueza11()
-  } else if (riqmar >= 86 && riqmar <= 95) {
+  } else if (riqmar <= 95) {
     return riqueza12()
   } else {
     return riqueza13()
@@ -3365,7 +3369,7 @@ function superior(roll, e) {
   const madeiraTollon = ["Arco curto", "Arco longo", "Bordão", "Clava", "Lança", "Pique", "Tacape", "Escudo leve"]
   const armasMira = ["Arco curto", "Arco longo", "Besta leve", "Besta pesada", "Mosquete", "Pistola"]
   const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
-  if(d6 >= 1 && d6 <= 3) {
+  if(d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       hidden.innerHTML = ''
@@ -3378,7 +3382,7 @@ function superior(roll, e) {
       superior(d6, equiroll)
     }
     return suproll
-  } else if (d6 == 4 || d6 == 5) {
+  } else if (d6 <= 5) {
     suproll = aprdura()
     if (suproll == "Sob medida") {
       hidden.innerHTML = ''
@@ -3406,7 +3410,7 @@ function superior2(roll, e, sup) {
   const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
   const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
   const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
-  if(d6 >= 1 && d6 <= 3) {
+  if(d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       hidden.innerHTML = ''
@@ -3431,7 +3435,7 @@ function superior2(roll, e, sup) {
       superior2(d6, equiroll, melhor)
     }
     return suproll
-  } else if (d6 == 4 || d6 == 5) {
+  } else if (d6 <= 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
       hidden.innerHTML = ''
@@ -3473,7 +3477,7 @@ function superior3(roll, e, sup, sup2) {
   const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
   const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
   const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
-  if(d6 >= 1 && d6 <= 3) {
+  if(d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       hidden.innerHTML = ''
@@ -3513,7 +3517,7 @@ function superior3(roll, e, sup, sup2) {
       superior3(d6, equiroll, melhor, melhor2)
     }
     return suproll
-  } else if (d6 == 4 || d6 == 5) {
+  } else if (d6 <= 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
       hidden.innerHTML = ''
@@ -3571,7 +3575,7 @@ function superior4(roll, e, sup, sup2, sup3) {
   const armaduraPesada = ["Brunea", "Cota de malha", "Loriga segmentada", "Meia armadura", "Armadura completa"]
   const materialEspecial = ["de Adamante", "de Aço-rubi", "de Gelo Eterno", "de Matéria Vermelha", "de Madeira Tollon", "de Mitral"]
   const incompativel = ["Precisa", "Maciça", "Reforçada", "Delicada"]
-  if(d6 >= 1 && d6 <= 3) {
+  if(d6 <= 3) {
     suproll = aprarma()
     if (suproll == "de Madeira Tollon" && !madeiraTollon.includes(equiroll)) {
       hidden.innerHTML = ''
@@ -3626,7 +3630,7 @@ function superior4(roll, e, sup, sup2, sup3) {
       superior4(d6, equiroll, melhor, melhor2, melhor3)
     }
     return suproll
-  } else if (d6 == 4 || d6 == 5) {
+  } else if (d6 <= 5) {
     suproll = aprdura()
     if (suproll == "Sob medida" && melhor != "Ajustada") {
       hidden.innerHTML = ''
@@ -3692,33 +3696,33 @@ function aprarma() {
   hidden.innerHTML = ''
   var armaapr = rolldice(1, 100)
   hidden.innerHTML = `O aprimoramento de arma rolou ${armaapr} <br>`
-  if(armaapr >= 1 && armaapr <= 10) {
+  if(armaapr <= 10) {
     return "Atroz"
-  } else if (armaapr >= 11 && armaapr <= 13) {
+  } else if (armaapr <= 13) {
     return "Banhada a ouro"
-  } else if (armaapr >= 14 && armaapr <= 23) {
+  } else if (armaapr <= 23) {
     return "Certeira"
-  } else if (armaapr >= 24 && armaapr <= 26) {
+  } else if (armaapr <= 26) {
     return "Cravejada de gemas"
-  } else if (armaapr >= 27 && armaapr <= 36) {
+  } else if (armaapr <= 36) {
     return "Cruel"
-  } else if (armaapr >= 37 && armaapr <= 39) {
+  } else if (armaapr <= 39) {
     return "Discreta"
-  } else if (armaapr >= 40 && armaapr <= 44) {
+  } else if (armaapr <= 44) {
     return "Equilibrada"
-  } else if (armaapr >= 45 && armaapr <= 48) {
+  } else if (armaapr <= 48) {
     return "Harmonizada"
-  } else if (armaapr >= 49 && armaapr <= 53) {
+  } else if (armaapr <= 53) {
     return "Injeção Alquímica"
-  } else if (armaapr == 54 || armaapr == 55) {
+  } else if (armaapr <= 55) {
     return "Macabra"
-  } else if (armaapr >= 56 && armaapr <= 65) {
+  } else if (armaapr <= 65) {
     return "Maciça"
-  } else if (armaapr >= 66 && armaapr <= 75) {
+  } else if (armaapr <= 75) {
     return materialespecial()
-  } else if (armaapr >= 76 && armaapr <= 80) {
+  } else if (armaapr <= 80) {
     return "Mira telescópica"
-  } else if (armaapr >= 81 && armaapr <= 90) {
+  } else if (armaapr <= 90) {
     return "Precisa"
   } else {
     return "Pungente"
@@ -3729,27 +3733,27 @@ function aprdura() {
   hidden.innerHTML = ''
   var duraapr = rolldice(1, 100)
   hidden.innerHTML = `O aprimoramento de armadura rolou ${duraapr} <br>`
-  if(duraapr >= 1 && duraapr <= 15) {
+  if(duraapr <= 15) {
     return "Ajustada"
-  } else if (duraapr >= 16 && duraapr <= 19) {
+  } else if (duraapr <= 19) {
     return "Banhada a ouro"
-  } else if (duraapr >= 20 && duraapr <= 23) {
+  } else if (duraapr <= 23) {
     return "Cravejada de gemas"
-  } else if (duraapr >= 24 && duraapr <= 28) {
+  } else if (duraapr <= 28) {
     return "Delicada"
-  } else if (duraapr >= 29 && duraapr <= 32) {
+  } else if (duraapr <= 32) {
     return "Discreta"
-  } else if (duraapr >= 33 && duraapr <= 37) {
+  } else if (duraapr <= 37) {
     return "com Espinhos"
-  } else if (duraapr >= 38 && duraapr <= 40) {
+  } else if (duraapr <= 40) {
     return "Macabra"
-  } else if (duraapr >= 41 && duraapr <= 50) {
+  } else if (duraapr <= 50) {
     return materialespecial()
-  } else if (duraapr >= 51 && duraapr <= 55) {
+  } else if (duraapr <= 55) {
     return "Polida"
-  } else if (duraapr >= 56 && duraapr <= 80) {
+  } else if (duraapr <= 80) {
     return "Reforçada"
-  } else if (duraapr >= 81 && duraapr <= 90) {
+  } else if (duraapr <= 90) {
     return "Selada"
   } else {
     return "Sob medida"
@@ -3760,23 +3764,23 @@ function apreso() {
   hidden.innerHTML = ''
   var esoapr = rolldice(1, 100)
   hidden.innerHTML = `O aprimoramento de esotérico rolou ${esoapr} <br>`
-  if(esoapr >= 1 && esoapr <= 4) {
+  if(esoapr <= 4) {
     return "Banhada a ouro"
-  } else if (esoapr >= 5 && esoapr <= 8) {
+  } else if (esoapr <= 8) {
     return "Cravejado de gemas"
-  } else if (esoapr >= 9 && esoapr <= 12) {
+  } else if (esoapr <= 12) {
     return "Discreto"
-  } else if (esoapr >= 13 && esoapr <= 27) {
+  } else if (esoapr <= 27) {
     return "Energético"
-  } else if (esoapr >= 28 && esoapr <= 42) {
+  } else if (esoapr <= 42) {
     return "Harmonizado"
-  } else if (esoapr >= 43 && esoapr <= 45) {
+  } else if (esoapr <= 45) {
     return "Macabra"
-  } else if (esoapr >= 46 && esoapr <= 54) {
+  } else if (esoapr <= 54) {
     return materialespecial()
-  } else if (esoapr >= 55 && esoapr <= 70) {
+  } else if (esoapr <= 70) {
     return "Poderoso"
-  } else if (esoapr >= 71 && esoapr <= 85) {
+  } else if (esoapr <= 85) {
     return "Canalizador"
   } else {
     return "Vigilante"
@@ -3917,61 +3921,61 @@ function encantoArma() {
   hidden.innerHTML = ''
   var encantoroll = rolldice(1, 100)
   hidden.innerHTML = `Um encanto de arma rolou ${encantoroll} <br>`
-  if (encantoroll >= 1 && encantoroll <= 5) {
+  if (encantoroll <= 5) {
     return "Ameaçadora"
-  } else if (encantoroll >= 6 && encantoroll <= 10) {
+  } else if (encantoroll <= 10) {
     return anticriatura()
-  } else if (encantoroll == 11 || encantoroll == 12) {
+  } else if (encantoroll <= 12) {
     return "Arremesso"
-  } else if (encantoroll == 13 || encantoroll == 14) {
+  } else if (encantoroll <= 14) {
     return "Assassina"
-  } else if (encantoroll == 15 || encantoroll == 16) {
+  } else if (encantoroll <= 16) {
     return "Caçadora"
-  } else if (encantoroll >= 17 && encantoroll <= 21) {
+  } else if (encantoroll <= 21) {
     return "Congelante"
-  } else if (encantoroll == 22 || encantoroll == 23) {
+  } else if (encantoroll <= 23) {
     return "Conjuradora"
-  } else if (encantoroll >= 24 && encantoroll <= 28) {
+  } else if (encantoroll <= 28) {
     return "Corrosiva"
-  } else if (encantoroll == 29 || encantoroll == 30) {
+  } else if (encantoroll <= 30) {
     return "Dançarina"
-  } else if (encantoroll >= 31 && encantoroll <= 34) {
+  } else if (encantoroll <= 34) {
     return "Defensora"
-  } else if (encantoroll == 35 || encantoroll == 36) {
+  } else if (encantoroll <= 36) {
     return "Destruidora"
-  } else if (encantoroll == 37 || encantoroll == 38) {
+  } else if (encantoroll <= 38) {
     return "Dilacerante"
-  } else if (encantoroll == 39 || encantoroll == 40) {
+  } else if (encantoroll <= 40) {
     return "Drenante"
-  } else if (encantoroll >= 41 && encantoroll <= 45) {
+  } else if (encantoroll <= 45) {
     return "Elétrica"
   } else if (encantoroll == 46) {
     return "Energética"
-  } else if (encantoroll == 47 || encantoroll == 48) {
+  } else if (encantoroll <= 48) {
     return "Excruciante"
-  } else if (encantoroll >= 49 && encantoroll <= 53) {
+  } else if (encantoroll <= 53) {
     return "Flamejante"
-  } else if (encantoroll >= 54 && encantoroll <= 63) {
+  } else if (encantoroll <= 63) {
     return "Formidável"
   } else if (encantoroll == 64) {
     return "Lancinante"
-  } else if (encantoroll >= 65 && encantoroll <= 72) {
+  } else if (encantoroll <= 72) {
     return "Magnífica"
-  } else if (encantoroll == 73 || encantoroll == 74) {
+  } else if (encantoroll <= 74) {
     return "Piedosa"
-  } else if (encantoroll == 75 || encantoroll == 76) {
+  } else if (encantoroll <= 76) {
     return "Profana"
-  } else if (encantoroll == 77 || encantoroll == 78) {
+  } else if (encantoroll <= 78) {
     return "Sagrada"
-  } else if (encantoroll == 79 || encantoroll == 80) {
+  } else if (encantoroll <= 80) {
     return "Sanguinária"
-  } else if (encantoroll == 81 || encantoroll == 82) {
+  } else if (encantoroll <= 82) {
     return "Trovejante"
-  } else if (encantoroll == 83 || encantoroll == 84) {
+  } else if (encantoroll <= 84) {
     return "Tumular"
-  } else if (encantoroll >= 85 && encantoroll <= 88) {
+  } else if (encantoroll <= 88) {
     return "Veloz"
-  } else if (encantoroll == 89 || encantoroll <= 90) {
+  } else if (encantoroll <= 90) {
     return "Venenosa"
   } else {
     return armaEsmecifica()
@@ -4000,55 +4004,55 @@ function encantoArmadura() {
   hidden.innerHTML = ''
   var encantoroll = rolldice(1, 100)
   hidden.innerHTML = `Um encanto de armadura rolou ${encantoroll} <br>`
-  if (encantoroll >= 1 && encantoroll <= 6) {
+  if (encantoroll <= 6) {
     return "Abascanto"
-  } else if (encantoroll >= 7 && encantoroll <= 10) {
+  } else if (encantoroll <= 10) {
     return "Abençoado"
-  } else if (encantoroll == 11 || encantoroll == 12) {
+  } else if (encantoroll <= 12) {
     return "Acrobático"
-  } else if (encantoroll == 13 || encantoroll == 14) {
+  } else if (encantoroll <= 14) {
     return "Alado"
-  } else if (encantoroll == 15 || encantoroll == 16) {
+  } else if (encantoroll <= 16) {
     return "Animado"
-  } else if (encantoroll == 17 || encantoroll == 18) {
+  } else if (encantoroll <= 18) {
     return "Assustador"
-  } else if (encantoroll >= 19 && encantoroll <= 22) {
+  } else if (encantoroll <= 22) {
     return "Cáustica"
-  } else if (encantoroll >= 23 && encantoroll <= 32) {
+  } else if (encantoroll <= 32) {
     return "Defensor"
-  } else if (encantoroll == 33 || encantoroll == 34) {
+  } else if (encantoroll <= 34) {
     return "Escorregadio"
-  } else if (encantoroll == 35 || encantoroll == 36) {
+  } else if (encantoroll <= 36) {
     return "Esmagador"
-  } else if (encantoroll == 37 || encantoroll == 38) {
+  } else if (encantoroll <= 38) {
     return "Fantasmagórico"
-  } else if (encantoroll == 39 || encantoroll == 40) {
+  } else if (encantoroll <= 40) {
     return "Fortificado"
-  } else if (encantoroll >= 41 && encantoroll <= 44) {
+  } else if (encantoroll <= 44) {
     return "Gélido"
-  } else if (encantoroll >= 45 && encantoroll <= 54) {
+  } else if (encantoroll <= 54) {
     return "Guardião"
-  } else if (encantoroll == 55 && encantoroll == 56) {
+  } else if (encantoroll <= 56) {
     return "Hipnótico"
-  } else if (encantoroll == 57 || encantoroll == 58) {
+  } else if (encantoroll <= 58) {
     return "Ilusório"
-  } else if (encantoroll >= 59 && encantoroll <= 62) {
+  } else if (encantoroll <= 62) {
     return "Incandescente"
-  } else if (encantoroll >= 63 && encantoroll <= 68) {
+  } else if (encantoroll <= 68) {
     return "Invulnerável"
-  } else if (encantoroll >= 69 && encantoroll <= 72) {
+  } else if (encantoroll <= 72) {
     return "Opaco"
-  } else if (encantoroll >= 73 && encantoroll <= 78) {
+  } else if (encantoroll <= 78) {
     return "Protetor"
-  } else if (encantoroll == 79 || encantoroll == 80) {
+  } else if (encantoroll <= 80) {
     return "Refletor"
-  } else if (encantoroll >= 81 && encantoroll <= 84) {
+  } else if (encantoroll <= 84) {
     return "Relampejante"
-  } else if (encantoroll == 85 || encantoroll == 86) {
+  } else if (encantoroll <= 86) {
     return "Reluzente"
-  } else if (encantoroll == 87 || encantoroll == 88) {
+  } else if (encantoroll <= 88) {
     return "Sombrio"
-  } else if (encantoroll == 89 || encantoroll == 90) {
+  } else if (encantoroll <= 90) {
     return "Zeloso"
   } else {
     return armaduraEspecifica()
@@ -4058,39 +4062,39 @@ function encantoArmadura() {
 function armaEsmecifica() {
   armaroll = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + hidden.innerHTML + `Sua arma específica rolou ${armaroll} <br>`
-  if (armaroll >= 1 && armaroll <= 5) {
+  if (armaroll <= 5) {
     return "Azagaia dos relâmpagos"
-  } else if (armaroll >= 6 && armaroll <= 15) {
+  } else if (armaroll <= 15) {
     return "Espada baronial"
-  } else if (armaroll >= 16 && armaroll <= 25) {
+  } else if (armaroll <= 25) {
     return "Lâmina da luz"
-  } else if (armaroll >= 26 && armaroll <= 30) {
+  } else if (armaroll <= 30) {
     return "Lança animalesca"
-  } else if (armaroll >= 31 && armaroll <= 35) {
+  } else if (armaroll <= 35) {
     return "Maça do terror"
-  } else if (armaroll >= 36 && armaroll <= 40) {
+  } else if (armaroll <= 40) {
     return "Florete fugaz"
-  } else if (armaroll >= 41 && armaroll <= 45) {
+  } else if (armaroll <= 45) {
     return "Cajado da destruição"
-  } else if (armaroll >= 46 && armaroll <= 50) {
+  } else if (armaroll <= 50) {
     return "Cajado da vida"
-  } else if (armaroll >= 51 && armaroll <= 55) {
+  } else if (armaroll <= 55) {
     return "Machado silvestre"
-  } else if (armaroll >= 56 && armaroll <= 60) {
+  } else if (armaroll <= 60) {
     return "Martelo de Doherimm"
-  } else if (armaroll >= 61 && armaroll <= 67) {
+  } else if (armaroll <= 67) {
     return "Arco do poder"
-  } else if (armaroll >= 68 && armaroll <= 72) {
+  } else if (armaroll <= 72) {
     return "Língua do deserto"
-  } else if (armaroll >= 73 && armaroll <= 77) {
+  } else if (armaroll <= 77) {
     return "Besta explosiva"
-  } else if (armaroll >= 78 && armaroll <= 82) {
+  } else if (armaroll <= 82) {
     return "Punhal sszzaazita"
-  } else if (armaroll >= 83 && armaroll <= 87) {
+  } else if (armaroll <= 87) {
     return "Espada sortuda"
-  } else if (armaroll >= 88 && armaroll <= 92) {
+  } else if (armaroll <= 92) {
     return "Avalanche"
-  } else if (armaroll >= 93 && armaroll <= 95) {
+  } else if (armaroll <= 95) {
     return "Cajado do poder"
   } else {
     return "Vingadora sagrada"
@@ -4100,29 +4104,29 @@ function armaEsmecifica() {
 function armaduraEspecifica() {
   armaduraroll = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + hidden.innerHTML + `Sua armadura específica rolou ${armaduraroll} <br>`
-  if (armaduraroll >= 1 && armaduraroll <= 10) {
+  if (armaduraroll <= 10) {
     return "Cota élfica"
-  } else if (armaduraroll >= 11 && armaduraroll <= 20) {
+  } else if (armaduraroll <= 20) {
     return "Couro de monstro"
-  } else if (armaduraroll >= 21 && armaduraroll <= 25) {
+  } else if (armaduraroll <= 25) {
     return "Escudo do conjurador"
-  } else if (armaduraroll >= 26 && armaduraroll <= 32) {
+  } else if (armaduraroll <= 32) {
     return "Loriga de centurião"
-  } else if (armaduraroll >= 33 && armaduraroll <= 42) {
+  } else if (armaduraroll <= 42) {
     return "Manto da noite"
-  } else if (armaduraroll >= 43 && armaduraroll <= 49) {
+  } else if (armaduraroll <= 49) {
     return "Couraça do comando"
-  } else if (armaduraroll >= 50 && armaduraroll <= 59) {
+  } else if (armaduraroll <= 59) {
     return "Baluarte anão"
-  } else if (armaduraroll >= 60 && armaduraroll <= 66) {
+  } else if (armaduraroll <= 66) {
     return "Escudo espinhoso"
-  } else if (armaduraroll >= 67 && armaduraroll <= 76) {
+  } else if (armaduraroll <= 76) {
     return "Escudo do leão"
-  } else if (armaduraroll >= 77 && armaduraroll <= 83) {
+  } else if (armaduraroll <= 83) {
     return "Carapaça demoníaca"
-  } else if (armaduraroll >= 84 && armaduraroll <= 88) {
+  } else if (armaduraroll <= 88) {
     return "Escudo do eclipse"
-  } else if (armaduraroll >= 89 && armaduraroll <= 93) {
+  } else if (armaduraroll <= 93) {
     return "Escudo de Azgher"
   } else {
     return "Armadura da luz"
@@ -4132,45 +4136,45 @@ function armaduraEspecifica() {
 function acessorioMenor() {
   acess = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Seu Acessório Menor rolou ${acess} <br>`
-  if (acess == 1 || acess == 2) {
+  if (acess <= 2) {
     return "Anel do sustento"
-  } else if (acess >= 3 && acess <= 7) {
+  } else if (acess <= 7) {
     return "Bainha mágica"
-  } else if (acess >= 8 && acess <= 12) {
+  } else if (acess <= 12) {
     return "Corda da escalada"
-  } else if (acess == 13 || acess == 14) {
+  } else if (acess <= 14) {
     return "Ferraduras da velocidade"
-  } else if (acess >= 15 && acess <= 19) {
+  } else if (acess <= 19) {
     return "Garrafa da fumaça eterna"
-  } else if (acess >= 20 && acess <= 24) {
+  } else if (acess <= 24) {
     return "Gema da luminosidade"
-  } else if (acess >= 25 && acess <= 29) {
+  } else if (acess <= 29) {
     return "Manto élfico"
-  } else if (acess >= 30 && acess <= 34) {
+  } else if (acess <= 34) {
     return "Mochila de carga"
-  } else if (acess >= 35 && acess <= 40) {
+  } else if (acess <= 40) {
     return "Brincos da sagacidade"
-  } else if (acess >= 41 && acess <= 46) {
+  } else if (acess <= 46) {
     return "Luvas da delicadeza"
-  } else if (acess >= 47 && acess <= 52) {
+  } else if (acess <= 52) {
     return "Manoplas da força do ogro"
-  } else if (acess >= 53 && acess <= 59) {
+  } else if (acess <= 59) {
     return "Manto da resistência"
-  } else if (acess >= 60 && acess <= 65) {
+  } else if (acess <= 65) {
     return "Manto do fascínio"
-  } else if (acess >= 66 && acess <= 71) {
+  } else if (acess <= 71) {
     return "Pingente da sensatez"
-  } else if (acess >= 72 && acess <= 77) {
+  } else if (acess <= 77) {
     return "Torque do vigor"
-  } else if (acess >= 78 && acess <= 82) {
+  } else if (acess <= 82) {
     return "Chapéu do disfarce"
-  } else if (acess == 83 || acess == 84) {
+  } else if (acess <= 84) {
     return "Flauta fantasma"
-  } else if (acess >= 85 && acess <= 89) {
+  } else if (acess <= 89) {
     return "Lanterna da revelação"
-  } else if (acess >= 90 && acess <= 96) {
+  } else if (acess <= 96) {
     return "Anel da proteção"
-  } else if (acess == 97 || acess == 98) {
+  } else if (acess <= 98) {
     return "Anel do escudo mental"
   } else {
     return "Pingente da saúde"
@@ -4180,47 +4184,47 @@ function acessorioMenor() {
 function acessorioMedio() {
   acess = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Seu Acessório Médio rolou ${acess} <br>`
-  if (acess >= 1 && acess <= 4) {
+  if (acess <= 4) {
     return "Anel de telecinesia"
-  } else if (acess >= 5 && acess <= 8) {
+  } else if (acess <= 8) {
     return "Bola de cristal"
-  } else if (acess == 9 || acess == 10) {
+  } else if (acess <= 10) {
     return "Caveira maldita"
-  } else if (acess >= 11 && acess <= 14) {
+  } else if (acess <= 14) {
     return "Botas aladas"
-  } else if (acess >= 15 && acess <= 18) {
+  } else if (acess <= 18) {
     return "Braceletes de bronze"
-  } else if (acess >= 19 && acess <= 24) {
+  } else if (acess <= 24) {
     return "Anel da energia"
-  } else if (acess >= 25 && acess <= 30) {
+  } else if (acess <= 30) {
     return "Anel da vitalidade"
-  } else if (acess >= 31 && acess <= 34) {
+  } else if (acess <= 34) {
     return "Anel da invisibilidade"
-  } else if (acess >= 35 && acess <= 38) {
+  } else if (acess <= 38) {
     return "Braçadeiras do arqueiro"
-  } else if (acess >= 39 && acess <= 42) {
+  } else if (acess <= 42) {
     return "Brincos de Marah"
-  } else if (acess >= 43 && acess <= 46) {
+  } else if (acess <= 46) {
     return "Faixas do pugilista"
-  } else if (acess >= 47 && acess <= 50) {
+  } else if (acess <= 50) {
     return "Manto da aranha"
-  } else if (acess >= 51 && acess <= 54) {
+  } else if (acess <= 54) {
     return "Vassoura voadora"
-  } else if (acess >= 55 && acess <= 58) {
+  } else if (acess <= 58) {
     return "Símbolo abençoado"
-  } else if (acess >= 59 && acess <= 64) {
+  } else if (acess <= 64) {
     return "Amuleto da robustez"
-  } else if (acess >= 65 && acess <= 68) {
+  } else if (acess <= 68) {
     return "Botas velozes"
-  } else if (acess >= 69 && acess <= 74) {
+  } else if (acess <= 74) {
     return "Cinto da força do gigante"
-  } else if (acess >= 75 && acess <= 80) {
+  } else if (acess <= 80) {
     return "Coroa majestosa"
-  } else if (acess >= 81 && acess <= 86) {
+  } else if (acess <= 86) {
     return "Estola da serenidade"
-  } else if (acess == 87 || acess == 88) {
+  } else if (acess <= 88) {
     return "Manto do morcego"
-  } else if (acess >= 89 && acess <= 94) {
+  } else if (acess <= 94) {
     return "Pulseiras da celeridade"
   } else {
     return "Tiara da sapiência"
@@ -4230,47 +4234,47 @@ function acessorioMedio() {
 function acessorioMaior() {
   acess = rolldice(1, 100)
   secreto.innerHTML = secreto.innerHTML + `Seu Acessório Maior rolou ${acess} <br>`
-  if (acess == 1 || acess == 2) {
+  if (acess <= 2) {
     return "Elmo do teletransporte"
-  } else if (acess == 3 || acess == 4) {
+  } else if (acess <= 4) {
     return "Gema da telepatia"
-  } else if (acess >= 5 && acess <= 9) {
+  } else if (acess <= 9) {
     return "Gema elemental"
-  } else if (acess >= 10 && acess <= 15) {
+  } else if (acess <= 15) {
     return "Manual da saúde corporal"
-  } else if (acess >= 16 && acess <= 21) {
+  } else if (acess <= 21) {
     return "Manual do bom exercício"
-  } else if (acess >= 22 && acess <= 27) {
+  } else if (acess <= 27) {
     return "Manual dos movimentos precisos"
-  } else if (acess >= 28 && acess <= 34) {
+  } else if (acess <= 34) {
     return "Medalhão de Lena"
-  } else if (acess >= 35 && acess <= 40) {
+  } else if (acess <= 40) {
     return "Tomo da compreensão"
-  } else if (acess >= 41 && acess <= 46) {
+  } else if (acess <= 46) {
     return "Tomo da liderança e influência"
-  } else if (acess >= 47 && acess <= 52) {
+  } else if (acess <= 52) {
     return "Tomo dos grandes pensamentos"
-  } else if (acess >= 53 && acess <= 57) {
+  } else if (acess <= 57) {
     return "Anel refletor"
-  } else if (acess >= 58 && acess <= 60) {
+  } else if (acess <= 60) {
     return "Cinto do campeão"
-  } else if (acess >= 61 && acess <= 67) {
+  } else if (acess <= 67) {
     return "Colar guardião"
-  } else if (acess >= 68 && acess <= 72) {
+  } else if (acess <= 72) {
     return "Estatueta animista"
-  } else if (acess >= 73 && acess <= 77) {
+  } else if (acess <= 77) {
     return "Anel da liberdade"
-  } else if (acess >= 78 && acess <= 82) {
+  } else if (acess <= 82) {
     return "Tapete voador"
-  } else if (acess >= 83 && acess <= 87) {
+  } else if (acess <= 87) {
     return "Braceletes de ouro"
-  } else if (acess == 88 || acess == 89) {
+  } else if (acess <= 89) {
     return "Espelho da oposição"
-  } else if (acess >= 90 && acess <= 94) {
+  } else if (acess <= 94) {
     return "Robe do arquimago"
-  } else if (acess == 95 || acess == 96) {
+  } else if (acess <= 96) {
     return "Orbe das tempestades"
-  } else if (acess == 97 && acess == 98) {
+  } else if (acess <= 98) {
     return "Anel da regeneração"
   } else {
     return "Espelho do aprisionamento"
