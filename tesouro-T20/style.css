@@ -7,32 +7,40 @@
     src: url('fontes/Tormenta20x.ttf') format('truetype');
 }
 
+:root {
+    --vinho: #B5344A;
+    --fundo: #9fa2a3/*#aaaaaa*/;
+}
+
 html, body {
     overflow-x: hidden;
     margin: 0 auto;
 }
 
 body {
-    background-color: gray;
+    background-color: rgb(100, 99, 99);
 }
 
 header {
     background-color: white;
     text-align: center;
     width: 600px;
-    margin: auto;
+    margin: 22px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.404);
     font-family: 't20';
+    color: var(--vinho);
     max-width: 80%;
+    border: 3px solid var(--vinho);
+    background-color: var(--fundo);
 }
 
 h1 {
     padding: 7px;
+    margin: 0 auto;
 }
 
 section {
-    background-color: white;
     border-radius: 10px;
     /*padding: 15px;*/
     width: 500px;
@@ -40,12 +48,28 @@ section {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.404);
     font-family: Arial, Helvetica, sans-serif;
     max-width: 70%;
+    border: 3px solid var(--vinho);
+    background-color: var(--fundo);
 }
 
 div {
     padding: 15px;
+    background-color: var(--fundo);
 }
 
+div#com {
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+div#res {
+    border-radius: 0px 0px 10px 10px;
+}
+div#secreto {
+    border-radius: 10px;
+    background-color: var(--fundo);
+}
 div#hidden {
     display: none;
 }
@@ -58,11 +82,17 @@ footer {
     background-color: white;
     text-align: center;
     width: 600px;
-    margin: auto;
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.404);
     font-family: 'Alegreya Sans', sans-serif;
     max-width: 80%;
+    border: 3px solid var(--vinho);
+    background-color: var(--fundo);
+}
+
+footer > p, footer > h3 {
+    margin: 0 auto;
 }
 
 a {
@@ -71,4 +101,30 @@ a {
 }
 a:hover {
     text-decoration: underline;
+}
+
+select, input {
+    height: 25px;
+    text-align: center;
+    color: var(--vinho);
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+    font-family: 'Alegreya Sans', sans-serif;
+    border: 2px solid var(--vinho);
+    padding-top: 0px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.404);
+}
+
+select:hover, input:hover {
+    background-color: rgb(150, 150, 150);
+}
+
+option {
+    font-weight: bold;
+}
+
+input#Gerar, select {
+    width: 75px;
 }
