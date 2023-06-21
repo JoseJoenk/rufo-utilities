@@ -2226,11 +2226,11 @@ function potion(num) {
 function riquezamenor(num) {
   let n = num
   let riqrol = rolldice(1+n, 100+n)
-  riqmen = n + riqrol
+  riqmen = riqrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol-n} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Menor rolou ${riqrol-n} + 20 <br>`
   }
   if (riqmen <= 25) {
     return riqueza1()
@@ -2254,11 +2254,11 @@ function riquezamenor(num) {
 function riquezamedia(num) {
   let n = num
   let riqrol = rolldice(1+n, 100+n)
-  riqmed = n + riqrol
+  riqmed = riqrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol-n} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Média rolou ${riqrol-n} + 20 <br>`
   }
   if (riqmed <= 10) {
     return riqueza3()
@@ -2284,11 +2284,11 @@ function riquezamedia(num) {
 function riquezamaior(num) {
   let n = num
   let riqrol = rolldice(1+n, 100+n)
-  riqmar = n + riqrol
+  riqmar = riqrol
   if (n == 0) {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqrol-n} <br>`
   } else {
-    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqmar} + 20 <br>`
+    secreto.innerHTML = secreto.innerHTML + `Uma riqueza Maior rolou ${riqrol-n} + 20 <br>`
   }
   if (riqmar <= 5) {
     return riqueza5()
