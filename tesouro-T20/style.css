@@ -19,6 +19,16 @@ html, body {
 
 body {
     background-color: rgb(100, 99, 99);
+    background-image: url('imagens/bg-esmeralda.png');
+    background-size: 100%;
+    background-position: center top fixed;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        background-image: none;
+    }
 }
 
 header {
