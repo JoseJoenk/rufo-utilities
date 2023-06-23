@@ -19,15 +19,30 @@ html, body {
 
 body {
     background-color: rgb(100, 99, 99);
-    background-image: url('imagens/bg-esmeralda.png');
+    background-image: url('imagens/bg-esmeralda.jpg');
     background-size: 100%;
-    background-position: center top fixed;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 950px) {
+    body {
+        background-image: url('imagens/bg-esmeralda2.jpg');
+        background-size: 150%;
+    }
+}
+
+@media screen and (max-width: 300px) {
     body {
         background-image: none;
+    }
+}
+
+@media screen and (max-height: 950px) and (orientation: landscape) {
+    body {
+        background-size: 115%;
+        background-position: right top;
     }
 }
 
@@ -125,6 +140,10 @@ select, input {
     border: 2px solid var(--vinho);
     padding-top: 0px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.404);
+}
+
+select {
+    margin-top: 0px;
 }
 
 select:hover, input:hover {
