@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ofícios - Rufo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Ofícios T20</h1>
+    </header>
+    <main>
+        <section>
+            <div id="texto1">
+                <ul>
+                    <li>Forneça o preço de uma unidade do item base.</li>
+                    <li>Coloque quantas modificações e/ou encantos deseja adicionar ao item. A parte de modificações prévias e encantos prévios serve para dizer quantas modificações/encantos já existiam no item caso o item não seja feito do zero. Você deve escolher a quantidade <strong>total</strong> de melhorias/encantos que o item irá possuir, e não a quantidade que você deseja adicionar.</li>
+                    <li>Munições são consumíveis, o que significa que você pode fazer dois pacotes da mesma munição com o mesmo teste. Apenas se lembre que você sofrerá -5 no teste!</li>
+                    <li>Itens Específicos Menores, Médios e Maiores se referem aos acessórios, armas, armaduras e escudos específicos do livro. Por padrão, todas as armas e armaduras específicas do livro são itens mágicos maiores.</li>
+                    <li>A menos que o seu mestre seja bonzinho, por padrão, qualquer item com pelo menos uma modificação ou encanto precisa de 1 mês para ser fabricado (incluindo munições!). Itens sem modificações ou encantos precisam de 1 semana para serem fabricados, e Consumíveis levam apenas 1 dia.</li>
+                </ul>
+            </div>
+            <div id="calccraft">
+                <table id="ccraft">
+                    <caption>Calculadora</caption>
+                    <tr>
+                        <th>Tipo do Item</th>
+                        <th>Preço</th>
+                        <th>Melhorias</th>
+                        <th>Melhorias Prévias</th>
+                        <th>CD das Melhorias</th>
+                        <th>Preço das Melhorias</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="itens" id="itens">
+                                <option value="Armas Simples">Armas Simples</option>
+                                <option value="Armonas">Armas Marciais, Exóticas ou de Fogo</option>
+                                <option value="Armaduras Leves">Armaduras Leves</option>
+                                <option value="Armaduras Pesadas">Armaduras Pesadas</option>
+                                <option value="Escudos">Escudos</option>
+                                <option value="Munições">Munições</option>
+                                <option value="Munições2">Munições (2x Pacotes)</option>
+                                <option value="EDA">Equipamento de Aventura</option>
+                                <option value="Ferramentas">Ferramentas</option>
+                                <option value="Vestuário">Vestuário</option>
+                                <option value="Esotéricos">Esotéricos</option>
+                                <option value="Mm">Item Específico Menor</option>
+                                <option value="Mme">Item Específico Médio</option>
+                                <option value="MMM">Item Específico Maior</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" name="preco" id="preco">
+                        </td>
+                        <td>
+                            <select name="melhorias" id="melhorias">
+                                <option value="1m">1</option>
+                                <option value="2m">2</option>
+                                <option value="3m">3</option>
+                                <option value="4m">4</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="melhoriasp" id="melhoriasp">
+                                <option value="1m">1</option>
+                                <option value="2m">2</option>
+                                <option value="3m">3</option>
+                                <option value="4m">4</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>CD do Item</th>
+                        <td></td>
+                        <th>Encantos</th>
+                        <th>Encantos Prévios</th>
+                        <th>CD dos Encantos</th>
+                        <th>Preço dos Encantos</th>
+                    </tr>
+                    <tr>
+                        <th>Material Especial</th>
+                        <td>
+                            <select name="material" id="material">
+                                <option value="açorubi">Aço-Rubi</option>
+                                <option value="adamante">Adamante</option>
+                                <option value="gelo">Gelo Eterno</option>
+                                <option value="madeira">Madeira Tollon</option>
+                                <option value="matéria">Matéria Vermelha</option>
+                                <option value="mitral">Mitral</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="encantos" id="encantos">
+                            <option value="e1">1</option>
+                            <option value="e2">2</option>
+                            <option value="e3">3</option>
+                        </select>
+                        </td>
+                        <td>
+                            <select name="encantosp" id="encantosp">
+                            <option value="e1">1</option>
+                            <option value="e2">2</option>
+                            <option value="e3">3</option>
+                        </select>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">CD Final</th>
+                        <th colspan="2">Preço Final</th>
+                        <th colspan="2">Custo de Fabricação</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="texto2">
+                <ul>
+                    <li>Selecione o item ou a quantidade de PMs da poção ou pergaminho que deseja fabricar.</li>
+                    <li>Todos os itens listados são consumíveis, ou seja, você pode fabricar dois itens iguais com um mesmo teste. Apenas se lembre que você sofrerá -5 no teste!</li>
+                    <li>Por padrão, itens consumíveis são fabricados em 1 dia.</li>
+                </ul>
+            </div>
+            <div id="calcalchemic">
+                <table id="calchemic">
+                    <caption>Alquimia</caption>
+                    <tr>
+                        <th>Item</th>
+                        <th>CD</th>
+                        <th>Duas Doses?</th>
+                        <th>Preço de Fabricação</th>
+                        <th>Preço Final</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="alquimico" id="alquimico">
+                                <option value="1pm">Poção 1 PM</option>
+                                <option value="2pm">Poção 2 PM</option>
+                                <option value="3pm">Poção 3 PM</option>
+                                <option value="4pm">Poção 4 PM</option>
+                                <option value="5pm">Poção 5 PM</option>
+                                <option value="6pm">Poção 6 PM</option>
+                                <option value="7pm">Poção 7 PM</option>
+                                <option value="8pm">Poção 8 PM</option>
+                                <option value="9pm">Poção 9 PM</option>
+                                <option value="10pm">Poção 10 PM</option>
+                                <option value="11pm">Poção 11 PM</option>
+                                <option value="12pm">Poção 12 PM</option>
+                                <option value="13pm">Poção 13 PM</option>
+                                <option value="14pm">Poção 14 PM</option>
+                                <option value="15pm">Poção 15 PM</option>
+                                <option value="16pm">Poção 16 PM</option>
+                                <option value="17pm">Poção 17 PM</option>
+                                <option value="18pm">Poção 18 PM</option>
+                                <option value="19pm">Poção 19 PM</option>
+                                <option value="20pm">Poção 20 PM</option>
+                                <option value="acido">Ácido</option>
+                                <option value="balsamo">Bálsamo Restaurador</option>
+                                <option value="bomba">Bomba</option>
+                                <option value="cosmetico">Cosmético</option>
+                                <option value="amor">Elixir do Amor</option>
+                                <option value="mana">Essência de Mana</option>
+                                <option value="fogoalq">Fogo Alquímico</option>
+                                <option value="desaparecimento">Pó do Desaparecimento</option>
+                                <option value="antidoto">Antídoto (Ghanor)</option>
+                                <option value="cosmetico">Cosmético (Ghanor)</option>
+                                <option value="incenso">Incenso (Ghanor)</option>
+                                <option value="turlin">Turlin (Ghanor)</option>
+                                <option value="bagafogo">Baga-de-Fogo</option>
+                                <option value="dente">Dente-de-Dragão</option>
+                                <option value="abissal">Essência Abissal</option>
+                                <option value="liquen">Líquen Lilás</option>
+                                <option value="musgo">Musgo Púrpura</option>
+                                <option value="ossos">Ossos de Monstro</option>
+                                <option value="pocristal">Pó de Cristal</option>
+                                <option value="pogiz">Pó de Giz</option>
+                                <option value="ramo">Ramo Verdejante</option>
+                                <option value="sal">Saco de Sal</option>
+                                <option value="seixo">Seixo de Âmbar</option>
+                                <option value="cemiterio">Terra de Cemitério</option>
+                                <option value="noz">Extrato de Noz (Ghanor)</option>
+                                <option value="gengibre">Gengibre Amargo (Ghanor)</option>
+                                <option value="sapo">Pernas de Sapo (Ghanor)</option>
+                                <option value="algodão">Pluma de Algodão (Ghanor)</option>
+                                <option value="beladona">Beladona</option>
+                                <option value="bruma">Bruma Sonolenta</option>
+                                <option value="cicuta">Cicuta</option>
+                                <option value="sombra">Essência de Sombra</option>
+                                <option value="nevoatoxica">Névoa Tóxica</option>
+                                <option value="peçonhacomum">Peçonha Comum</option>
+                                <option value="peçonhaconcentrada">Peçonha Concentrada</option>
+                                <option value="peçonhapotente">Peçonha Potente</option>
+                                <option value="lich">Pó de Lich</option>
+                                <option value="nimb">Riso de Nimb</option>
+                                <option value="arictina">Arictina (Ghanor)</option>
+                                <option value="beijo">Beijo do Ocaso (Ghanor)</option>
+                                <option value="fogoliquido">Fogo Líquido (Ghanor)</option>
+                                <option value="valeriana">Valeriana (Ghanor)</option>
+                                <option value="vaporpurpura">Vapor Púrpura (Ghanor)</option>
+                                <option value="acidoconcentrado">Ácido Concentrado (Ghanor)</option>
+                                <option value="balsamopotente">Bálsamo Potente (Ghanor)</option>
+                                <option value="amorg">Elixir do Amor (Ghanor)</option>
+                                <option value="fluido">Fluido Congelante (Ghanor)</option>
+                                <option value="inferno">Frasco do Inferno (Ghanor)</option>
+                                <option value="incensom">Incenso Místico (Ghanor)</option>
+                                <option value="licor">Licor de Ervas (Ghanor)</option>
+                                <option value="pod">Pó do Desaparecimento (Ghanor)</option>
+                                <option value="rochoso">Soro Rochoso (Ghanor)</option>
+                                <option value="rubro">Soro Rubro (Ghanor)</option>
+                                <option value="substrato">Substrato de Mana (Ghanor)</option>
+                            </select>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h3><em>Feito por Rufo da Areia Sombria<br>Discord: @zerademanti</em></h3>
+        <p>Baseada no livro de Tormenta20 v1.2 Jogo do Ano.<br>Tormenta 20 é um produto da <a href="https://jamboeditora.com.br/" target="_blank"><strong>Jambô Editora</strong></a> e seus respectivos criadores, todos os direitos reservados. Este é um projeto de fãs e não possui fins lucrativos</p>
+    </footer>
+</body>
+</html>
